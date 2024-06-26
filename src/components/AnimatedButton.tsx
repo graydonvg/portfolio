@@ -5,11 +5,12 @@ import { motion } from "framer-motion";
 export default function AnimatedButton() {
   return (
     <motion.button
-      className="radial-gradient relative rounded-md px-6 py-2 shadow-sm"
-      initial={{ "--x": "100%", scale: 1 } as any}
+      className="radial-gradient fade-in-button relative w-fit rounded-md px-6 py-2 shadow-sm"
+      initial={{ "--x": "100%" } as any}
       animate={{ "--x": "-100%" } as any}
       whileTap={{ scale: 0.97 }}
       transition={{
+        delay: 2,
         repeat: Infinity,
         repeatType: "loop",
         repeatDelay: 1,
@@ -19,8 +20,8 @@ export default function AnimatedButton() {
         mass: 2,
         scale: {
           type: "spring",
-          stiffness: 10,
-          damping: 5,
+          stiffness: 100,
+          damping: 3,
           mass: 0.1,
         },
       }}

@@ -12,6 +12,47 @@ body {
   margin: 0;
 }
 
+.fade-in-button {
+  animation: left-to-right-fade-in 3s ease-in;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
+
+@keyframes left-to-right-fade-in {
+  0% {
+    pointer-events: none;
+    mask-size: 0%;
+    -webkit-mask-size: 0%;
+    mask-image: linear-gradient(-75deg, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0));
+    -webkit-mask-image: linear-gradient(
+      -75deg,
+      rgba(0, 0, 0, 1) 70%,
+      rgba(0, 0, 0, 0)
+    );
+  }
+  80% {
+    pointer-events: unset;
+    mask-size: 0%;
+    -webkit-mask-size: 0%;
+    mask-image: linear-gradient(-75deg, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0));
+    -webkit-mask-image: linear-gradient(
+      -75deg,
+      rgba(0, 0, 0, 1) 70%,
+      rgba(0, 0, 0, 0)
+    );
+  }
+  100% {
+    mask-size: 100%;
+    -webkit-mask-size: 100%;
+    mask-image: linear-gradient(-75deg, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0));
+    -webkit-mask-image: linear-gradient(
+      -75deg,
+      rgba(0, 0, 0, 1) 70%,
+      rgba(0, 0, 0, 0)
+    );
+  }
+}
+
 .radial-gradient {
   background: radial-gradient(
       circle at 50% -70%,
@@ -56,7 +97,7 @@ body {
 .light-beam {
   position: absolute;
   z-index: -10;
-  top: 70px;
+  top: 60px;
   left: 50%;
   transform: translateX(-50%);
   width: 800px;
@@ -80,45 +121,33 @@ body {
     light-beam-scale calc(var(--duration, 5s) * 1.7) var(--delay, 0s) both;
 }
 
-.light-beam-one {
+.light-beam-a {
   --rotate: 20deg;
   --scale: 1;
   --duration: 4s;
 }
 
-.light-beam-two {
+.light-beam-b {
   --rotate: 0deg;
   --scale: 1;
-  --duration: 7s;
+  --duration: 6s;
 }
 
-.light-beam-three {
+.light-beam-c {
   --rotate: -20deg;
   --scale: 1;
   --duration: 5s;
 }
 
-/* .light-beam-four {
-  --rotate: 40deg;
-  --scale: 1;
-  --duration: 3s;
-}
-
-.light-beam-five {
-  --rotate: -40deg;
-  --scale: 1;
-  --duration: 6s;
-} */
-
 @keyframes light-beam-opacity {
   0% {
-    opacity: 0.3;
+    opacity: 0.4;
   }
   50% {
     opacity: 0.8;
   }
   100% {
-    opacity: 0.3;
+    opacity: 0.4;
   }
 }
 
@@ -136,14 +165,3 @@ body {
       scale(var(--scale, 1));
   }
 }
-
-/* @keyframes light-beam-scale {
-  0% {
-    transform: translateX(-50%) rotate(calc(var(--rotate, 0deg) * 0))
-      scale(var(--scale, 1));
-  }
-  100% {
-    transform: translateX(-50%) rotate(calc(var(--rotate, 0deg) * 1.2))
-      scale(calc(var(--scale, 1) * 1.1));
-  }
-} */
