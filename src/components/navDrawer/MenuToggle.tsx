@@ -17,7 +17,7 @@ type MenuToggleProps = {
 export function MenuToggle({ toggle }: MenuToggleProps) {
   return (
     <button
-      className="absolute left-2 top-6 z-50 flex h-fit cursor-pointer select-none items-center justify-center rounded-full border-none p-2 outline-none hover:bg-slate-900"
+      className="absolute left-2 top-6 z-50 flex h-fit cursor-pointer select-none items-center justify-center rounded-full border-none p-2 outline-none md:hover:bg-slate-900"
       onClick={toggle}
     >
       <svg width="28" height="28" viewBox="0 0 22 19">

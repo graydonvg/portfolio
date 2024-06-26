@@ -13,12 +13,6 @@ body {
 }
 
 .fade-in-button {
-  /* mask-image: linear-gradient(
-    -75deg,
-    rgba(0, 0, 0, 0) 100%,
-    rgba(0, 0, 0, 1) 0%
-  );
-  mask-size: 100%; */
   animation: left-to-right-fade-in 3s ease-in;
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
@@ -115,11 +109,11 @@ body {
 .light-beam {
   position: absolute;
   z-index: -10;
-  top: 60px;
+  top: 80px;
   left: 50%;
   transform: translateX(-50%);
   width: 800px;
-  height: 700px;
+  height: 100svh;
   background-image: conic-gradient(
     from 0deg at 50% -5%,
     transparent 45%,
