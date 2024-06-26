@@ -1,0 +1,56 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Navigation } from "./Navigation";
+import { MenuToggle } from "./MenuToggle";
+import { useState } from "react";
+import { useDimensions } from "@/hooks/useDimensions";
+
+const sidebar = {
+  open: (height = 1000) => ({
+    clipPath: `circle(${height * 2}px at 40px 40px)`,
+    transition: {
+      type: "spring",
+      stiffness: 20,
+      restDelta: 2,
+    },
+  }),
+  closed: {
+    clipPath: "circle(0px at 31px 41px)",
+    transition: {
+      delay: 0.5,
+      type: "spring",
+      stiffness: 400,
+      damping: 40,
+    },
+  },
+};
+
+export function NavDrawer() {
+  const [isOpen, setIsOpen] = useState(false);
+  const element =
+    typeof window !== "undefined"
+      ? document.getElementById("nav-drawer")
+      : null;
+  const dimensions = useDimensions(element);
+
+  return (
+    <motion.nav
+      initial={false}
+      animate={isOpen ? "open" : "closed"}
+      custom={dimensions?.height}
+    >
+      <MenuToggle toggle={() => setIsOpen((prev) => !prev)} />
+      <motion.div
+        className="absolute bottom-0 left-0 top-0 z-20 w-full bg-slate-950/80"
+        variants={sidebar}
+      />
+      <motion.div
+        id="nav-drawer"
+        className="absolute bottom-0 left-0 top-0 z-30 w-[300px] bg-slate-900"
+        variants={sidebar}
+      />
+      <Navigation />
+    </motion.nav>
+  );
+}
