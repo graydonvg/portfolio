@@ -25,13 +25,13 @@ body {
     -webkit-mask-size: 0%;
     mask-image: linear-gradient(
       -75deg,
-      rgba(0, 0, 0, 0) 100%,
-      rgba(0, 0, 0, 1) 0%
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 100%
     );
     -webkit-mask-image: linear-gradient(
       -75deg,
-      rgba(0, 0, 0, 0) 100%,
-      rgba(0, 0, 0, 1) 0%
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 100%
     );
   }
   80% {
@@ -40,13 +40,13 @@ body {
     -webkit-mask-size: 0%;
     mask-image: linear-gradient(
       -75deg,
-      rgba(0, 0, 0, 0) 100%,
-      rgba(0, 0, 0, 1) 0%
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 100%
     );
     -webkit-mask-image: linear-gradient(
       -75deg,
-      rgba(0, 0, 0, 0) 100%,
-      rgba(0, 0, 0, 1) 0%
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 100%
     );
   }
   100% {
@@ -71,7 +71,7 @@ body {
       rgba(250, 250, 250, 0.15) 0%,
       transparent 80%
     ),
-    rgba(2, 6, 23, 0.7);
+    #020617;
 }
 
 .linear-mask {
@@ -109,11 +109,11 @@ body {
 .light-beam {
   position: absolute;
   z-index: -10;
-  top: 80px;
+  top: 100px;
   left: 50%;
   transform: translateX(-50%);
   width: 800px;
-  height: 100svh;
+  height: calc(100svh);
   background-image: conic-gradient(
     from 0deg at 50% -5%,
     transparent 45%,
@@ -133,19 +133,19 @@ body {
     light-beam-scale calc(var(--duration, 5s) * 1.7) var(--delay, 0s) both;
 }
 
-.light-beam-a {
+.light-beam-1 {
   --rotate: 20deg;
   --scale: 1;
   --duration: 4s;
 }
 
-.light-beam-b {
+.light-beam-2 {
   --rotate: 0deg;
   --scale: 1;
   --duration: 6s;
 }
 
-.light-beam-c {
+.light-beam-3 {
   --rotate: -20deg;
   --scale: 1;
   --duration: 5s;
@@ -175,5 +175,40 @@ body {
   100% {
     transform: translateX(-50%) rotate(var(--rotate, 0deg))
       scale(var(--scale, 1));
+  }
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    filter: brightness(2);
+  }
+  20% {
+    filter: brightness(0.8);
+  }
+  30% {
+    filter: brightness(2);
+  }
+  40% {
+    filter: brightness(0.8);
+  }
+  50% {
+    filter: brightness(2);
+  }
+  60% {
+    filter: brightness(0.8);
+  }
+  70% {
+    filter: brightness(2);
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    filter: brightness(0.8);
   }
 }

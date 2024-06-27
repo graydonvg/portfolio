@@ -15,13 +15,15 @@ const links = ["about", "projects", "contact", "github", "linkedin", "resume"];
 
 export function Navigation() {
   return (
-    <motion.ul
-      variants={variants}
-      className="absolute left-0 top-[116px] z-40 w-[230px] space-y-6 px-4"
-    >
-      {links.map((link) => (
-        <MenuItem key={link} link={link} />
-      ))}
-    </motion.ul>
+    <nav>
+      <motion.ul
+        variants={variants}
+        className="fixed left-0 top-[116px] z-40 w-[230px] space-y-6 px-4"
+      >
+        {links.map((link) => (
+          <MenuItem key={link} link={link} />
+        ))}
+      </motion.ul>
+    </nav>
   );
 }

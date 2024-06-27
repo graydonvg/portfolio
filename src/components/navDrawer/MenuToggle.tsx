@@ -1,13 +1,7 @@
 import { SVGMotionProps, motion } from "framer-motion";
 
 function Path(props: SVGMotionProps<SVGPathElement>) {
-  return (
-    <motion.path
-      className="fill-slate-400 stroke-slate-400"
-      strokeWidth="2"
-      {...props}
-    />
-  );
+  return <motion.path strokeWidth="2" {...props} />;
 }
 
 type MenuToggleProps = {
@@ -17,10 +11,15 @@ type MenuToggleProps = {
 export function MenuToggle({ toggle }: MenuToggleProps) {
   return (
     <button
-      className="absolute left-2 top-6 z-50 flex h-fit cursor-pointer select-none items-center justify-center rounded-full border-none p-2 outline-none md:hover:bg-slate-900"
+      className="fixed left-2 top-5 z-50 flex h-fit cursor-pointer select-none items-center justify-center rounded-full border-none p-2 outline-none"
       onClick={toggle}
     >
-      <svg width="28" height="28" viewBox="0 0 22 19">
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 22 19"
+        className="active:drop-shadow-illuminate hover-hover:hover:drop-shadow-illuminate fill-slate-400 stroke-slate-400"
+      >
         <Path
           variants={{
             closed: { d: "M 2 2.5 L 20 2.5" },

@@ -11,20 +11,21 @@ const config: Config = {
       fontFamily: {
         inter: ["var(--font-inter)"],
       },
+      screens: {
+        "hover-hover": { raw: "(hover: hover)" },
+      },
       backgroundImage: {
-        spotlight:
-          "conic-gradient(from 0deg at 50% -5%, transparent 45%, rgba(124, 145, 182, .3) 49%, rgba(124, 145, 182, .5) 50%, rgba(124, 145, 182, .3) 51%, transparent 55%)",
+        "star-radial":
+          "radial-gradient(50% 50% at 50% 50%, rgba(148, 163, 184, 0.5) 0%, rgba(148, 163, 184, 0) 100%)",
+      },
+      dropShadow: {
+        illuminate: "0 0 3px rgba(148, 163, 184, 0.8)",
       },
       keyframes: {
         "fade-in": {
           "0%": { opacity: "0%" },
           "80%": { opacity: "0%" },
           "100%": { opacity: "100%" },
-        },
-        "fade-in-down": {
-          "0%": { opacity: "0%", transform: "translateY(-100%)" },
-          "80%": { opacity: "0%", transform: "translateY(-100%)" },
-          "100%": { opacity: "100%", transform: "translateY(0%)" },
         },
         "fade-in-unblur": {
           "0%": {
@@ -61,9 +62,8 @@ const config: Config = {
       },
       animation: {
         "translate-hero-greeting": "translate-greeting 1.5s linear",
-        "navbar-fade-in-down": "fade-in-down 1.6s linear",
-        "hero-light-beam-fade-in": "fade-in 1.6s linear",
-        "hero-title-unblur": "fade-in-unblur 2s linear",
+        "fade-in-hero-lights-and-icons": "fade-in 1.6s linear",
+        "unblur-hero-title": "fade-in-unblur 2s linear",
       },
     },
   },

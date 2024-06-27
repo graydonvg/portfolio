@@ -35,22 +35,22 @@ export function NavDrawer() {
   const dimensions = useDimensions(element);
 
   return (
-    <motion.nav
+    <motion.div
       initial={false}
       animate={isOpen ? "open" : "closed"}
       custom={dimensions?.height}
     >
       <MenuToggle toggle={() => setIsOpen((prev) => !prev)} />
       <motion.div
-        className="absolute bottom-0 left-0 top-0 z-20 w-full bg-slate-950/80"
+        className="fixed bottom-0 left-0 top-0 z-20 w-full bg-slate-900/80 xl:hidden"
         variants={sidebar}
       />
       <motion.div
         id="nav-drawer"
-        className="absolute bottom-0 left-0 top-0 z-30 w-[300px] bg-slate-900"
+        className="fixed bottom-0 left-0 top-0 z-30 w-[300px] bg-slate-900 xl:hidden"
         variants={sidebar}
       />
       <Navigation />
-    </motion.nav>
+    </motion.div>
   );
 }

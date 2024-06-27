@@ -21,15 +21,15 @@ export default function AnimatedButton() {
         scale: {
           type: "spring",
           stiffness: 100,
-          damping: 3,
+          damping: 10,
           mass: 0.1,
         },
       }}
     >
+      <span className="linear-overlay absolute inset-0 block rounded-md p-px" />
       <span className="linear-mask relative block h-full w-full text-lg font-light tracking-wide text-slate-300">
         Contact me
       </span>
-      <span className="linear-overlay absolute inset-0 block rounded-md p-px" />
     </motion.button>
   );
 }
