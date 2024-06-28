@@ -51,7 +51,7 @@ export function MenuItem({ link }: Props) {
       variants={variants}
       whileHover={{ scale: 1.1, cursor: "pointer" }}
       whileTap={{ scale: 0.95 }}
-      className="z-50 flex list-none items-center gap-4 text-2xl text-slate-300"
+      className="z-50 flex list-none items-center gap-4 text-2xl text-neutral-50 dark:text-slate-300"
     >
       <span>{getIcon(link, 2)}</span>
       <span className="capitalize">{link}</span>

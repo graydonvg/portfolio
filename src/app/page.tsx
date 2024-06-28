@@ -1,36 +1,39 @@
 import AnimatedButton from "@/components/AnimatedButton";
+import ThemeSwitch from "@/components/ThemeSwitch";
 import { NavDrawer } from "@/components/navDrawer/NavDrawer";
-import { Moon } from "lucide-react";
 
 export default function Home() {
   return (
     <div className="relative mx-auto my-0 max-w-screen-2xl overflow-hidden">
-      <header className="animate-fade-in-hero-lights-and-icons fixed z-50 flex w-full items-center justify-center py-7">
+      <header className="fixed z-50 flex w-full animate-fade-in-hero-lights-and-icons items-center justify-center py-7">
         <NavDrawer />
-        <Moon
-          className="hover-hover:hover:drop-shadow-illuminate active:drop-shadow-illuminate cursor-pointer text-slate-400"
-          size={36}
-        />
+        <ThemeSwitch />
       </header>
 
-      <div className="animate-fade-in-hero-lights-and-icons pointer-events-none fixed inset-0 -z-40 flex">
-        {/* <div className="light-beam light-beam-d"></div> */}
-        <div className="light-beam light-beam-1"></div>
-        <div className="light-beam light-beam-2"></div>
-        <div className="light-beam light-beam-3"></div>
-        {/* <div className="light-beam light-beam-e"></div> */}
+      <div className="pointer-events-none fixed inset-0 -z-40 flex animate-fade-in-hero-lights-and-icons">
+        <div className="dark:block">
+          <div className="light-beam light-beam-1 moon-light"></div>
+          <div className="light-beam light-beam-2 moon-light"></div>
+          <div className="light-beam light-beam-3 moon-light"></div>
+        </div>
+
+        <div className="dark:hidden">
+          <div className="light-beam light-beam-1 sun-light"></div>
+          <div className="light-beam light-beam-2 sun-light"></div>
+          <div className="light-beam light-beam-3 sun-light"></div>
+        </div>
       </div>
 
       <main className="flex min-h-svh flex-col items-center px-4">
         <section className="flex min-h-svh flex-col items-center justify-center space-y-4 text-center">
-          <p className="animate-translate-hero-greeting bg-gradient-to-b from-slate-300 via-slate-400 to-slate-500 bg-clip-text text-xl font-semibold text-transparent sm:text-2xl">
+          <p className="animate-translate-hero-greeting bg-gradient-to-b bg-clip-text text-xl font-semibold text-neutral-800 sm:text-2xl dark:from-slate-300 dark:via-slate-400 dark:to-slate-500 dark:text-transparent">
             <span>Hello</span>
             <span>, I&apos;m Graydon</span>
           </p>
-          <h1 className="animate-unblur-hero-title flex flex-col items-center text-2xl/9 font-extrabold sm:text-6xl/[5.625rem]">
+          <h1 className="flex animate-unblur-hero-title flex-col items-center text-2xl/9 font-extrabold text-neutral-900 sm:text-6xl/[5.625rem] dark:text-slate-300">
             <span>Frontend web developer </span>
             <span>specializing in </span>
-            <span className="bg-gradient-to-b from-indigo-200 via-indigo-300 to-indigo-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-b bg-clip-text dark:from-slate-500 dark:via-indigo-300 dark:to-indigo-600 dark:text-transparent">
               ReactJs
             </span>
           </h1>

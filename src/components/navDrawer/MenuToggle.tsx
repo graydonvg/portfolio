@@ -18,7 +18,7 @@ export function MenuToggle({ toggle }: MenuToggleProps) {
         width="28"
         height="28"
         viewBox="0 0 22 19"
-        className="active:drop-shadow-illuminate hover-hover:hover:drop-shadow-illuminate fill-slate-400 stroke-slate-400"
+        className="fill-yellow-200 stroke-yellow-200 dark:fill-slate-400 dark:stroke-slate-400"
       >
         <Path
           variants={{

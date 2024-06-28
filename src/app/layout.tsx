@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 import StarsBackground from "@/components/StarsBackground";
+import Providers from "./providers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,12 +22,17 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={cn("bg-slate-950 font-inter text-white", inter.variable)}
+        className={cn(
+          "bg-sky-600 font-inter dark:bg-slate-950",
+          inter.variable,
+        )}
       >
-        {children}
-        <StarsBackground />
+        <Providers>
+          {children}
+          <StarsBackground />
+        </Providers>
       </body>
     </html>
   );

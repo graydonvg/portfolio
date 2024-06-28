@@ -6,6 +6,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
@@ -19,7 +20,8 @@ const config: Config = {
           "radial-gradient(50% 50% at 50% 50%, rgba(148, 163, 184, 0.5) 0%, rgba(148, 163, 184, 0) 100%)",
       },
       dropShadow: {
-        illuminate: "0 0 3px rgba(148, 163, 184, 0.8)",
+        "illuminate-dark-mode": "0 0 3px rgba(148, 163, 184, 0.8)",
+        "illuminate-light-mode": "0 0 3px rgba(254, 240, 138, 0.8)",
       },
       keyframes: {
         "fade-in": {
