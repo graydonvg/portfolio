@@ -44,7 +44,7 @@ export default function StarsBackground() {
   }
 
   return (
-    <div className="fixed left-0 top-0 -z-50 h-full w-full animate-fade-in-hero-lights-and-icons overflow-hidden will-change-contents">
+    <div className="fixed left-0 top-0 -z-50 h-full w-full animate-fade-in-hero-lights-and-icons overflow-hidden">
       {stars.map((star) => {
         return (
           <div
