@@ -30,7 +30,7 @@ export default function Home() {
 
       <main className="flex min-h-svh flex-col items-center px-4">
         <section className="flex min-h-svh flex-col items-center justify-center space-y-4 text-center">
-          <p className="animate-translate-hero-greeting bg-gradient-to-b from-yellow-200 to-yellow-50 bg-clip-text text-xl font-semibold text-transparent dark:from-slate-300 dark:via-slate-400 dark:to-slate-500 sm:text-2xl">
+          <p className="animate-translate-hero-greeting bg-gradient-to-b from-yellow-200 to-yellow-50 bg-clip-text text-xl font-semibold text-transparent will-change-transform dark:from-slate-300 dark:via-slate-400 dark:to-slate-500 sm:text-2xl">
             <span>Hello</span>
             <span>, I&apos;m Graydon</span>
           </p>
