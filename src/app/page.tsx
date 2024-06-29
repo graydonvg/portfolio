@@ -1,5 +1,4 @@
 import AnimatedButton from "@/components/AnimatedButton";
-import StarsBackground from "@/components/StarsBackground";
 import ThemeSwitch from "@/components/ThemeSwitch";
 import { NavDrawer } from "@/components/navDrawer/NavDrawer";
 
