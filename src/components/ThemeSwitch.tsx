@@ -11,7 +11,13 @@ export default function ThemeSwitch() {
 
   useEffect(() => setMounted(true), []);
 
-  if (!mounted) return <Circle size={iconSize} className="animate-pulse" />;
+  if (!mounted)
+    return (
+      <Circle
+        size={iconSize}
+        className="animate-pulse text-yellow-200 dark:to-slate-400"
+      />
+    );
 
   if (resolvedTheme === "dark") {
     return (

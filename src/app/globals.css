@@ -12,15 +12,6 @@ body {
   margin: 0;
 }
 
-@layer base {
-  :root {
-    --background: 27 27 27;
-    --foreground: 225 225 225;
-    --accent: 254 254 91;
-    --muted: 115 115 115;
-  }
-}
-
 .fade-in-button {
   animation: left-to-right-fade-in 3s ease-in;
   mask-repeat: no-repeat;
@@ -117,18 +108,17 @@ body {
 
 .light-beam {
   position: absolute;
-  z-index: -10;
   left: 50%;
   transform: translateX(-50%);
   transform-origin: 50% 0;
   width: 800px;
-  height: calc(100svh + 30%);
-  filter: blur(50px);
+  height: calc(100svh + 10%);
+  filter: blur(3px);
   pointer-events: none;
   animation:
-    light-beam-opacity calc(var(--duration, 5s) * 1.2) linear infinite
+    light-beam-opacity calc(var(--duration, 5s)) linear infinite
       var(--delay, 0s) alternate,
-    light-beam-scale calc(var(--duration, 5s) * 1.7) var(--delay, 0s) both;
+    light-beam-scale 5s 0.7s forwards;
 }
 
 .sun-light {
@@ -136,41 +126,53 @@ body {
   background-image: conic-gradient(
     from 0deg at 50% 1%,
     transparent 45%,
-    rgba(254, 240, 138, 0.3) 49%,
-    rgba(254, 240, 138, 0.5) 50%,
-    rgba(254, 240, 138, 0.3) 51%,
+    rgba(230, 216, 92, 0.1) 49%,
+    rgba(230, 216, 92, 0.3) 50%,
+    rgba(230, 216, 92, 0.1) 51%,
     transparent 55%
   );
 }
 
 .moon-light {
-  top: 30px;
+  top: 20px;
   background-image: conic-gradient(
-    from 0deg at 50% 1%,
-    transparent 45%,
-    rgba(124, 145, 182, 0.3) 49%,
-    rgba(124, 145, 182, 0.5) 50%,
-    rgba(124, 145, 182, 0.3) 51%,
-    transparent 55%
+    from 0deg at 50% 40px,
+    transparent 47%,
+    rgba(124, 145, 182, 0.2) 49%,
+    rgba(124, 145, 182, 0.4) 50%,
+    rgba(124, 145, 182, 0.2) 51%,
+    transparent 53%
   );
 }
 
 .light-beam-1 {
   --rotate: 20deg;
   --scale: 1;
-  --duration: 4s;
+  --duration: 5s;
+}
+
+.light-beam-4 {
+  --rotate: 10deg;
+  --scale: 1;
+  --duration: 6s;
 }
 
 .light-beam-2 {
   --rotate: 0deg;
   --scale: 1;
-  --duration: 6s;
+  --duration: 7s;
+}
+
+.light-beam-5 {
+  --rotate: -10deg;
+  --scale: 1;
+  --duration: 5.5s;
 }
 
 .light-beam-3 {
   --rotate: -20deg;
   --scale: 1;
-  --duration: 5s;
+  --duration: 4.5s;
 }
 
 @keyframes light-beam-opacity {
@@ -187,15 +189,15 @@ body {
 
 @keyframes light-beam-scale {
   0% {
-    transform: translateX(-50%) rotate(var(--rotate, 0deg))
+    transform: translateX(-50%) rotate(calc(var(--rotate, 0deg) * 0.6))
       scale(var(--scale, 1));
   }
-  50% {
+  45% {
     transform: translateX(-50%) rotate(calc(var(--rotate, 0deg) * 1.2))
       scale(calc(var(--scale, 1) * 1.1));
   }
   100% {
-    transform: translateX(-50%) rotate(var(--rotate, 0deg))
+    transform: translateX(-50%) rotate(calc(var(--rotate, 0deg) * 1))
       scale(var(--scale, 1));
   }
 }

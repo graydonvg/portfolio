@@ -25,36 +25,29 @@ const config: Config = {
       },
       keyframes: {
         "fade-in": {
-          "0%": { opacity: "0%" },
-          "80%": { opacity: "0%" },
+          "0%, 80%": { opacity: "0%" },
           "100%": { opacity: "100%" },
         },
         "fade-in-unblur": {
-          "0%": {
+          "0%, 55%": {
             opacity: "0%",
-            filter: "blur(50px)",
-          },
-          "80%": {
-            opacity: "0%",
+            scale: "0%",
             filter: "blur(50px)",
           },
           "100%": {
             opacity: "100%",
+            scale: "100%",
             filter: "blur(0px)",
           },
         },
         "translate-greeting": {
           "0%": {
             opacity: "0%",
-            transform: "translateY(83px) scale(0)",
+            transform: "translateY(85px) scale(0)",
           },
-          "20%": {
+          "20%, 80%": {
             opacity: "100%",
-            transform: "translateY(83px) scale(1.6)",
-          },
-          "80%": {
-            opacity: "100%",
-            transform: "translateY(83px) scale(1.6)",
+            transform: "translateY(85px) scale(1.6)",
           },
           "100%": {
             opacity: "100%",
@@ -65,7 +58,7 @@ const config: Config = {
       animation: {
         "translate-hero-greeting": "translate-greeting 1.5s linear",
         "fade-in-hero-lights-and-icons": "fade-in 1.6s linear",
-        "unblur-hero-title": "fade-in-unblur 2s linear",
+        "unblur-hero-title": "fade-in-unblur 1.85s ease-in",
       },
     },
   },
