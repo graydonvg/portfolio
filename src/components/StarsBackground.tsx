@@ -44,7 +44,7 @@ export default function StarsBackground() {
   }
 
   return (
-    <div className="fixed left-0 top-0 -z-50 h-full w-full animate-fade-in-hero-lights-and-icons overflow-hidden">
+    <div className="hero-elements-fade-in fixed left-0 top-0 -z-50 h-full w-full overflow-hidden">
       {stars.map((star) => {
         return (
           <div
@@ -55,7 +55,7 @@ export default function StarsBackground() {
               left: star.left,
               width: star.size,
               height: star.size,
-              animation: `fade-in-out ${star.animationDuration}s ease-in-out forwards`,
+              animation: `star-pulse-fade ${star.animationDuration}s ease-in-out forwards`,
             }}
             onAnimationEnd={() => handleAnimationEnd(star.id)}
           />

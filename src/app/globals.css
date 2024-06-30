@@ -12,13 +12,66 @@ body {
   margin: 0;
 }
 
-.fade-in-button {
-  animation: left-to-right-fade-in 3s ease-in;
+.hero-greeting-slide {
+  opacity: 0;
+  animation: greeting-slide-in 1.5s linear forwards;
+}
+
+@keyframes greeting-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(85px) scale(0);
+  }
+  20%,
+  80% {
+    opacity: 1;
+    transform: translateY(85px) scale(1.6);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.hero-elements-fade-in {
+  animation: fade-in-simple 1.6s linear;
+}
+
+@keyframes fade-in-simple {
+  0%,
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hero-title-grow-unblur {
+  animation: unblur-fade-in-hero-title 1.85s ease-in;
+}
+
+@keyframes unblur-fade-in-hero-title {
+  0%,
+  55% {
+    opacity: 0;
+    scale: 0;
+    filter: blur(50px);
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+    filter: blur(0);
+  }
+}
+
+.hero-button-fade-in {
+  animation: mask-left-to-right-fade-in 3s ease-in;
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
 }
 
-@keyframes left-to-right-fade-in {
+@keyframes mask-left-to-right-fade-in {
   0% {
     pointer-events: none;
     mask-size: 0%;
@@ -65,7 +118,7 @@ body {
   }
 }
 
-.radial-gradient {
+.hero-button-radial-gradient {
   background: radial-gradient(
       circle at 50% -70%,
       rgba(203, 213, 225, 0.25) 0%,
@@ -74,22 +127,7 @@ body {
     #020617;
 }
 
-.linear-mask {
-  mask-image: linear-gradient(
-    -75deg,
-    white calc(var(--x) + 20%),
-    transparent calc(var(--x) + 30%),
-    white calc(var(--x) + 100%)
-  );
-  -webkit-mask-image: linear-gradient(
-    -75deg,
-    white calc(var(--x) + 20%),
-    transparent calc(var(--x) + 30%),
-    white calc(var(--x) + 100%)
-  );
-}
-
-.linear-overlay {
+.hero-button-linear-overlay {
   background-image: linear-gradient(
     -75deg,
     rgba(203, 213, 225, 0.1) calc(var(--x) + 20%),
@@ -106,22 +144,34 @@ body {
   -webkit-mask-composite: xor;
 }
 
-.light-beam {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  transform-origin: 50% 0;
-  width: 800px;
-  height: calc(100svh + 10%);
-  filter: blur(20px);
-  pointer-events: none;
-  animation:
-    light-beam-opacity calc(var(--duration, 5s)) linear infinite
-      var(--delay, 0s) alternate,
-    light-beam-scale 5s 0.7s forwards;
+.hero-button-linear-mask {
+  mask-image: linear-gradient(
+    -75deg,
+    white calc(var(--x) + 20%),
+    transparent calc(var(--x) + 30%),
+    white calc(var(--x) + 100%)
+  );
+  -webkit-mask-image: linear-gradient(
+    -75deg,
+    white calc(var(--x) + 20%),
+    transparent calc(var(--x) + 30%),
+    white calc(var(--x) + 100%)
+  );
 }
 
-.sun-light {
+.light-beam-pulsate-animation {
+  animation: light-beam-pulsate calc(var(--duration, 5s)) linear infinite
+    var(--delay, 0s) alternate;
+}
+
+.light-beam-transform-animation {
+  animation:
+    light-beam-pulsate calc(var(--duration, 5s)) linear infinite
+      var(--delay, 0s) alternate,
+    light-beam-transform 5s 0.7s forwards;
+}
+
+/* .sun-light {
   top: 40px;
   background-image: conic-gradient(
     from 0deg at 50% 1%,
@@ -131,51 +181,39 @@ body {
     rgba(230, 216, 92, 0.1) 51%,
     transparent 55%
   );
-}
-
-.moon-light {
-  top: 20px;
-  background-image: conic-gradient(
-    from 0deg at 50% 40px,
-    transparent 47%,
-    rgba(124, 145, 182, 0.2) 49%,
-    rgba(124, 145, 182, 0.4) 50%,
-    rgba(124, 145, 182, 0.2) 51%,
-    transparent 53%
-  );
-}
+} */
 
 .light-beam-1 {
-  --rotate: 20deg;
-  --scale: 1;
-  --duration: 5s;
-}
-
-.light-beam-4 {
-  --rotate: 10deg;
-  --scale: 1;
-  --duration: 6s;
-}
-
-.light-beam-2 {
   --rotate: 0deg;
   --scale: 1;
   --duration: 7s;
 }
 
-.light-beam-5 {
+.light-beam-2 {
+  --rotate: 10deg;
+  --scale: 1;
+  --duration: 6s;
+}
+
+.light-beam-3 {
   --rotate: -10deg;
   --scale: 1;
   --duration: 5.5s;
 }
 
-.light-beam-3 {
+.light-beam-4 {
+  --rotate: 20deg;
+  --scale: 1;
+  --duration: 5s;
+}
+
+.light-beam-5 {
   --rotate: -20deg;
   --scale: 1;
   --duration: 4.5s;
 }
 
-@keyframes light-beam-opacity {
+@keyframes light-beam-pulsate {
   0% {
     opacity: 0.4;
   }
@@ -187,7 +225,7 @@ body {
   }
 }
 
-@keyframes light-beam-scale {
+@keyframes light-beam-transform {
   0% {
     transform: translateX(-50%) rotate(calc(var(--rotate, 0deg) * 0.6))
       scale(var(--scale, 1));
@@ -202,7 +240,7 @@ body {
   }
 }
 
-@keyframes fade-in-out {
+@keyframes star-pulse-fade {
   0% {
     opacity: 0;
   }
@@ -228,7 +266,7 @@ body {
   70% {
     filter: brightness(2);
   }
-  85% {
+  80% {
     opacity: 1;
   }
   100% {

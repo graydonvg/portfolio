@@ -18,47 +18,12 @@ const config: Config = {
       backgroundImage: {
         "star-radial":
           "radial-gradient(50% 50% at 50% 50%, rgba(148, 163, 184, 0.5) 0%, rgba(148, 163, 184, 0) 100%)",
+        "moon-light-conic":
+          "conic-gradient(from 0deg at 50% 40px, transparent 47%, rgba(124, 145, 182, 0.2) 49%, rgba(124, 145, 182, 0.4) 50%, rgba(124, 145, 182, 0.2) 51%, transparent 53%)",
       },
       dropShadow: {
-        "illuminate-dark-mode": "0 0 3px rgba(148, 163, 184, 0.8)",
-        "illuminate-light-mode": "0 0 3px rgba(254, 240, 138, 0.8)",
-      },
-      keyframes: {
-        "fade-in": {
-          "0%, 80%": { opacity: "0%" },
-          "100%": { opacity: "100%" },
-        },
-        "fade-in-unblur": {
-          "0%, 55%": {
-            opacity: "0%",
-            scale: "0%",
-            filter: "blur(50px)",
-          },
-          "100%": {
-            opacity: "100%",
-            scale: "100%",
-            filter: "blur(0px)",
-          },
-        },
-        "translate-greeting": {
-          "0%": {
-            opacity: "0%",
-            transform: "translateY(85px) scale(0)",
-          },
-          "20%, 80%": {
-            opacity: "100%",
-            transform: "translateY(85px) scale(1.6)",
-          },
-          "100%": {
-            opacity: "100%",
-            transform: "translateY(0px) scale(1)",
-          },
-        },
-      },
-      animation: {
-        "translate-hero-greeting": "translate-greeting 1.5s linear",
-        "fade-in-hero-lights-and-icons": "fade-in 1.6s linear",
-        "unblur-hero-title": "fade-in-unblur 1.85s ease-in",
+        "illuminate-moon": "0 0 3px rgba(148, 163, 184, 0.8)",
+        "illuminate-sun": "0 0 3px rgba(254, 240, 138, 0.8)",
       },
     },
   },

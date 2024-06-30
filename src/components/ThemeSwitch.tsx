@@ -23,7 +23,7 @@ export default function ThemeSwitch() {
     return (
       <Moon
         onClick={() => setTheme("light")}
-        className="active:drop-shadow-illuminate-dark-mode hover-hover:hover:drop-shadow-illuminate-dark-mode cursor-pointer text-slate-400"
+        className="active:drop-shadow-illuminate-moon hover-hover:hover:drop-shadow-illuminate-moon cursor-pointer text-slate-400"
         size={iconSize}
       />
     );
@@ -33,7 +33,7 @@ export default function ThemeSwitch() {
     return (
       <Sun
         onClick={() => setTheme("dark")}
-        className="active:drop-shadow-illuminate-light-mode hover-hover:hover:drop-shadow-illuminate-light-mode cursor-pointer text-yellow-200"
+        className="active:drop-shadow-illuminate-sun hover-hover:hover:drop-shadow-illuminate-sun cursor-pointer text-yellow-200"
         size={iconSize}
       />
     );
