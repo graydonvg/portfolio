@@ -42,19 +42,19 @@ const variants = {
 };
 
 type Props = {
-  link: string;
+  option: string;
 };
 
-export function MenuItem({ link }: Props) {
+export function MenuItem({ option }: Props) {
   return (
     <motion.li
       variants={variants}
       whileHover={{ scale: 1.1, cursor: "pointer" }}
       whileTap={{ scale: 0.95 }}
-      className="z-50 flex list-none items-center gap-4 text-2xl text-neutral-50 will-change-transform dark:text-slate-300"
+      className="z-50 flex list-none items-center gap-4 text-2xl"
     >
-      <span>{getIcon(link, 2)}</span>
-      <span className="capitalize">{link}</span>
+      <span>{getIcon(option, 2)}</span>
+      <span className="capitalize">{option}</span>
     </motion.li>
   );
 }

@@ -11,23 +11,23 @@ type MenuToggleProps = {
 export function MenuToggle({ toggle }: MenuToggleProps) {
   return (
     <button
-      className="fixed left-2 top-6 z-50 flex h-fit cursor-pointer select-none items-center justify-center rounded-full border-none p-2 outline-none"
+      className="fixed left-4 top-7 z-50 flex h-fit cursor-pointer select-none items-center justify-center rounded-full border-none outline-none"
       onClick={toggle}
     >
       <svg
-        width="28"
-        height="28"
-        viewBox="0 0 22 19"
-        className="fill-yellow-200 stroke-yellow-200 dark:fill-slate-400 dark:stroke-slate-400"
+        width="36"
+        height="36"
+        viewBox="0 0 24 24"
+        className="fill-neutral-50 stroke-neutral-50 dark:fill-slate-400 dark:stroke-slate-400"
       >
         <Path
           variants={{
-            closed: { d: "M 2 2.5 L 20 2.5" },
-            open: { d: "M 3 16.5 L 17 2.5" },
+            closed: { d: "M 4 6 L 20 6" },
+            open: { d: "M 6 9 L 18 21" },
           }}
         />
         <Path
-          d="M 2 9.423 L 20 9.423"
+          d="M 4 12 L 20 12"
           variants={{
             closed: { opacity: 1 },
             open: { opacity: 0 },
@@ -36,8 +36,8 @@ export function MenuToggle({ toggle }: MenuToggleProps) {
         />
         <Path
           variants={{
-            closed: { d: "M 2 16.346 L 20 16.346" },
-            open: { d: "M 3 2.5 L 17 16.346" },
+            closed: { d: "M 4 18 L 20 18" },
+            open: { d: "M 6 21 L 18 9" },
           }}
         />
       </svg>

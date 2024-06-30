@@ -11,7 +11,14 @@ const variants = {
   },
 };
 
-const links = ["about", "projects", "contact", "github", "linkedin", "resume"];
+const menuOptions = [
+  "about",
+  "projects",
+  "contact",
+  "github",
+  "linkedin",
+  "resume",
+];
 
 export function Navigation() {
   return (
@@ -20,8 +27,8 @@ export function Navigation() {
         variants={variants}
         className="fixed left-0 top-[116px] z-40 w-[230px] space-y-6 px-4"
       >
-        {links.map((link) => (
-          <MenuItem key={link} link={link} />
+        {menuOptions.map((option) => (
+          <MenuItem key={option} option={option} />
         ))}
       </motion.ul>
     </nav>

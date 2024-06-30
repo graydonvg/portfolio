@@ -30,7 +30,7 @@ export function NavDrawer() {
   const [isOpen, setIsOpen] = useState(false);
   const element =
     typeof window !== "undefined"
-      ? document.getElementById("nav-drawer")
+      ? document.getElementById("nav-drawer-bg")
       : null;
   const dimensions = useDimensions(element);
 
@@ -42,12 +42,12 @@ export function NavDrawer() {
     >
       <MenuToggle toggle={() => setIsOpen((prev) => !prev)} />
       <motion.div
-        className="fixed bottom-0 left-0 top-0 z-20 w-full bg-sky-700/80 xl:hidden dark:bg-slate-900/80"
+        className="fixed bottom-0 left-0 top-0 z-20 w-full bg-sky-700/80 dark:bg-slate-900/80 xl:hidden"
         variants={sidebar}
       />
       <motion.div
-        id="nav-drawer"
-        className="fixed bottom-0 left-0 top-0 z-30 w-[300px] bg-sky-700 xl:hidden dark:bg-slate-900"
+        id="nav-drawer-bg"
+        className="fixed bottom-0 left-0 top-0 z-30 w-[300px] bg-sky-700 dark:bg-slate-900 xl:hidden"
         variants={sidebar}
       />
       <Navigation />
