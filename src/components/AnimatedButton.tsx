@@ -10,7 +10,8 @@ export default function AnimatedButton() {
       animate={{ "--x": "-100%" } as any}
       whileTap={{ scale: 0.97 }}
       transition={{
-        delay: 2.2,
+        delay: 1.05,
+        // delay: 1.55,
         repeat: Infinity,
         repeatType: "loop",
         repeatDelay: 1,
