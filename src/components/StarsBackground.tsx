@@ -1,6 +1,8 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { Star } from "lucide-react";
+import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 type Star = {
@@ -23,11 +25,14 @@ function createStar(): Star {
 
 export default function StarsBackground() {
   const [stars, setStars] = useState<Star[]>([]);
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
+    if (resolvedTheme === "light") return;
+
     const initialStars = Array.from({ length: 75 }, createStar);
     setStars(initialStars);
-  }, []);
+  }, [resolvedTheme]);
 
   function addStar() {
     const newStar = createStar();
@@ -44,7 +49,16 @@ export default function StarsBackground() {
   }
 
   return (
-    <div className="hero-elements-fade-in fixed left-0 top-0 -z-50 h-full w-full overflow-hidden">
+    <div
+      suppressHydrationWarning
+      className={cn(
+        "hero-elements-fade-in fixed left-0 top-0 -z-50 h-full w-full overflow-hidden",
+        {
+          block: resolvedTheme === "dark",
+          hidden: resolvedTheme === "light",
+        },
+      )}
+    >
       {stars.map((star) => {
         return (
           <div

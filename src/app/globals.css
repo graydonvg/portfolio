@@ -12,6 +12,18 @@ body {
   margin: 0;
 }
 
+.card {
+  background: linear-gradient(
+      0deg,
+      rgba(186, 207, 247, 0.03),
+      rgba(186, 207, 247, 0.1)
+    )
+    rgba(5, 6, 15, 0.8);
+  box-shadow:
+    inset 0 1px 1px 0 rgba(216, 236, 248, 0.2),
+    inset 0 24px 48px 0 rgba(168, 216, 245, 0.06);
+}
+
 .hero-greeting-slide {
   opacity: 0;
   animation: greeting-slide-in 1.5s linear forwards;
@@ -34,6 +46,11 @@ body {
 }
 
 .hero-elements-fade-in {
+  opacity: 0;
+  animation: fade-in-simple 0.32s 1.28s linear forwards;
+}
+
+.scroll-button-fade-in {
   opacity: 0;
   animation: fade-in-simple 0.32s 1.28s linear forwards;
 }
@@ -174,18 +191,6 @@ body {
       var(--delay, 0s) alternate,
     light-beam-transform 5s 0.7s forwards;
 }
-
-/* .sun-light {
-  top: 40px;
-  background-image: conic-gradient(
-    from 0deg at 50% 1%,
-    transparent 45%,
-    rgba(230, 216, 92, 0.1) 49%,
-    rgba(230, 216, 92, 0.3) 50%,
-    rgba(230, 216, 92, 0.1) 51%,
-    transparent 55%
-  );
-} */
 
 .light-beam-1 {
   --rotate: 0deg;

@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 import StarsBackground from "@/components/StarsBackground";
 import Providers from "./providers";
-import Navbar from "@/components/Navbar";
 import LightBeams from "@/components/LightBeams";
 
 const inter = Inter({
@@ -27,15 +26,12 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-svh bg-sky-600 font-inter text-neutral-50 dark:bg-slate-950 dark:text-slate-300",
+          "relative min-h-svh bg-sky-600 font-inter text-neutral-50 dark:bg-slate-950 dark:text-slate-300",
           inter.variable,
         )}
       >
         <Providers>
-          <Navbar />
-          <main className="mx-auto flex max-w-screen-2xl flex-col items-center px-4">
-            {children}
-          </main>
+          {children}
           <LightBeams />
           <StarsBackground />
         </Providers>

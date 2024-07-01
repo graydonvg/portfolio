@@ -1,8 +1,9 @@
 import AnimatedButton from "./AnimatedButton";
+import ScrollIntoViewButton from "./ScrollIntoViewButton";
 
 export default function HeroSection() {
   return (
-    <section className="flex min-h-svh flex-col items-center justify-center space-y-4 text-center">
+    <section className="relative flex min-h-svh flex-col items-center justify-center gap-4 text-center">
       <p className="hero-greeting-slide bg-gradient-to-b from-yellow-200 to-yellow-50 bg-clip-text text-xl font-semibold text-transparent dark:from-slate-300 dark:via-slate-400 dark:to-slate-500 sm:text-2xl">
         <span>Hello</span>
         <span>, I&apos;m Graydon</span>
@@ -14,7 +15,8 @@ export default function HeroSection() {
           ReactJs
         </span>
       </h1>
-      <AnimatedButton />
+      <AnimatedButton label="Contact me" />
+      <ScrollIntoViewButton />
     </section>
   );
 }

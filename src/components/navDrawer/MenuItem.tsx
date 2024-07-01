@@ -1,19 +1,12 @@
-import * as React from "react";
 import { motion } from "framer-motion";
-import {
-  Github,
-  Linkedin,
-  NotebookText,
-  Palette,
-  Phone,
-  User,
-} from "lucide-react";
+import { Github, Linkedin, NotebookText } from "lucide-react";
+import Link from "next/link";
 
 function getIcon(icon: string, strokeWidth: number) {
   const icons = {
-    about: <User strokeWidth={strokeWidth} />,
-    projects: <Palette strokeWidth={strokeWidth} />,
-    contact: <Phone strokeWidth={strokeWidth} />,
+    // about: <User strokeWidth={strokeWidth} />,
+    // projects: <Palette strokeWidth={strokeWidth} />,
+    // contact: <Phone strokeWidth={strokeWidth} />,
     github: <Github strokeWidth={strokeWidth} />,
     linkedin: <Linkedin strokeWidth={strokeWidth} />,
     resume: <NotebookText strokeWidth={strokeWidth} />,
@@ -42,7 +35,12 @@ const variants = {
 };
 
 type Props = {
-  option: string;
+  option: {
+    label: string;
+    link: string;
+    icon: string;
+    newTab: boolean;
+  };
 };
 
 export function MenuItem({ option }: Props) {
@@ -51,10 +49,16 @@ export function MenuItem({ option }: Props) {
       variants={variants}
       whileHover={{ scale: 1.1, cursor: "pointer" }}
       whileTap={{ scale: 0.95 }}
-      className="z-50 flex list-none items-center gap-4 text-2xl"
+      className="z-50 list-none"
     >
-      <span>{getIcon(option, 2)}</span>
-      <span className="capitalize">{option}</span>
+      <Link
+        href={option.link}
+        target={option.newTab ? "_blank" : "_self"}
+        className="flex items-center gap-4 text-2xl"
+      >
+        <span>{getIcon(option.icon, 2)}</span>
+        <span className="capitalize">{option.label}</span>
+      </Link>
     </motion.li>
   );
 }

@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 export default function ThemeSwitch() {
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
-  const iconSize = 36;
+  const iconSize = 48;
 
   useEffect(() => setMounted(true), []);
 
@@ -18,7 +18,7 @@ export default function ThemeSwitch() {
     return (
       <Moon
         onClick={() => setTheme("light")}
-        className="active:drop-shadow-illuminate-moon hover-hover:hover:drop-shadow-illuminate-moon cursor-pointer text-slate-400"
+        className="cursor-pointer text-slate-400 active:drop-shadow-illuminate-moon hover-hover:hover:drop-shadow-illuminate-moon"
         size={iconSize}
       />
     );
@@ -28,7 +28,7 @@ export default function ThemeSwitch() {
     return (
       <Sun
         onClick={() => setTheme("dark")}
-        className="active:drop-shadow-illuminate-sun hover-hover:hover:drop-shadow-illuminate-sun cursor-pointer text-yellow-200"
+        className="cursor-pointer text-yellow-200 active:drop-shadow-illuminate-sun hover-hover:hover:drop-shadow-illuminate-sun"
         size={iconSize}
       />
     );
