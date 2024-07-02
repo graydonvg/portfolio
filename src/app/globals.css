@@ -120,11 +120,18 @@ body {
   );
 }
 
-.hero-light-beam-animation {
+.hero-light-beam-intro {
   animation:
     light-beam-pulsate calc(var(--duration, 5s)) linear infinite
       var(--delay, 0s) alternate,
     light-beam-transform 5s 0.7s forwards;
+}
+
+.hero-light-beam-pulsate {
+  transform: translateX(-50%) rotate(calc(var(--rotate, 0deg) * 1))
+    scale(var(--scale, 1));
+  animation: light-beam-pulsate calc(var(--duration, 5s)) linear infinite
+    var(--delay, 0s) alternate;
 }
 
 @keyframes light-beam-pulsate {

@@ -20,7 +20,7 @@ export default function AnimatedButton({ label }: Props) {
       animate={{ "--x": "-100%" } as any}
       whileTap={{ scale: 0.97 }}
       transition={{
-        delay: 0.4,
+        delay: 0.7,
         repeat: Infinity,
         repeatType: "loop",
         repeatDelay: 1,
