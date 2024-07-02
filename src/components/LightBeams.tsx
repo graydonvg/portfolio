@@ -6,7 +6,7 @@ export default function LightBeams() {
         {Array.from(Array(5)).map((_, i) => (
           <div
             key={i}
-            className={`light-beam-pulsate-animation light-beam-transform-animation light-beam-${i + 1} pointer-events-none absolute left-1/2 top-5 h-[calc(100svh+5%)] w-[800px] origin-[50%_0%] -translate-x-1/2 bg-moon-light-conic blur-[20px]`}
+            className={`hero-light-beam-animation light-beam-${i + 1} pointer-events-none absolute left-1/2 top-12 h-[calc(100svh+5%)] w-[800px] origin-[50%_0%] -translate-x-1/2 bg-moon-light-conic blur-[20px]`}
           ></div>
         ))}
       </div>
@@ -16,7 +16,7 @@ export default function LightBeams() {
         {Array.from(Array(3)).map((_, i) => (
           <div
             key={i}
-            className={`light-beam-pulsate-animation light-beam-transform-animation light-beam-${i + 1} pointer-events-none absolute left-1/2 top-5 h-[calc(100svh+1%)] w-[800px] origin-[50%_0%] -translate-x-1/2 bg-moon-light-conic blur-[20px]`}
+            className={`hero-light-beam-animation light-beam-${i + 1} pointer-events-none absolute left-1/2 top-5 h-[calc(100svh+1%)] w-[800px] origin-[50%_0%] -translate-x-1/2 bg-moon-light-conic blur-[20px]`}
           ></div>
         ))}
       </div>

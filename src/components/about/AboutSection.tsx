@@ -45,24 +45,6 @@ export default function AboutSection() {
             tempore laborum doloribus corrupti labore, repellendus possimus
             error facere doloremque.
           </p>
-          <div className="flex w-full flex-col lg:flex-row">
-            <div className="flex flex-1 justify-center">
-              <img
-                className="h-auto"
-                src="https://github-readme-stats.vercel.app/api?username=graydonvg&theme=transparent&hide_border=true&title_color=FEFE5B&text_color=FFFFFF&icon_color=&text_bold=false"
-                alt="GitHub Stats"
-                loading="lazy"
-              />
-            </div>
-            <div className="flex flex-1 justify-center">
-              <img
-                className="h-auto"
-                src="https://github-readme-streak-stats.herokuapp.com?user=graydonvg&theme=dark&hide_border=true&type=png&background=EB545400&ring=FEFE5B&currStreakLabel=FEFE5B"
-                alt="GitHub Streak"
-                loading="lazy"
-              />
-            </div>
-          </div>
         </AboutItem>
       </div>
     </section>

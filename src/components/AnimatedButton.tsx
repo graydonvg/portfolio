@@ -15,12 +15,12 @@ export default function AnimatedButton({ label }: Props) {
   return (
     <motion.button
       onClick={handleScroll}
-      className="hero-button-radial-gradient hero-button-fade-in relative w-fit rounded-md px-6 py-2 shadow-sm"
+      className="hero-button-radial-gradient hero-elements-grow-unblur relative w-fit rounded-md px-6 py-2 shadow-sm"
       initial={{ "--x": "100%" } as any}
       animate={{ "--x": "-100%" } as any}
       whileTap={{ scale: 0.97 }}
       transition={{
-        delay: 1.54,
+        delay: 0.4,
         repeat: Infinity,
         repeatType: "loop",
         repeatDelay: 1,

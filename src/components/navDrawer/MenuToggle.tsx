@@ -18,7 +18,7 @@ export function MenuToggle({ toggle }: MenuToggleProps) {
         width="48"
         height="48"
         viewBox="0 0 24 24"
-        className="fill-neutral-50 stroke-neutral-50 dark:fill-slate-400 dark:stroke-slate-400"
+        className="fill-slate-400 stroke-slate-400"
       >
         <Path
           variants={{

@@ -15,22 +15,6 @@ type EmailTemplate = {
   message: string;
 };
 
-const motionContainer = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.3,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const motionItem = {
-  hidden: { scale: 0 },
-  show: { scale: 1 },
-};
-
 export default function ContactForm() {
   const {
     register,
@@ -50,7 +34,7 @@ export default function ContactForm() {
         {
           publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
           limitRate: {
-            throttle: 5000,
+            throttle: 10000,
           },
         },
       )
@@ -68,7 +52,7 @@ export default function ContactForm() {
 
           reset();
         },
-        (error) => {
+        (_error) => {
           toast.update(loadingToastId, {
             type: "error",
             render:

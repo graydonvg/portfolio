@@ -3,9 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
-import StarsBackground from "@/components/StarsBackground";
-import Providers from "./providers";
-import LightBeams from "@/components/LightBeams";
+import BackgroundElements from "@/components/BackgroundElements";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,15 +24,12 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "relative min-h-svh bg-sky-600 font-inter text-neutral-50 dark:bg-slate-950 dark:text-slate-300",
+          "relative min-h-svh bg-slate-950 text-slate-300",
           inter.variable,
         )}
       >
-        <Providers>
-          {children}
-          <LightBeams />
-          <StarsBackground />
-        </Providers>
+        {children}
+        <BackgroundElements />
       </body>
     </html>
   );

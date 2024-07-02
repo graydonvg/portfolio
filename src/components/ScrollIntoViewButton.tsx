@@ -9,7 +9,7 @@ export default function ScrollIntoViewButton() {
   }
 
   return (
-    <div className="scroll-button-fade-in absolute bottom-0">
+    <div className="hero-elements-grow-unblur absolute bottom-0">
       <ChevronDown
         onClick={handleScroll}
         size={64}
