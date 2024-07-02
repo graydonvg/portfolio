@@ -12,6 +12,10 @@ body {
   margin: 0;
 }
 
+:root {
+  color-scheme: dark;
+}
+
 .card {
   background: linear-gradient(
       0deg,

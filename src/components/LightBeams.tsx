@@ -6,7 +6,7 @@ export default function LightBeams() {
   useEffect(() => {
     const beams = document.querySelectorAll(".light-beam");
 
-    // Get the computed style for the transform animation duration
+    // Get the computed style for the light beam transform animation duration
     const getAnimationDuration = (element: Element) => {
       const style = window.getComputedStyle(element);
       const transformDurationString =
