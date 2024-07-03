@@ -1,6 +1,7 @@
-import * as React from "react";
 import { motion } from "framer-motion";
-import { MenuItem } from "./MenuItem";
+import { MenuItemScrollLink } from "./MenuItemScrollLink";
+import { MenuItemExternalLink } from "./MenuItemExternalLink";
+import { CONSTANTS } from "@/constants";
 
 const variants = {
   open: {
@@ -11,46 +12,35 @@ const variants = {
   },
 };
 
-// const menuOptions = [
-//   // "about",
-//   // "projects",
-//   // "contact",
-//   "github",
-//   "linkedin",
-//   "resume",
-// ];
+type Props = {
+  toggleMenu: () => void;
+};
 
-const menuOptions = [
-  {
-    label: "Github",
-    link: "https://github.com/graydonvg",
-    icon: "github",
-    newTab: true,
-  },
-  {
-    label: "LinkedIn",
-    link: "https://www.linkedin.com/",
-    icon: "linkedin",
-    newTab: true,
-  },
-  {
-    label: "Resume",
-    link: "/resume.pdf",
-    icon: "resume",
-    newTab: true,
-  },
-];
-
-export function Navigation() {
+export function Navigation({ toggleMenu }: Props) {
   return (
     <nav>
       <motion.ul
         variants={variants}
-        className="fixed left-0 top-[116px] z-40 w-[230px] space-y-6 px-4"
+        className="fixed left-0 top-[120px] z-40 w-[300px] space-y-10 px-4"
       >
-        {menuOptions.map((option) => (
-          <MenuItem key={option.label} option={option} />
-        ))}
+        <div className="space-y-6">
+          {CONSTANTS.NAV_OPTIONS.INTERNAL_LINKS.map((option) => (
+            <MenuItemScrollLink
+              key={option.label}
+              option={option}
+              toggleMenu={toggleMenu}
+            />
+          ))}
+        </div>
+        <div className="space-y-6">
+          {CONSTANTS.NAV_OPTIONS.EXTERNAL_LINKS.map((option) => (
+            <MenuItemExternalLink
+              key={option.label}
+              option={option}
+              toggleMenu={toggleMenu}
+            />
+          ))}
+        </div>
       </motion.ul>
     </nav>
   );

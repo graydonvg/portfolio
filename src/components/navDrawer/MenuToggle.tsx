@@ -5,14 +5,15 @@ function Path(props: SVGMotionProps<SVGPathElement>) {
 }
 
 type MenuToggleProps = {
-  toggle: () => void;
+  toggleMenu: () => void;
 };
 
-export function MenuToggle({ toggle }: MenuToggleProps) {
+export function MenuToggle({ toggleMenu }: MenuToggleProps) {
   return (
     <button
-      className="absolute left-4 top-7 z-50 flex h-fit cursor-pointer select-none items-center justify-center rounded-full border-none outline-none"
-      onClick={toggle}
+      className="absolute left-4 top-7 z-50 cursor-pointer select-none rounded-full border-none outline-none"
+      onClick={toggleMenu}
+      aria-label="navigation menu button"
     >
       <svg
         width="48"

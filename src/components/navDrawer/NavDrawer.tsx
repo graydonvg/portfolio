@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Navigation } from "./Navigation";
 import { MenuToggle } from "./MenuToggle";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDimensions } from "@/hooks/useDimensions";
 
 const sidebar = {
@@ -16,9 +16,9 @@ const sidebar = {
     },
   }),
   closed: {
-    clipPath: "circle(0px at 31px 41px)",
+    clipPath: "circle(00px at 40px 52px)",
     transition: {
-      delay: 0.5,
+      delay: 0,
       type: "spring",
       stiffness: 400,
       damping: 40,
@@ -34,23 +34,40 @@ export function NavDrawer() {
       : null;
   const dimensions = useDimensions(element);
 
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    }
+
+    if (!isOpen) {
+      document.body.style.overflow = originalOverflow;
+    }
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [isOpen]);
+
   return (
     <motion.div
       initial={false}
       animate={isOpen ? "open" : "closed"}
       custom={dimensions?.height}
     >
-      <MenuToggle toggle={() => setIsOpen((prev) => !prev)} />
+      <MenuToggle toggleMenu={() => setIsOpen((prev) => !prev)} />
       <motion.div
-        className="fixed bottom-0 left-0 top-0 z-20 w-full bg-slate-900/80 xl:hidden"
+        className="fixed bottom-0 left-0 top-0 z-20 w-full bg-slate-900/80"
         variants={sidebar}
-      />
-      <motion.div
-        id="nav-drawer-bg"
-        className="fixed bottom-0 left-0 top-0 z-30 w-[300px] bg-slate-900 xl:hidden"
-        variants={sidebar}
-      />
-      <Navigation />
+      >
+        <motion.div
+          id="nav-drawer-bg"
+          className="fixed bottom-0 left-0 top-0 z-30 w-[300px] bg-slate-900"
+          variants={sidebar}
+        >
+          <Navigation toggleMenu={() => setIsOpen((prev) => !prev)} />
+        </motion.div>
+      </motion.div>
     </motion.div>
   );
 }

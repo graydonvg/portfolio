@@ -1,10 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
-
 "use client";
 
 import { useEffect, useRef } from "react";
 import AboutItem from "./AboutItem";
 import emitter from "@/lib/eventEmitter";
+import { SCROLL_TO } from "@/constants";
 
 export default function AboutSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -16,10 +15,10 @@ export default function AboutSection() {
       }
     };
 
-    emitter.on("scrollToAboutMeSection", handleScroll);
+    emitter.on(SCROLL_TO.about, handleScroll);
 
     return () => {
-      emitter.off("scrollToAboutMeSection", handleScroll);
+      emitter.off(SCROLL_TO.about, handleScroll);
     };
   }, []);
 

@@ -28,6 +28,10 @@ body {
     inset 0 24px 48px 0 rgba(168, 216, 245, 0.06);
 }
 
+.paused {
+  animation-play-state: paused;
+}
+
 .hero-greeting-slide {
   opacity: 0;
   animation: slide-in 1.5s linear forwards;
