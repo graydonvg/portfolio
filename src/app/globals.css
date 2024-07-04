@@ -28,10 +28,6 @@ body {
     inset 0 24px 48px 0 rgba(168, 216, 245, 0.06);
 }
 
-.paused {
-  animation-play-state: paused;
-}
-
 .hero-greeting-slide {
   opacity: 0;
   animation: slide-in 1.5s linear forwards;
@@ -87,13 +83,21 @@ body {
   }
 }
 
-.hero-button-radial-gradient {
+.hero-button-radial-gradient-1 {
   background: radial-gradient(
       circle at 50% -70%,
       rgba(203, 213, 225, 0.25) 0%,
       transparent 80%
     ),
     #020617;
+}
+.hero-button-radial-gradient-2 {
+  background: radial-gradient(
+      circle at 50% -70%,
+      rgba(203, 213, 225, 0.25) 0%,
+      transparent 80%
+    ),
+    #4338ca;
 }
 
 .hero-button-linear-overlay {

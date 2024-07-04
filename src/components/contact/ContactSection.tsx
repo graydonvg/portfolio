@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import ContactForm from "./ContactForm";
 import emitter from "@/lib/eventEmitter";
-import { SCROLL_TO } from "@/constants";
+import { CONSTANTS } from "@/constants";
 
 export default function ContactSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -15,10 +15,10 @@ export default function ContactSection() {
       }
     };
 
-    emitter.on(SCROLL_TO.contact, handleScroll);
+    emitter.on(CONSTANTS.SCROLL_TO.CONTACT_SECTION, handleScroll);
 
     return () => {
-      emitter.off(SCROLL_TO.contact, handleScroll);
+      emitter.off(CONSTANTS.SCROLL_TO.CONTACT_SECTION, handleScroll);
     };
   }, []);
 

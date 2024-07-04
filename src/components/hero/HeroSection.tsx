@@ -1,5 +1,5 @@
-import AnimatedButton from "./AnimatedButton";
-import ScrollIntoViewButton from "./ScrollIntoViewButton";
+import ScrollToAboutMeButton from "../ScrollToAboutMeButton";
+import HeroButtons from "./HeroButtons";
 
 export default function HeroSection() {
   return (
@@ -9,14 +9,14 @@ export default function HeroSection() {
         <span>, I&apos;m Graydon</span>
       </p>
       <h1 className="hero-elements-grow-unblur flex flex-col items-center text-2xl/9 font-extrabold text-slate-300 sm:text-6xl/[5.625rem]">
-        <span>Frontend web developer </span>
+        <span>Front-end web developer </span>
         <span>specializing in </span>
         <span className="bg-gradient-to-b from-indigo-200 via-indigo-300 to-indigo-600 bg-clip-text text-transparent">
           ReactJs
         </span>
       </h1>
-      <AnimatedButton label="Contact me" />
-      <ScrollIntoViewButton />
+      <HeroButtons />
+      <ScrollToAboutMeButton />
     </section>
   );
 }

@@ -1,8 +1,9 @@
-import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
-import ProjectsSection from "@/components/ProjectsSection";
+import HeroSection from "@/components/hero/HeroSection";
 import AboutSection from "@/components/about/AboutSection";
+import ProjectsSection from "@/components/projects/ProjectsSection";
 import ContactSection from "@/components/contact/ContactSection";
+import BackgroundElements from "@/components/BackgroundElements";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
           <ContactSection />
         </div>
       </main>
+      <BackgroundElements />
     </>
   );
 }

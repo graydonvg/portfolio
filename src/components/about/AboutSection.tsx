@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import AboutItem from "./AboutItem";
 import emitter from "@/lib/eventEmitter";
-import { SCROLL_TO } from "@/constants";
+import { CONSTANTS } from "@/constants";
 
 export default function AboutSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -15,10 +15,10 @@ export default function AboutSection() {
       }
     };
 
-    emitter.on(SCROLL_TO.about, handleScroll);
+    emitter.on(CONSTANTS.SCROLL_TO.ABOUT_SECTION, handleScroll);
 
     return () => {
-      emitter.off(SCROLL_TO.about, handleScroll);
+      emitter.off(CONSTANTS.SCROLL_TO.ABOUT_SECTION, handleScroll);
     };
   }, []);
 
