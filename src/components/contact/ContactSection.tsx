@@ -28,8 +28,8 @@ export default function ContactSection() {
       className="flex flex-col items-center justify-center gap-8"
     >
       <div className="flex w-full flex-col items-center justify-center space-y-6 sm:w-3/4">
-        <h2 className="w-full text-center text-xl font-semibold md:text-2xl">
-          Contact me
+        <h2 className="w-full text-center text-2xl font-bold capitalize md:text-4xl">
+          contact me
         </h2>
         <p className="text-center text-sm font-light sm:text-base">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
