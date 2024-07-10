@@ -73,13 +73,13 @@ export default function ProjectCard(project: Props) {
           ))}
         </ul>
         <div className="mt-4 flex gap-4">
-          <button className="flex min-w-fit flex-1 items-center justify-center gap-2 rounded-md bg-indigo-700 px-2 py-1 text-lg">
+          <button className="flex min-w-fit flex-1 items-center justify-center gap-2 rounded-md bg-slate-300 px-2 py-1 text-lg font-medium text-slate-950">
             <span className="h-[18px] w-[18px]">
               <Github className="h-full w-full" />
             </span>
             Repository
           </button>
-          <button className="min-w-fit flex-1 rounded-md bg-indigo-700 px-2 py-1 text-lg">
+          <button className="min-w-fit flex-1 rounded-md bg-indigo-700 px-2 py-1 text-lg font-medium">
             Visit
           </button>
         </div>

@@ -27,7 +27,7 @@ export const CONSTANTS = {
     {
       title: "MyStore",
       description:
-        "An e-commerce site with an admin panel with role based access control.",
+        "Developed an e-commerce platform featuring an admin panel with role-based access control to manage users, products, and orders efficiently.",
       tags: [
         "typescript",
         "react",
