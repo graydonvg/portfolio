@@ -78,7 +78,7 @@ export default function AboutSection() {
       <p className="text-xs sm:text-sm md:text-base">
         Here are a few technologies I&apos;ve been working with recently:
       </p>
-      <div className="flex w-full text-xs sm:text-sm md:w-1/3">
+      <div className="flex w-full gap-1 text-xs sm:text-sm md:w-1/3">
         <ul className="flex-1 list-inside list-disc capitalize">
           {firstHalfOfList.map((item) => (
             <li key={item}>{item}</li>
