@@ -37,7 +37,10 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="card w-full space-y-4 rounded-md p-4">
+    <section
+      ref={sectionRef}
+      className="card w-full space-y-4 rounded-md p-4 sm:p-6"
+    >
       <h2 className="w-full text-center text-2xl font-bold capitalize md:text-4xl">
         about me
       </h2>

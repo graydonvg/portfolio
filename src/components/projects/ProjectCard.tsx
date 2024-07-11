@@ -23,7 +23,7 @@ export default function ProjectCard(project: Props) {
   return (
     <div
       key={project.title}
-      className="card flex flex-col gap-2 rounded-md p-4 md:flex-row md:gap-4"
+      className="card flex flex-col gap-2 rounded-md p-4 sm:p-6 md:flex-row md:gap-4"
     >
       <div className="flex-1">
         <Link href={project.projectUrl} target="_blank">
