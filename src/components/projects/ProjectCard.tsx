@@ -35,7 +35,7 @@ export default function ProjectCard(project: Props) {
         </Link>
       </div>
       <div className="flex flex-1 flex-col">
-        <h3 className="text-lg font-semibold">{project.title}</h3>
+        <h3 className="text-xl font-semibold">{project.title}</h3>
         <div className="mt-2 space-y-2 font-light leading-tight">
           <p>{project.description}</p>
           {project.inspiration ? (

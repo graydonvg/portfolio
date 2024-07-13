@@ -79,7 +79,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body
         className={cn(
           "relative min-h-svh bg-slate-950 text-slate-300",

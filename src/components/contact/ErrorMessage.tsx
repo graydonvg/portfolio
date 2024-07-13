@@ -1,4 +1,4 @@
-import { FieldErrors, FieldValues } from 'react-hook-form';
+import { FieldErrors, FieldValues } from "react-hook-form";
 
 type Props = {
   errors: FieldErrors<FieldValues>;
@@ -9,7 +9,9 @@ export default function ErrorMessage({ errors, field }: Props) {
   return (
     <>
       {errors?.[field] && (
-        <span className="inline-block self-start text-accent">{errors?.[field]?.message?.toString()}</span>
+        <span className="inline-block self-start text-red-500">
+          {errors?.[field]?.message?.toString()}
+        </span>
       )}
     </>
   );

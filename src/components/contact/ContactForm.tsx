@@ -7,6 +7,7 @@ import ErrorMessage from "./ErrorMessage";
 import Toast from "../Toast";
 import { Flip, toast } from "react-toastify";
 import TextareaAutosize from "react-textarea-autosize";
+import { cn } from "@/lib/utils";
 
 type EmailTemplate = {
   to_name: string;
@@ -87,28 +88,58 @@ export default function ContactForm() {
         <input
           type="text"
           placeholder="name"
-          {...register("name", { required: true, maxLength: 80 })}
-          className="card w-full rounded-md p-2 shadow-lg focus:outline-none focus:ring-2 focus:ring-slate-400/50"
+          {...register("name", {
+            required: "This field is required.",
+            maxLength: {
+              value: 80,
+              message: "Name cannot exceed 80 characters",
+            },
+          })}
+          className={cn(
+            "card w-full rounded-md p-2 shadow-lg focus:outline-none focus:ring-2 focus:ring-slate-400/50",
+            {
+              "outline outline-red-500 focus:ring-red-500":
+                errors.name && errors.name.message,
+            },
+          )}
         />
         <ErrorMessage errors={errors} field="name" />
         <input
           type="email"
           placeholder="email"
-          {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
-          className="card w-full rounded-md p-2 shadow-lg focus:outline-none focus:ring-2 focus:ring-slate-400/50"
+          {...register("email", {
+            required: "This field is required.",
+            pattern: {
+              value: /^\S+@\S+$/i,
+              message: "Entered value does not match email format",
+            },
+          })}
+          className={cn(
+            "card w-full rounded-md p-2 shadow-lg focus:outline-none focus:ring-2 focus:ring-slate-400/50",
+            {
+              "outline outline-red-500 focus:ring-red-500":
+                errors.email && errors.email.message,
+            },
+          )}
         />
         <ErrorMessage errors={errors} field="email" />
         <TextareaAutosize
           maxRows={16}
           placeholder="message"
-          {...register("message", { required: true })}
-          className="card min-h-52 w-full rounded-md p-2 shadow-lg focus:outline-none focus:ring-2 focus:ring-slate-400/50"
+          {...register("message", { required: "This field is required." })}
+          className={cn(
+            "card min-h-52 w-full rounded-md p-2 shadow-lg focus:outline-none focus:ring-2 focus:ring-slate-400/50",
+            {
+              "outline outline-red-500 focus:ring-red-500":
+                errors.message && errors.message.message,
+            },
+          )}
         />
         <ErrorMessage errors={errors} field="message" />
         <input
           value="send"
           type="submit"
-          className="card cursor-pointer rounded-md border border-slate-400/30 px-10 py-4 capitalize shadow-lg backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-slate-400/50"
+          className="cursor-pointer rounded-md border border-slate-400/30 bg-indigo-700 px-10 py-4 capitalize shadow-lg backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-slate-400/50"
         />
       </form>
       <Toast />
