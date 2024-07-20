@@ -45,33 +45,42 @@ export default function AboutSection() {
         about me
       </h2>
       <p className="text-xs sm:text-sm md:text-base">
-        Hello! My name is Graydon. I began my career in the hospitality
-        industry, working as a restaurant manager and administrator. While I
-        enjoyed my time in hospitality, I constantly yearned for more
-        intellectual challenges and missed the thrill of problem-solving.
+        Hello! My name is Graydon.
+      </p>
+      <p className="text-xs sm:text-sm md:text-base">
+        I began my career in hospitality, working as a restaurant manager and
+        administrator. Despite enjoying my time there, I craved intellectual
+        challenges and missed the thrill of problem-solving.
       </p>
       <p className="text-xs sm:text-sm md:text-base">
         My love for solving problems dates back to high school, where I found
-        great joy in tackling calculus problems. This passion led me to delve
-        into the world of applied mathematics and statistics in my spare time.
-        Eventually, I started working with programming languages like C++,
-        Octave, MATLAB, and R. Despite my enthusiasm for math, coding began to
-        captivate me even more.
+        great joy in tackling calculus problems. This passion led me to explore
+        applied mathematics and statistics in my spare time.
       </p>
       <p className="text-xs sm:text-sm md:text-base">
-        My interest in web development sparked through conversations with
-        friends who were already in the field. Curious and eager to learn, I
-        decided to give it a try. I started off with HTML, CSS and Javascript.
-        The more I explored, the more I fell in love with it. I knew I had found
-        exactly what I was looking for: a blend of problem-solving and
-        creativity with instant feedback. Discovering the power of React was a
-        game-changer for me, and my excitement only grew when I encountered
-        Next.js.
+        Eventually, I started working with programming languages like C++,
+        Octave, MATLAB, and R. While I enjoyed math, coding captivated me even
+        more.
+      </p>
+      <p className="text-xs sm:text-sm md:text-base">
+        Conversations with friends in web development piqued my interest in the
+        field. I started off with HTML, CSS and Javascript. The more I explored,
+        the more I fell in love with it.
+      </p>
+      <p className="text-xs sm:text-sm md:text-base">
+        I knew I had found exactly what I was looking for: a blend of
+        problem-solving and creativity with instant feedback.
+      </p>
+      <p className="text-xs sm:text-sm md:text-base">
+        Discovering the power of React was a game-changer for me, and my
+        excitement only grew when I encountered Next.js.
       </p>
       <p className="text-xs sm:text-sm md:text-base">
         There is nothing quite like the satisfaction of overcoming a challenging
-        coding problem. This feeling drives me to code every chance I get. My
-        goal is to become an expert in front-end development and eventually
+        coding problem. This feeling drives me to code every chance I get.
+      </p>
+      <p className="text-xs sm:text-sm md:text-base">
+        My goal is to become an expert in front-end development and eventually
         expand my skills to become a full-stack developer.
       </p>
       <p className="text-xs sm:text-sm md:text-base">
