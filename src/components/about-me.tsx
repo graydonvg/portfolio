@@ -5,7 +5,7 @@ export default function AboutMe() {
   return (
     <section className="grid grid-cols-2 gap-16 px-[7.5rem] py-24">
       <div className="aspect-square w-full rounded-2xl bg-zinc-300"></div>
-      <div className="flex h-full flex-col justify-center gap-4">
+      <div className="flex flex-col justify-center gap-4">
         <TypographyH2>About me</TypographyH2>
         <div>
           <TypographyP>

@@ -22,3 +22,54 @@ export const projects = [
     },
   },
 ];
+
+export const technologies = [
+  {
+    name: "HTML 5",
+    iconPath: "/icons/html5.svg",
+  },
+  {
+    name: "CSS 3",
+    iconPath: "/icons/css3.svg",
+  },
+  {
+    name: "Tailwind CSS",
+    iconPath: "/icons/tailwindcss.svg",
+  },
+  {
+    name: "JavaScript",
+    iconPath: "/icons/javascript.svg",
+  },
+  {
+    name: "TypeScript",
+    iconPath: "/icons/typescript.svg",
+  },
+  {
+    name: "React JS",
+    iconPath: "/icons/react.svg",
+  },
+  {
+    name: "Next JS",
+    iconPath: "/icons/nextjs.svg",
+  },
+  {
+    name: "Redux Toolkit",
+    iconPath: "/icons/redux.svg",
+  },
+  {
+    name: "Supabase",
+    iconPath: "/icons/supabase.svg",
+  },
+  {
+    name: "Firebase",
+    iconPath: "/icons/firebase.svg",
+  },
+  {
+    name: "MUI",
+    iconPath: "/icons/mui.svg",
+  },
+  {
+    name: "Shadcn",
+    iconPath: "/icons/shadcnui.svg",
+  },
+];

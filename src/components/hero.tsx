@@ -9,7 +9,7 @@ export default function Hero() {
       <Navbar />
 
       <div className="flex flex-col items-center gap-14">
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 text-center">
           <TypographyP>Hello, I’m Graydon!</TypographyP>
           <TypographyH1>
             <span>Front-end web developer </span>
