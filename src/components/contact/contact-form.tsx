@@ -102,13 +102,13 @@ export default function ContactForm() {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel className="text-[1.125rem]">Name</FormLabel>
                 <FormControl>
                   <Input
                     {...field}
                     type="text"
                     placeholder="John Doe *"
-                    className={cn("", {
+                    className={cn("text-[1.125rem]", {
                       "outline outline-red-500 focus:ring-red-500":
                         form.formState.errors.name &&
                         form.formState.errors.name.message,
@@ -124,13 +124,13 @@ export default function ContactForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel className="text-[1.125rem]">Email</FormLabel>
                 <FormControl>
                   <Input
                     {...field}
                     type="text"
                     placeholder="john@doe.com *"
-                    className={cn("", {
+                    className={cn("text-[1.125rem]", {
                       "outline outline-red-500 focus:ring-red-500":
                         form.formState.errors.email &&
                         form.formState.errors.email.message,
@@ -146,12 +146,12 @@ export default function ContactForm() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Message</FormLabel>
+                <FormLabel className="text-[1.125rem]">Message</FormLabel>
                 <FormControl>
                   <Textarea
                     {...field}
                     placeholder="Your message *"
-                    className={cn("min-h-52", {
+                    className={cn("min-h-52 text-[1.125rem]", {
                       "outline outline-red-500 focus:ring-red-500":
                         form.formState.errors.message &&
                         form.formState.errors.message.message,

@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import ContactForm from "./contact-form";
 import emitter from "@/lib/event-emitter";
-import { TypographyP } from "../ui/typography/p";
+import TypographyP from "../ui/typography/p";
 
 export default function ContactMe() {
   const sectionRef = useRef<HTMLElement | null>(null);

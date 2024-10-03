@@ -1,5 +1,5 @@
-import { TypographyH2 } from "./ui/typography/h2";
-import { TypographyP } from "./ui/typography/p";
+import TypographyH2 from "./ui/typography/h2";
+import TypographyP from "./ui/typography/p";
 
 export default function AboutMe() {
   return (

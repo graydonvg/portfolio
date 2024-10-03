@@ -1,5 +1,5 @@
 import { technologies } from "@/constants";
-import { TypographyH2 } from "./ui/typography/h2";
+import TypographyH2 from "./ui/typography/h2";
 import Image from "next/image";
 
 export default function Technologies() {
@@ -8,7 +8,6 @@ export default function Technologies() {
       <div className="flex flex-col items-start justify-center">
         <TypographyH2>Some of my favourite technologies</TypographyH2>
       </div>
-
       <div className="flex flex-wrap items-center justify-center gap-10">
         {technologies.map((technology) => (
           <div

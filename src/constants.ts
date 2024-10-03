@@ -8,7 +8,7 @@ export const projects = [
       "Developed an e-commerce platform featuring an admin panel with role-based access control to manage users, products, and orders efficiently. Inspired by South African e-commerce store, Superbalist.",
     tags: [
       "typescript",
-      "react",
+      "react.js",
       "next.js",
       "redux",
       "supabase",
@@ -45,11 +45,11 @@ export const technologies = [
     iconPath: "/icons/typescript.svg",
   },
   {
-    name: "React JS",
+    name: "React.js",
     iconPath: "/icons/react.svg",
   },
   {
-    name: "Next JS",
+    name: "Next.js",
     iconPath: "/icons/nextjs.svg",
   },
   {

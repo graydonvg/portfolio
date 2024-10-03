@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import { TypographyH2 } from "./ui/typography/h2";
+import TypographyH2 from "./ui/typography/h2";
 import { projects } from "@/constants";
 
 export default function Projects() {
