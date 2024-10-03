@@ -13,7 +13,7 @@ import { projects } from "@/constants";
 
 export default function Projects() {
   return (
-    <section className="flex flex-col items-center justify-center gap-16 px-[7.5rem] py-24">
+    <section className="flex flex-col items-center justify-center gap-16">
       <TypographyH2>Projects</TypographyH2>
 
       {projects.map((project, index) => (
@@ -30,7 +30,7 @@ export default function Projects() {
               <CardTitle className="text-[2rem] leading-7">
                 {project.title}
               </CardTitle>
-              <CardDescription className="pt-[10px] text-base leading-5">
+              <CardDescription className="text-pretty pt-[10px] text-base leading-5">
                 {project.description}
               </CardDescription>
             </CardHeader>

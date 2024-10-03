@@ -1,12 +1,10 @@
-"use client";
-
 import { technologies } from "@/constants";
 import { TypographyH2 } from "./ui/typography/h2";
 import Image from "next/image";
 
 export default function Technologies() {
   return (
-    <section className="grid grid-cols-2 gap-16 px-[7.5rem] py-24">
+    <section className="grid grid-cols-2 gap-16">
       <div className="flex flex-col items-start justify-center">
         <TypographyH2>Some of my favourite technologies</TypographyH2>
       </div>

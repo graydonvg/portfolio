@@ -3,7 +3,7 @@ import { TypographyP } from "./ui/typography/p";
 
 export default function AboutMe() {
   return (
-    <section className="grid grid-cols-2 gap-16 px-[7.5rem] py-24">
+    <section className="grid grid-cols-2 gap-16">
       <div className="aspect-square w-full rounded-2xl bg-zinc-300"></div>
       <div className="flex flex-col justify-center gap-4">
         <TypographyH2>About me</TypographyH2>
@@ -19,7 +19,7 @@ export default function AboutMe() {
             Curiosity then brought me to web development, where I began with
             HTML, CSS, and JavaScript, eventually falling in love with React and
             Next.js. I thrive on the creative problem-solving that coding
-            offers, and I’m always excited to tackle new challenges.
+            offers, and I&apos;m always excited to tackle new challenges.
           </TypographyP>
           <TypographyP>
             My goal is to master front-end development and grow into full-stack
