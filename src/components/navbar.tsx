@@ -9,8 +9,8 @@ export default function Navbar() {
   }
 
   return (
-    <div className="absolute left-0 top-0 flex w-full items-center justify-between px-20 py-8">
-      <span className="text-xl leading-[1.875rem]">Graydon von Gossler</span>
+    <nav className="absolute left-0 top-0 flex w-full items-center justify-between px-20 py-8">
+      <span className="text-xl/[1.875rem]">Graydon von Gossler</span>
       <div className="flex gap-4">
         <Button variant="outline" className="rounded-full">
           GitHub
@@ -22,6 +22,6 @@ export default function Navbar() {
           Contact me
         </Button>
       </div>
-    </div>
+    </nav>
   );
 }

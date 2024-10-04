@@ -4,14 +4,20 @@ import { useEffect, useRef } from "react";
 import ContactForm from "./contact-form";
 import emitter from "@/lib/event-emitter";
 import TypographyP from "../ui/typography/p";
+import { useScroll, useTransform, motion } from "framer-motion";
 
 export default function ContactMe() {
-  const sectionRef = useRef<HTMLElement | null>(null);
+  const element = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: element,
+    offset: ["start end", "start start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 0.54], [-500, 0]);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (sectionRef.current) {
-        sectionRef.current.scrollIntoView({ behavior: "smooth" });
+      if (element.current) {
+        element.current.scrollIntoView({ behavior: "smooth" });
       }
     };
 
@@ -23,7 +29,11 @@ export default function ContactMe() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="grid grid-cols-2 gap-20 px-24 pt-20">
+    <motion.div
+      ref={element}
+      style={{ y }}
+      className="mx-auto grid max-w-screen-2xl grid-cols-2 gap-20 px-[13.5rem] pt-24 text-secondary"
+    >
       <div>
         <h2 className="text-pretty text-[2.5rem] font-semibold leading-[2.75rem] tracking-tight">
           I&apos;m seeking a full-time front-end developer role.
@@ -38,6 +48,6 @@ export default function ContactMe() {
         </div>
       </div>
       <ContactForm />
-    </section>
+    </motion.div>
   );
 }

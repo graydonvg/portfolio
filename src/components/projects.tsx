@@ -27,10 +27,8 @@ export default function Projects() {
           </div>
           <div className="flex flex-col items-start border-t">
             <CardHeader>
-              <CardTitle className="text-[2rem] leading-7">
-                {project.title}
-              </CardTitle>
-              <CardDescription className="text-pretty pt-[10px] text-base leading-5">
+              <CardTitle className="text-[2rem]/7">{project.title}</CardTitle>
+              <CardDescription className="text-pretty pt-[10px] text-base/5">
                 {project.description}
               </CardDescription>
             </CardHeader>
@@ -39,7 +37,7 @@ export default function Projects() {
                 {project.tags.map((tag) => (
                   <li
                     key={tag}
-                    className="shadow-inner-[0_0_0_1px_rgba(186, 215, 247, 0.12)] flex items-center justify-center rounded-full px-3 py-1 text-[0.875rem] font-semibold uppercase leading-5 tracking-wider shadow-[inset_0_0_0_1px]"
+                    className="flex items-center justify-center rounded-full px-3 py-1 text-[0.875rem]/5 font-semibold uppercase tracking-wider shadow-[inset_0_0_0_1px]"
                   >
                     {tag}
                   </li>
