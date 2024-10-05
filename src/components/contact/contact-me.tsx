@@ -44,7 +44,7 @@ export default function ContactMe() {
             offer, or just want to chat about code, send me a message, and
             I&apos;ll get back to you as soon as I can.
           </TypographyP>
-          <TypographyP>graydon@gmail.com - Github - LinkedIn</TypographyP>
+          <TypographyP>graydonvg@gmail.com - Github - LinkedIn</TypographyP>
         </div>
       </div>
       <ContactForm />
