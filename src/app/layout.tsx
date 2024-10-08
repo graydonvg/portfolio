@@ -20,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("antialiased", inter.variable)}>{children}</body>
+      <body className={cn("relative bg-slate-950 antialiased", inter.variable)}>
+        {children}
+      </body>
     </html>
   );
 }

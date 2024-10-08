@@ -17,7 +17,7 @@ export default function Projects() {
       <TypographyH2>Projects</TypographyH2>
 
       {projects.map((project, index) => (
-        <Card key={index} className="grid grid-cols-2 bg-zinc-200">
+        <Card key={index} className="grid grid-cols-2 bg-slate-200">
           <div className="py-8 pl-8">
             <Image
               src={project.image}

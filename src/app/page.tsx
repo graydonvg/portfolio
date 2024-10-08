@@ -5,23 +5,29 @@ import Hero from "@/components/hero";
 import Projects from "@/components/projects";
 import Technologies from "@/components/technologies";
 import Navbar from "@/components/navbar";
+import BackgroundElements from "@/components/background-elements";
 
 export default function Home() {
   return (
-    <div className="overflow-hidden">
-      <header className="flex min-h-[856px] flex-col items-center justify-center bg-zinc-200 px-20 py-[122px]">
-        <Navbar />
-        <Hero />
-      </header>
-      <main className="relative z-20 mx-auto max-w-screen-2xl space-y-48 bg-background px-[7.5rem] py-24">
-        <AboutMe />
-        <Projects />
-        <Technologies />
-      </main>
-      <RoundedOverlay />
-      <footer className="z-0 bg-zinc-800 pb-10">
-        <ContactMe />
-      </footer>
-    </div>
+    <>
+      <div className="overflow-hidden">
+        <header className="flex min-h-dvh flex-col items-center justify-center px-20 py-[122px] text-slate-300">
+          <Navbar />
+          <Hero />
+        </header>
+        <div className="bg-background">
+          <main className="relative z-20 mx-auto max-w-screen-2xl space-y-48 px-[7.5rem] py-24">
+            <AboutMe />
+            <Projects />
+            <Technologies />
+          </main>
+          <RoundedOverlay />
+        </div>
+        <footer className="z-0 pb-10 text-slate-300">
+          <ContactMe />
+        </footer>
+      </div>
+      <BackgroundElements />
+    </>
   );
 }
