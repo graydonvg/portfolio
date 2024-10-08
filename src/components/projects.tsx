@@ -17,34 +17,34 @@ export default function Projects() {
       <TypographyH2>Projects</TypographyH2>
 
       {projects.map((project, index) => (
-        <Card key={index} className="grid grid-cols-2 gap-4 bg-zinc-200">
-          <div className="p-6 pr-0">
+        <Card key={index} className="grid grid-cols-2 bg-zinc-200">
+          <div className="py-8 pl-8">
             <Image
               src={project.image}
               alt="Project screenshot"
-              className="rounded-md border border-border shadow-md"
+              className="rounded-md"
             />
           </div>
-          <div className="flex flex-col items-start border-t">
-            <CardHeader>
-              <CardTitle className="text-[2rem]/7">{project.title}</CardTitle>
-              <CardDescription className="text-pretty pt-[10px] text-base/5">
+          <div className="flex flex-col items-start">
+            <CardHeader className="p-8 pb-6">
+              <CardTitle className="text-4xl">{project.title}</CardTitle>
+              <CardDescription className="text-pretty pt-[10px] text-base/5 text-foreground">
                 {project.description}
               </CardDescription>
             </CardHeader>
-            <CardContent className="m-0">
+            <CardContent className="m-0 p-8 pt-0">
               <ul className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <li
                     key={tag}
-                    className="flex items-center justify-center rounded-full px-3 py-1 text-[0.875rem]/5 font-semibold uppercase tracking-wider shadow-[inset_0_0_0_1px]"
+                    className="flex items-center justify-center rounded-full px-3 py-1 text-[0.875rem]/5 font-semibold uppercase tracking-wider text-muted-foreground shadow-[inset_0_0_0_1px]"
                   >
                     {tag}
                   </li>
                 ))}
               </ul>
             </CardContent>
-            <CardFooter className="flex h-full w-full items-end gap-4 pb-6">
+            <CardFooter className="flex h-full w-full items-end gap-4 p-8 pt-0">
               <Button variant="outline" className="flex-1">
                 Repository
               </Button>
