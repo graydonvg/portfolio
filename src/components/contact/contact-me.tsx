@@ -5,6 +5,8 @@ import ContactForm from "./contact-form";
 import emitter from "@/lib/event-emitter";
 import TypographyP from "../ui/typography/p";
 import { useScroll, useTransform, motion } from "framer-motion";
+import Link from "next/link";
+import { EMAIL_ADDRESS, LINKS } from "@/constants";
 
 export default function ContactMe() {
   const element = useRef<HTMLDivElement | null>(null);
@@ -44,7 +46,32 @@ export default function ContactMe() {
             offer, or just want to chat about code, send me a message, and
             I&apos;ll get back to you as soon as I can.
           </TypographyP>
-          <TypographyP>graydonvg@gmail.com - Github - LinkedIn</TypographyP>
+          <TypographyP>
+            <Link
+              href={`mailto:${EMAIL_ADDRESS}`}
+              className="text-blue-400 hover:text-blue-500 hover:underline"
+            >
+              {EMAIL_ADDRESS}
+            </Link>{" "}
+            -{" "}
+            <Link
+              href={LINKS.GITHUB}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 visited:text-purple-400 hover:text-blue-500 hover:underline visited:hover:text-purple-500"
+            >
+              Github
+            </Link>{" "}
+            -{" "}
+            <Link
+              href={LINKS.LINKEDIN}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 visited:text-purple-400 hover:text-blue-500 hover:underline visited:hover:text-purple-500"
+            >
+              LinkedIn
+            </Link>
+          </TypographyP>
         </div>
       </div>
       <ContactForm />

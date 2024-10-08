@@ -1,5 +1,12 @@
 import projectImage from "/public/mystore-screenshot.png";
 
+export const EMAIL_ADDRESS = "graydonvg@gmail.com";
+
+export const LINKS = {
+  GITHUB: "https://github.com/graydonvg",
+  LINKEDIN: "https://www.linkedin.com/",
+};
+
 export const projects = [
   {
     image: projectImage,
