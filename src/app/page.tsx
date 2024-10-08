@@ -19,7 +19,7 @@ export default function Home() {
         <Technologies />
       </main>
       <RoundedOverlay />
-      <footer className="z-0 bg-zinc-800">
+      <footer className="z-0 bg-zinc-800 pb-10">
         <ContactMe />
       </footer>
     </div>

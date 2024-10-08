@@ -9,7 +9,7 @@ export default function RoundedOverlay() {
     target: container,
     offset: ["start end", "start start"],
   });
-  const height = useTransform(scrollYProgress, [0, 0.54], [100, 0]);
+  const height = useTransform(scrollYProgress, [0, 0.58], [100, 0]);
 
   return (
     <motion.div

@@ -12,7 +12,7 @@ export default function ContactMe() {
     target: element,
     offset: ["start end", "start start"],
   });
-  const y = useTransform(scrollYProgress, [0, 0.54], [-500, 0]);
+  const y = useTransform(scrollYProgress, [0, 0.58], [-500, 0]);
 
   useEffect(() => {
     const handleScroll = () => {
