@@ -11,7 +11,7 @@ export default function Hero() {
           <span>specializing in ReactJS</span>
         </TypographyH1>
       </div>
-      <Button className="w-fit rounded-full">View my resume</Button>
+      <Button className="w-fit">View my resume</Button>
     </div>
   );
 }
