@@ -10,6 +10,7 @@ import {
 } from "./ui/card";
 import TypographyH2 from "./ui/typography/h2";
 import { projects } from "@/constants";
+import Link from "next/link";
 
 export default function Projects() {
   return (
@@ -45,10 +46,24 @@ export default function Projects() {
               </ul>
             </CardContent>
             <CardFooter className="flex h-full w-full items-end gap-4 p-8 pt-0">
-              <Button variant="outline" className="flex-1">
-                Repository
-              </Button>
-              <Button className="flex-1">View website</Button>
+              <Link
+                href={project.links.repository}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1"
+              >
+                <Button variant="outline" className="w-full">
+                  Repository
+                </Button>
+              </Link>
+              <Link
+                href={project.links.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1"
+              >
+                <Button className="w-full">View website</Button>
+              </Link>
             </CardFooter>
           </div>
         </Card>
