@@ -52,7 +52,7 @@ export default function Projects() {
                 rel="noopener noreferrer"
                 className="flex-1"
               >
-                <Button variant="outline" className="w-full">
+                <Button variant="secondary" className="w-full">
                   Repository
                 </Button>
               </Link>

@@ -15,10 +15,10 @@ export default function Navbar() {
       <span className="text-xl/[1.875rem]">Graydon von Gossler</span>
       <div className="flex gap-4">
         <Link href={LINKS.GITHUB} target="_blank" rel="noopener noreferrer">
-          <Button variant="outline">GitHub</Button>
+          <Button variant="secondary">GitHub</Button>
         </Link>
         <Link href={LINKS.LINKEDIN} target="_blank" rel="noopener noreferrer">
-          <Button variant="outline">LinkedIn</Button>
+          <Button variant="secondary">LinkedIn</Button>
         </Link>
         <Button onClick={scrollTo}>Contact me</Button>
       </div>
