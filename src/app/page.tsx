@@ -1,11 +1,12 @@
 import AboutMe from "@/components/about-me";
-import RoundedOverlay from "@/components/rounded-overlay";
+import RoundedOverlayBottom from "@/components/rounded-overlay/rounded-overlay-bottom";
 import ContactMe from "@/components/contact/contact-me";
 import Hero from "@/components/hero";
 import Projects from "@/components/projects";
 import Technologies from "@/components/technologies";
 import Navbar from "@/components/navbar";
 import BackgroundElements from "@/components/background-elements";
+import RoundedOverlayTop from "@/components/rounded-overlay/rounded-overlay-top";
 
 export default function Home() {
   return (
@@ -16,12 +17,13 @@ export default function Home() {
           <Hero />
         </header>
         <div className="bg-background">
+          <RoundedOverlayTop />
           <main className="relative z-20 mx-auto max-w-screen-2xl space-y-48 px-[7.5rem] py-24">
             <AboutMe />
             <Projects />
             <Technologies />
           </main>
-          <RoundedOverlay />
+          <RoundedOverlayBottom />
         </div>
         <footer className="z-0 pb-10 text-slate-300">
           <ContactMe />

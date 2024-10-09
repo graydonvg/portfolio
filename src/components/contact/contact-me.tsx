@@ -12,9 +12,9 @@ export default function ContactMe() {
   const container = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start end", "start start"],
+    offset: ["start end", "start 0.42"],
   });
-  const y = useTransform(scrollYProgress, [0, 0.58], [-500, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], [-500, 0]);
 
   useEffect(() => {
     const handleScroll = () => {
