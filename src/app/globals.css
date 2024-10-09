@@ -47,6 +47,7 @@
     light-beam-pulsate calc(var(--duration, 5s)) linear infinite
       var(--delay, 0s) alternate,
     light-beam-transform 5s forwards;
+  will-change: transform, opacity;
 }
 
 .hero-light-beam-pulsate {
@@ -54,6 +55,7 @@
     scale(var(--scale, 1));
   animation: light-beam-pulsate calc(var(--duration, 5s)) linear infinite
     var(--delay, 0s) alternate;
+  will-change: transform, opacity;
 }
 
 @keyframes light-beam-pulsate {

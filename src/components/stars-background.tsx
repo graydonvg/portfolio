@@ -57,18 +57,6 @@ export default function StarsBackground() {
     >
       {stars.map((star) => {
         return (
-          // <div
-          //   key={star.id}
-          //   className="absolute rounded-full bg-star-radial"
-          //   style={{
-          //     top: star.top,
-          //     left: star.left,
-          //     width: star.size,
-          //     height: star.size,
-          //     animation: `star-pulse-fade ${star.animationDuration}s ease-in-out forwards`,
-          //   }}
-          //   onAnimationEnd={() => handleAnimationEnd(star.id)}
-          // />
           <div
             key={star.id}
             className="absolute"
@@ -78,6 +66,7 @@ export default function StarsBackground() {
               width: star.size,
               height: star.size,
               animation: `star-pulse-fade ${star.animationDuration}s ease-in-out forwards`,
+              willChange: "opacity, filter",
             }}
             onAnimationEnd={() => handleAnimationEnd(star.id)}
           >
