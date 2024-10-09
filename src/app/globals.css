@@ -2,16 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -56,7 +46,7 @@ body {
   animation:
     light-beam-pulsate calc(var(--duration, 5s)) linear infinite
       var(--delay, 0s) alternate,
-    light-beam-transform 5s 0.7s forwards;
+    light-beam-transform 5s forwards;
 }
 
 .hero-light-beam-pulsate {

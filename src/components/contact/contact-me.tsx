@@ -9,17 +9,17 @@ import Link from "next/link";
 import { EMAIL_ADDRESS, LINKS } from "@/constants";
 
 export default function ContactMe() {
-  const element = useRef<HTMLDivElement | null>(null);
+  const container = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
-    target: element,
+    target: container,
     offset: ["start end", "start start"],
   });
   const y = useTransform(scrollYProgress, [0, 0.58], [-500, 0]);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (element.current) {
-        element.current.scrollIntoView({ behavior: "smooth" });
+      if (container.current) {
+        container.current.scrollIntoView({ behavior: "smooth" });
       }
     };
 
@@ -32,7 +32,7 @@ export default function ContactMe() {
 
   return (
     <motion.div
-      ref={element}
+      ref={container}
       style={{ y }}
       className="mx-auto grid max-w-screen-2xl grid-cols-2 gap-20 px-[13.5rem] pt-24 text-secondary"
     >

@@ -2,6 +2,9 @@
 
 import { Star } from "lucide-react";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import reactIcon from "/public/icons/react.svg";
 
 type Star = {
   id: number;
@@ -44,15 +47,31 @@ export default function StarsBackground() {
   }
 
   return (
-    <div
-      suppressHydrationWarning
-      className="hero-elements-fade-in fixed left-0 top-0 -z-50 h-full w-full overflow-hidden"
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{
+        duration: 0.3,
+      }}
+      className="fixed left-0 top-0 -z-50 h-full w-full overflow-hidden"
     >
       {stars.map((star) => {
         return (
+          // <div
+          //   key={star.id}
+          //   className="absolute rounded-full bg-star-radial"
+          //   style={{
+          //     top: star.top,
+          //     left: star.left,
+          //     width: star.size,
+          //     height: star.size,
+          //     animation: `star-pulse-fade ${star.animationDuration}s ease-in-out forwards`,
+          //   }}
+          //   onAnimationEnd={() => handleAnimationEnd(star.id)}
+          // />
           <div
             key={star.id}
-            className="bg-star-radial absolute rounded-full"
+            className="absolute"
             style={{
               top: star.top,
               left: star.left,
@@ -61,9 +80,11 @@ export default function StarsBackground() {
               animation: `star-pulse-fade ${star.animationDuration}s ease-in-out forwards`,
             }}
             onAnimationEnd={() => handleAnimationEnd(star.id)}
-          />
+          >
+            <Image src={reactIcon} alt={"react icon"} fill />
+          </div>
         );
       })}
-    </div>
+    </motion.div>
   );
 }
