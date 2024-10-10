@@ -44,6 +44,9 @@ const config: Config = {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
+        moonLight: {
+          DEFAULT: "hsl(var(--moon-light))",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -64,7 +67,7 @@ const config: Config = {
         "star-radial":
           "radial-gradient(50% 50% at 50% 50%, rgba(148, 163, 184, 0.5) 0%, rgba(148, 163, 184, 0) 100%)",
         "moon-light-conic":
-          "conic-gradient(from 0deg at 50% 40px, transparent 47%, rgba(124, 145, 182, 0.2) 49%, rgba(124, 145, 182, 0.3) 50%, rgba(124, 145, 182, 0.2) 51%, transparent 53%)",
+          "conic-gradient(from 0deg at 50% 40px, transparent 47%, hsl(var(--moon-light) / 0.2) 49%, hsl(var(--moon-light) / 0.3) 50%, hsl(var(--moon-light) / 0.2) 51%, transparent 53%)",
       },
     },
   },

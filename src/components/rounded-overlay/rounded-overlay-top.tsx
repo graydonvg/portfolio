@@ -17,7 +17,7 @@ export default function RoundedOverlayTop() {
       style={{ height, willChange: "height" }}
       className="relative z-10"
     >
-      <div className="absolute -left-[10%] h-[750%] w-[120%] -translate-y-[23%] rounded-[50%_50%_0%_0%] bg-background"></div>
+      <div className="shadow-moonLight absolute -left-[10%] h-[750%] w-[120%] -translate-y-[23%] rounded-[50%_50%_0%_0%] bg-background shadow-[0px_-10px_30px]"></div>
     </motion.div>
   );
 }

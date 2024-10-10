@@ -1,12 +1,38 @@
+"use client";
+
 import TypographyH2 from "./ui/typography/h2";
 import TypographyP from "./ui/typography/p";
+// import { motion } from "framer-motion";
 
 export default function AboutMe() {
   return (
     <section className="grid grid-cols-2 gap-16">
       <div className="aspect-square w-full rounded-2xl bg-slate-200"></div>
       <div className="flex flex-col justify-center gap-4">
-        <TypographyH2>About me</TypographyH2>
+        <TypographyH2>
+          {/* <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{
+              duration: 1,
+            }}
+          >
+            About{" "}
+          </motion.span>
+          <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{
+              duration: 1,
+              delay: 0.1,
+            }}
+          >
+            me
+          </motion.span> */}
+          About me
+        </TypographyH2>
         <div>
           <TypographyP>
             I started my career in hospitality as a restaurant manager, but I
