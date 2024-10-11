@@ -24,8 +24,10 @@ export default function Hero() {
       }}
       className="flex flex-col items-center justify-center gap-14"
     >
-      <div className="flex flex-col items-center justify-center gap-4 text-center">
-        <p className="text-xl/[1.875rem]">Hello, I&apos;m Graydon!</p>
+      <div className="flex flex-col items-center justify-center gap-3 text-nowrap text-center sm:gap-4">
+        <p className="text-[clamp(1.125rem,5vw,1.5rem)]/[clamp(1.75rem,5vw+1rem,2rem)]">
+          Hello, I&apos;m Graydon!
+        </p>
         <TypographyH1>
           <span>Front-end web developer </span>
           <span>specializing in ReactJS</span>
@@ -35,3 +37,9 @@ export default function Hero() {
     </motion.div>
   );
 }
+
+// text-[clamp(1.5rem,5vw+0.5rem,4.75rem)]/[clamp(2.25rem,5vw+1rem,5.25rem)]
+
+// text-lg sm:text-2xl
+
+// text-xl/[1.875rem]

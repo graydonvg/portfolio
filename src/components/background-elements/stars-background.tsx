@@ -83,6 +83,18 @@ export default function StarsBackground() {
           >
             <Image src={reactIcon} alt={"react icon"} fill />
           </div>
+          // <div
+          //   key={star.id}
+          //   className="absolute rounded-full bg-star-radial"
+          //   style={{
+          //     top: star.top,
+          //     left: star.left,
+          //     width: star.size,
+          //     height: star.size,
+          //     animation: `star-pulse-fade ${star.animationDuration}s ease-in-out forwards`,
+          //   }}
+          //   onAnimationEnd={() => handleAnimationEnd(star.id)}
+          // />
         );
       })}
     </motion.div>

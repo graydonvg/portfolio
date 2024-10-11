@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <div className="overflow-hidden">
-        <header className="relative z-10 flex min-h-dvh flex-col items-center justify-center bg-slate-950 px-20 py-[122px] text-slate-300">
+        <header className="relative z-10 flex min-h-dvh flex-col items-center justify-center bg-slate-950 p-4 py-[122px] text-slate-300">
           <Navbar />
           <Hero />
           <BackgroundElements />
@@ -24,8 +24,8 @@ export default function Home() {
           </main>
         </div>
         <RoundedOverlay />
-        <footer className="relative z-0 h-[800px] bg-slate-950">
-          <div className="relative -top-[100dvh] h-[calc(100dvh+800px)]">
+        <footer className="z-0 h-[800px] bg-slate-950">
+          <div className="-top-[100dvh] h-[calc(100dvh+800px)]">
             <div className="fixed top-[calc(100dvh-800px)] h-[800px] w-full">
               <ContactMe />
             </div>
