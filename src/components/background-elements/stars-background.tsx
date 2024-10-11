@@ -3,8 +3,6 @@
 import { Star } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion, useScroll } from "framer-motion";
-import Image from "next/image";
-import reactIcon from "/public/icons/react.svg";
 import { cn } from "@/lib/utils";
 
 type Star = {
@@ -70,31 +68,16 @@ export default function StarsBackground() {
         return (
           <div
             key={star.id}
-            className="absolute"
+            className="absolute rounded-full bg-star-radial"
             style={{
               top: star.top,
               left: star.left,
               width: star.size,
               height: star.size,
               animation: `star-pulse-fade ${star.animationDuration}s ease-in-out forwards`,
-              willChange: "opacity, filter",
             }}
             onAnimationEnd={() => handleAnimationEnd(star.id)}
-          >
-            <Image src={reactIcon} alt={"react icon"} fill />
-          </div>
-          // <div
-          //   key={star.id}
-          //   className="absolute rounded-full bg-star-radial"
-          //   style={{
-          //     top: star.top,
-          //     left: star.left,
-          //     width: star.size,
-          //     height: star.size,
-          //     animation: `star-pulse-fade ${star.animationDuration}s ease-in-out forwards`,
-          //   }}
-          //   onAnimationEnd={() => handleAnimationEnd(star.id)}
-          // />
+          />
         );
       })}
     </motion.div>
