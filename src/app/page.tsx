@@ -5,7 +5,7 @@ import Hero from "@/components/hero";
 import Projects from "@/components/projects";
 import Technologies from "@/components/technologies";
 import Navbar from "@/components/navbar";
-import BackgroundElements from "@/components/background-elements";
+import BackgroundElements from "@/components/background-elements/background-elements";
 
 export default function Home() {
   return (
