@@ -22,7 +22,7 @@ export default function Projects() {
         const isEven = index % 2 === 0;
 
         return (
-          <Card key={index} className="grid grid-cols-2 gap-8 bg-card p-8">
+          <Card key={index} className="grid grid-cols-2 gap-12 bg-card p-12">
             <div
               className={cn("order-1", {
                 "order-2": !isEven,
