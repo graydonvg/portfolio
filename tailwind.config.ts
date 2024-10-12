@@ -69,6 +69,9 @@ const config: Config = {
         "moon-light-conic":
           "conic-gradient(from 0deg at 50% 40px, transparent 47%, hsl(var(--moon-light) / 0.2) 49%, hsl(var(--moon-light) / 0.3) 50%, hsl(var(--moon-light) / 0.2) 51%, transparent 53%)",
       },
+      screens: {
+        "hover-hover": { raw: "(hover: hover)" },
+      },
     },
   },
   plugins: [tailwindcssAnimate],

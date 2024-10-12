@@ -3,7 +3,7 @@
 import emitter from "@/lib/event-emitter";
 import { Button } from "./ui/button";
 import Link from "next/link";
-import { LINKS } from "@/constants";
+import { LINKS } from "@/lib/constants";
 import { motion } from "framer-motion";
 
 export default function Navbar() {

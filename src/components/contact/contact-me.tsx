@@ -4,12 +4,17 @@ import { useEffect, useRef } from "react";
 import ContactForm from "./contact-form";
 import emitter from "@/lib/event-emitter";
 import TypographyP from "../ui/typography/p";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-import { EMAIL_ADDRESS, LINKS } from "@/constants";
+import { EMAIL_ADDRESS, LINKS } from "@/lib/constants";
 
 export default function ContactMe() {
   const container = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "start 0.42"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [-500, 0]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +33,8 @@ export default function ContactMe() {
   return (
     <motion.div
       ref={container}
-      className="mx-auto grid max-w-screen-2xl grid-cols-2 gap-20 px-[13.5rem] pt-24 text-secondary"
+      style={{ y }}
+      className="mx-auto grid max-w-screen-2xl grid-cols-1 gap-12 px-4 pt-24 text-secondary md:px-8 lg:grid-cols-2 lg:gap-20 lg:px-12 xl:px-[13.5rem]"
     >
       <div>
         <h2 className="text-pretty text-[2.5rem] font-semibold leading-[2.75rem] tracking-tight">

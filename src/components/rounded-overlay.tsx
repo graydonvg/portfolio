@@ -1,15 +1,39 @@
 "use client";
 
-import { useScroll, useTransform, motion } from "framer-motion";
-import { useRef } from "react";
+import { useScroll, useTransform, motion, ScrollOffset } from "framer-motion";
+import { useLayoutEffect, useRef, useState } from "react";
 
 export default function RoundedOverlay() {
+  const [offset, setOffset] = useState<ScrollOffset | undefined>([
+    "start end",
+    "start start",
+  ]);
+  const footer =
+    typeof window !== "undefined" ? document.querySelector("footer") : null;
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start end", "start 0.42"],
+    offset,
   });
-  const height = useTransform(scrollYProgress, [0, 1], [100, 0]);
+  const height = useTransform(scrollYProgress, [0, 1], ["10vh", "0vh"]);
+
+  useLayoutEffect(() => {
+    function updateOffset() {
+      if (footer?.offsetHeight && footer?.offsetHeight < window.innerHeight) {
+        const footerHeight = footer.offsetHeight;
+        const offsetRatio = 1 - footerHeight / window.innerHeight;
+        setOffset(["start end", `start ${offsetRatio}`]);
+      } else {
+        setOffset(["start end", "start start"]);
+      }
+    }
+
+    updateOffset();
+
+    window.addEventListener("resize", updateOffset);
+
+    return () => window.removeEventListener("resize", updateOffset);
+  }, [footer]);
 
   return (
     <motion.div

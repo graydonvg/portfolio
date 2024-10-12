@@ -3,8 +3,8 @@ import TypographyP from "./ui/typography/p";
 
 export default function AboutMe() {
   return (
-    <section className="grid grid-cols-2 gap-16">
-      <div className="aspect-square w-full rounded-2xl bg-slate-200"></div>
+    <section className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 xl:gap-16">
+      <div className="hidden aspect-square w-full rounded-2xl bg-slate-200 md:block"></div>
       <div className="flex flex-col justify-center gap-4">
         <TypographyH2>About me</TypographyH2>
         <div>

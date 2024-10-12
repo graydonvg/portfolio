@@ -37,9 +37,3 @@ export default function Hero() {
     </motion.div>
   );
 }
-
-// text-[clamp(1.5rem,5vw+0.5rem,4.75rem)]/[clamp(2.25rem,5vw+1rem,5.25rem)]
-
-// text-lg sm:text-2xl
-
-// text-xl/[1.875rem]
