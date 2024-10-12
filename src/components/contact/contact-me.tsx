@@ -50,6 +50,7 @@ export default function ContactMe() {
       adjustFooterOverlap(); // Set initial footer margin
 
       // to make it responsive, re-calculate the margin-top on the footer when the ScrollTriggers revert
+      // @ts-expect-error supported event 'revert' but not included in types
       ScrollTrigger.addEventListener("revert", adjustFooterOverlap);
 
       ScrollTrigger.create({
@@ -61,6 +62,7 @@ export default function ContactMe() {
 
       // Cleanup listeners on unmount
       return () => {
+        // @ts-expect-error supported event 'revert' but not included in types
         ScrollTrigger.removeEventListener("revert", adjustFooterOverlap);
         ScrollTrigger.killAll(); // Remove all ScrollTriggers
       };

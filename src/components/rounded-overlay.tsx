@@ -1,6 +1,7 @@
 "use client";
 
-import { useScroll, useTransform, motion, ScrollOffset } from "framer-motion";
+import { ScrollOffset } from "@/lib/types";
+import { useScroll, useTransform, motion } from "framer-motion";
 import { useLayoutEffect, useRef, useState } from "react";
 
 export default function RoundedOverlay() {
