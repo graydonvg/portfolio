@@ -4,7 +4,7 @@ import ContactMe from "@/components/contact/contact-me";
 import Hero from "@/components/hero";
 import Projects from "@/components/projects";
 import Technologies from "@/components/technologies";
-// import Navbar from "@/components/navbar";
+import Navbar from "@/components/navbar";
 import BackgroundElements from "@/components/background-elements/background-elements";
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
     <div>
       <div className="overflow-hidden">
         <header className="relative z-10 flex min-h-dvh flex-col items-center justify-center bg-slate-950 px-4 py-[122px] text-slate-300">
-          {/* <Navbar /> */}
+          <Navbar />
           <Hero />
           <BackgroundElements />
         </header>
