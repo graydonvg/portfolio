@@ -9,7 +9,7 @@ import BackgroundElements from "@/components/background-elements/background-elem
 
 export default function Home() {
   return (
-    <>
+    <div>
       <div className="overflow-hidden">
         <header className="relative z-10 flex min-h-dvh flex-col items-center justify-center bg-slate-950 px-4 py-[122px] text-slate-300">
           {/* <Navbar /> */}
@@ -28,6 +28,6 @@ export default function Home() {
           <ContactMe />
         </footer>
       </div>
-    </>
+    </div>
   );
 }

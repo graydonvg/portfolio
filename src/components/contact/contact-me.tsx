@@ -4,17 +4,20 @@ import { useEffect, useRef } from "react";
 import ContactForm from "./contact-form";
 import emitter from "@/lib/event-emitter";
 import TypographyP from "../ui/typography/p";
-import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { EMAIL_ADDRESS, LINKS } from "@/lib/constants";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
+}
 
 export default function ContactMe() {
   const container = useRef<HTMLDivElement | null>(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start end", "start 0.42"],
-  });
-  const y = useTransform(scrollYProgress, [0, 1], [-500, 0]);
+  const footer =
+    typeof window !== "undefined" ? document.querySelector("footer") : null;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,10 +33,44 @@ export default function ContactMe() {
     };
   }, []);
 
+  useGSAP(
+    () => {
+      // we never want it to overlap more than the height of the screen
+      function getOverlap() {
+        if (!footer) return 0;
+        return Math.min(window.innerHeight, footer.offsetHeight);
+      }
+
+      // adjusts the margin-top of the footer to overlap the proper amount
+      function adjustFooterOverlap() {
+        if (!footer) return;
+        footer.style.marginTop = `-${getOverlap()}px`;
+      }
+
+      adjustFooterOverlap(); // Set initial footer margin
+
+      // to make it responsive, re-calculate the margin-top on the footer when the ScrollTriggers revert
+      ScrollTrigger.addEventListener("revert", adjustFooterOverlap);
+
+      ScrollTrigger.create({
+        trigger: footer,
+        start: () => `top ${window.innerHeight - getOverlap()}`,
+        end: () => `+=${getOverlap()}`,
+        pin: true,
+      });
+
+      // Cleanup listeners on unmount
+      return () => {
+        ScrollTrigger.removeEventListener("revert", adjustFooterOverlap);
+        ScrollTrigger.killAll(); // Remove all ScrollTriggers
+      };
+    },
+    { scope: container }, // Ensure the animation is scoped to the container
+  );
+
   return (
-    <motion.div
+    <div
       ref={container}
-      style={{ y }}
       className="mx-auto grid max-w-screen-2xl grid-cols-1 gap-12 px-4 pt-24 text-secondary md:px-8 lg:grid-cols-2 lg:gap-20 lg:px-12 xl:px-[13.5rem]"
     >
       <div>
@@ -75,6 +112,6 @@ export default function ContactMe() {
         </div>
       </div>
       <ContactForm />
-    </motion.div>
+    </div>
   );
 }

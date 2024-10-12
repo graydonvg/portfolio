@@ -35,6 +35,7 @@ export default function Projects() {
                 src={project.image}
                 alt="Project screenshot"
                 className="rounded-md"
+                priority
               />
             </div>
             <div
