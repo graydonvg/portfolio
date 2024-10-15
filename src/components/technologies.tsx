@@ -17,7 +17,7 @@ export default function Technologies() {
             <div className="relative h-12 w-12 md:h-[72px] md:w-[72px] lg:h-24 lg:w-24">
               <Image src={technology.iconPath} alt={technology.name} fill />
             </div>
-            <span className="text-sm font-semibold md:text-base lg:text-lg">
+            <span className="whitespace-nowrap text-sm font-semibold md:text-base lg:text-lg">
               {technology.name}
             </span>
           </div>

@@ -6,7 +6,7 @@ import { LINKS } from "@/lib/constants";
 import { motion } from "framer-motion";
 
 export default function Navbar() {
-  function scrollToFooter() {
+  function scrollToContactForm() {
     window.scrollTo({
       top: document.documentElement.scrollHeight,
       behavior: "smooth",
@@ -30,7 +30,7 @@ export default function Navbar() {
         <Link href={LINKS.LINKEDIN} target="_blank" rel="noopener noreferrer">
           <Button variant="outline">LinkedIn</Button>
         </Link>
-        <Button onClick={scrollToFooter}>Contact me</Button>
+        <Button onClick={scrollToContactForm}>Contact me</Button>
       </div>
     </motion.nav>
   );

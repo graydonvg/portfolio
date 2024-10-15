@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef } from "react";
 import ContactForm from "./contact-form";
 import TypographyP from "../ui/typography/p";
 import Link from "next/link";
@@ -14,7 +13,6 @@ if (typeof window !== "undefined") {
 }
 
 export default function ContactMe() {
-  const container = useRef<HTMLDivElement | null>(null);
   const footer =
     typeof window !== "undefined" ? document.querySelector("footer") : null;
 
@@ -44,7 +42,6 @@ export default function ContactMe() {
       pin: true,
     });
 
-    // Cleanup listeners on unmount
     return () => {
       // @ts-expect-error supported event 'revert' but not included in types
       ScrollTrigger.removeEventListener("revert", adjustFooterOverlap);
@@ -53,10 +50,7 @@ export default function ContactMe() {
   });
 
   return (
-    <div
-      ref={container}
-      className="mx-auto grid max-w-screen-2xl grid-cols-1 gap-12 px-4 pt-24 text-secondary md:px-8 lg:grid-cols-2 lg:gap-20 lg:px-12 xl:px-[13.5rem]"
-    >
+    <div className="mx-auto grid max-w-screen-2xl grid-cols-1 gap-12 px-4 pt-24 text-secondary md:px-8 lg:grid-cols-2 lg:gap-20 lg:px-12 xl:px-[13.5rem]">
       <div>
         <h2 className="text-pretty text-[2.5rem] font-semibold leading-[2.75rem] tracking-tight">
           I&apos;m seeking a full-time front-end developer role.
