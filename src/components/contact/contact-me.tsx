@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import ContactForm from "./contact-form";
-import emitter from "@/lib/event-emitter";
 import TypographyP from "../ui/typography/p";
 import Link from "next/link";
 import { EMAIL_ADDRESS, LINKS } from "@/lib/constants";
@@ -19,56 +18,39 @@ export default function ContactMe() {
   const footer =
     typeof window !== "undefined" ? document.querySelector("footer") : null;
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (container.current) {
-        container.current.scrollIntoView({ behavior: "smooth" });
-      }
-    };
+  useGSAP(() => {
+    // we never want it to overlap more than the height of the screen
+    function getOverlap() {
+      if (!footer) return 0;
+      return Math.min(window.innerHeight, footer.offsetHeight);
+    }
 
-    emitter.on("contactForm", handleScroll);
+    // adjusts the margin-top of the footer to overlap the proper amount
+    function adjustFooterOverlap() {
+      if (!footer) return;
+      footer.style.marginTop = `-${getOverlap()}px`;
+    }
 
+    adjustFooterOverlap(); // Set initial footer margin
+
+    // to make it responsive, re-calculate the margin-top on the footer when the ScrollTriggers revert
+    // @ts-expect-error supported event 'revert' but not included in types
+    ScrollTrigger.addEventListener("revert", adjustFooterOverlap);
+
+    ScrollTrigger.create({
+      trigger: footer,
+      start: () => `top ${window.innerHeight - getOverlap()}`,
+      end: () => `+=${getOverlap()}`,
+      pin: true,
+    });
+
+    // Cleanup listeners on unmount
     return () => {
-      emitter.off("contactForm", handleScroll);
-    };
-  }, []);
-
-  useGSAP(
-    () => {
-      // we never want it to overlap more than the height of the screen
-      function getOverlap() {
-        if (!footer) return 0;
-        return Math.min(window.innerHeight, footer.offsetHeight);
-      }
-
-      // adjusts the margin-top of the footer to overlap the proper amount
-      function adjustFooterOverlap() {
-        if (!footer) return;
-        footer.style.marginTop = `-${getOverlap()}px`;
-      }
-
-      adjustFooterOverlap(); // Set initial footer margin
-
-      // to make it responsive, re-calculate the margin-top on the footer when the ScrollTriggers revert
       // @ts-expect-error supported event 'revert' but not included in types
-      ScrollTrigger.addEventListener("revert", adjustFooterOverlap);
-
-      ScrollTrigger.create({
-        trigger: footer,
-        start: () => `top ${window.innerHeight - getOverlap()}`,
-        end: () => `+=${getOverlap()}`,
-        pin: true,
-      });
-
-      // Cleanup listeners on unmount
-      return () => {
-        // @ts-expect-error supported event 'revert' but not included in types
-        ScrollTrigger.removeEventListener("revert", adjustFooterOverlap);
-        ScrollTrigger.killAll(); // Remove all ScrollTriggers
-      };
-    },
-    { scope: container }, // Ensure the animation is scoped to the container
-  );
+      ScrollTrigger.removeEventListener("revert", adjustFooterOverlap);
+      ScrollTrigger.killAll(); // Remove all ScrollTriggers
+    };
+  });
 
   return (
     <div

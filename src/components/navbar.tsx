@@ -1,14 +1,16 @@
 "use client";
 
-import emitter from "@/lib/event-emitter";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { LINKS } from "@/lib/constants";
 import { motion } from "framer-motion";
 
 export default function Navbar() {
-  function scrollTo() {
-    emitter.emit("contactForm");
+  function scrollToFooter() {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "smooth",
+    });
   }
 
   return (
@@ -28,7 +30,7 @@ export default function Navbar() {
         <Link href={LINKS.LINKEDIN} target="_blank" rel="noopener noreferrer">
           <Button variant="outline">LinkedIn</Button>
         </Link>
-        <Button onClick={scrollTo}>Contact me</Button>
+        <Button onClick={scrollToFooter}>Contact me</Button>
       </div>
     </motion.nav>
   );
