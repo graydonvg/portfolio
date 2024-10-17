@@ -23,7 +23,7 @@ export default function Home() {
         </main>
       </div>
       <RoundedOverlay />
-      <footer className="z-0 bg-slate-950 pb-10 text-slate-300">
+      <footer className="z-0 !w-full !max-w-full bg-slate-950 pb-10 text-slate-300">
         <ContactMe />
       </footer>
     </div>

@@ -70,6 +70,8 @@ const config: Config = {
           "conic-gradient(from 0deg at 50% 40px, transparent 47%, hsl(var(--moon-light) / 0.2) 49%, hsl(var(--moon-light) / 0.3) 50%, hsl(var(--moon-light) / 0.2) 51%, transparent 53%)",
       },
       screens: {
+        // xs: "420px",
+
         "hover-hover": { raw: "(hover: hover)" },
       },
     },

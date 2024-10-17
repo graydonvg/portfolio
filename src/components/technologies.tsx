@@ -8,16 +8,16 @@ export default function Technologies() {
       <div className="flex flex-col items-start justify-center text-center lg:text-start">
         <TypographyH2>Some of my favourite technologies</TypographyH2>
       </div>
-      <div className="flex flex-wrap items-center justify-center gap-10">
+      <div className="grid grid-cols-3 gap-12 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-4">
         {technologies.map((technology) => (
           <div
             key={technology.name}
-            className="flex flex-col items-center justify-center gap-2"
+            className="flex aspect-square flex-col items-center justify-center gap-4"
           >
-            <div className="relative h-12 w-12 md:h-[72px] md:w-[72px] lg:h-24 lg:w-24">
+            <div className="relative aspect-square w-full">
               <Image src={technology.iconPath} alt={technology.name} fill />
             </div>
-            <span className="whitespace-nowrap text-sm font-semibold md:text-base lg:text-lg">
+            <span className="text-center text-sm font-semibold md:text-base lg:text-lg">
               {technology.name}
             </span>
           </div>

@@ -11,7 +11,7 @@ export default function Hero() {
     target: container,
     offset: ["end 0.62", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], [0, -300]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-20dvh"]);
 
   return (
     <motion.div
@@ -24,7 +24,7 @@ export default function Hero() {
       }}
       className="flex flex-col items-center justify-center gap-14"
     >
-      <div className="flex flex-col items-center justify-center gap-3 text-nowrap text-center sm:gap-4">
+      <div className="flex flex-col items-center justify-center gap-3 whitespace-nowrap text-center sm:gap-4">
         <p className="text-[clamp(1.125rem,5vw,1.5rem)]/[clamp(1.75rem,5vw+1rem,2rem)]">
           Hello, I&apos;m Graydon!
         </p>

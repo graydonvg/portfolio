@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.pin-spacer {
+  width: 100% !important;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
