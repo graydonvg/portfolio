@@ -2,7 +2,7 @@ import AboutMe from "@/components/about-me";
 import RoundedOverlay from "@/components/rounded-overlay";
 import ContactMe from "@/components/contact/contact-me";
 import Hero from "@/components/hero";
-import Projects from "@/components/projects";
+import Projects from "@/components/projects/projects";
 import Technologies from "@/components/technologies";
 import Navbar from "@/components/navbar";
 import BackgroundElements from "@/components/background-elements/background-elements";
@@ -16,7 +16,7 @@ export default function Home() {
         <BackgroundElements />
       </header>
       <div className="relative z-20 bg-background">
-        <main className="mx-auto max-w-screen-2xl space-y-48 px-4 py-24 md:px-8 xl:px-[7.5rem]">
+        <main>
           <AboutMe />
           <Projects />
           <Technologies />
