@@ -6,26 +6,31 @@ import Projects from "@/components/projects/projects";
 import Technologies from "@/components/technologies";
 import Navbar from "@/components/navbar";
 import BackgroundElements from "@/components/background-elements/background-elements";
+import WaveSeparatorBottom from "@/components/wave-separator-bottom";
 
 export default function Home() {
   return (
-    <div className="overflow-hidden">
-      <header className="relative z-10 flex min-h-dvh flex-col items-center justify-center bg-slate-950 px-4 py-[122px] text-slate-300">
+    <div className="relative z-0 overflow-hidden bg-slate-950">
+      <header className="relative z-10 flex min-h-[calc(100dvh+40px)] flex-col items-center justify-center px-4 py-[122px] text-slate-300">
         <Navbar />
         <Hero />
-        <BackgroundElements />
+
+        <WaveSeparatorBottom />
       </header>
-      <div className="relative z-20 bg-background">
-        <main>
+      <main className="bg-transparent">
+        <section className="relative z-20 bg-background">
           <AboutMe />
-          <Projects />
+        </section>
+        <Projects />
+        <section className="relative z-20 bg-background">
           <Technologies />
-        </main>
-      </div>
-      <RoundedOverlay />
-      <footer className="z-0 !w-full !max-w-full bg-slate-950 pb-10 text-slate-300">
+        </section>
+        <RoundedOverlay />
+      </main>
+      <footer className="!w-full !max-w-full bg-slate-950 text-slate-300">
         <ContactMe />
       </footer>
+      <BackgroundElements />
     </div>
   );
 }

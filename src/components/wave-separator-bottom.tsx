@@ -1,6 +1,6 @@
 export default function WaveSeparatorBottom() {
   return (
-    <div className="custom-shape-divider-bottom-1729251420">
+    <div className="custom-shape-divider-bottom-1729321393">
       <svg
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"

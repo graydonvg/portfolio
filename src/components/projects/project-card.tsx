@@ -49,7 +49,7 @@ export default function ProjectCard({ project, isEven }: Props) {
         scale,
         willChange: "scale",
       }}
-      className="grid grid-cols-1 gap-8 bg-card p-4 md:grid-cols-2 md:p-8 lg:gap-12 lg:p-12"
+      className="z-10 grid grid-cols-1 gap-8 bg-card p-4 md:grid-cols-2 md:p-8 lg:gap-12 lg:p-12"
     >
       <div
         className={cn("order-1", {

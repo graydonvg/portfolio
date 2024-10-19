@@ -50,7 +50,7 @@ export default function ContactMe() {
   });
 
   return (
-    <div className="mx-auto grid max-w-screen-2xl grid-cols-1 gap-12 px-4 pt-24 text-secondary md:px-8 lg:grid-cols-2 lg:gap-20 lg:px-12 xl:px-[13.5rem]">
+    <div className="mx-auto grid max-w-screen-2xl grid-cols-1 gap-12 px-4 pb-10 pt-12 text-secondary sm:pt-24 md:px-8 md:pt-36 lg:grid-cols-2 lg:gap-20 lg:px-12 xl:px-[13.5rem]">
       <div>
         <h2 className="text-pretty text-[2.5rem] font-semibold leading-[2.75rem] tracking-tight">
           I&apos;m seeking a full-time front-end developer role.

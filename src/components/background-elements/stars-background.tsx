@@ -2,7 +2,7 @@
 
 import { Star } from "lucide-react";
 import { useEffect, useState } from "react";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 type Star = {
@@ -24,15 +24,7 @@ function createStar(): Star {
 }
 
 export default function StarsBackground() {
-  const { scrollYProgress } = useScroll();
   const [stars, setStars] = useState<Star[]>([]);
-  const [hideStars, setHideStars] = useState(false);
-
-  useEffect(() => {
-    scrollYProgress.on("change", (e) =>
-      e > 0.5 ? setHideStars(true) : setHideStars(false),
-    );
-  }, [scrollYProgress]);
 
   useEffect(() => {
     const initialStars = Array.from({ length: 75 }, createStar);
@@ -60,9 +52,7 @@ export default function StarsBackground() {
       transition={{
         duration: 0.3,
       }}
-      className={cn("fixed left-0 top-0 -z-50 h-full w-full overflow-hidden", {
-        absolute: hideStars,
-      })}
+      className={cn("fixed left-0 top-0 -z-50 h-full w-full overflow-hidden")}
     >
       {stars.map((star) => {
         return (

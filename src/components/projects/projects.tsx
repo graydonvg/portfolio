@@ -7,7 +7,7 @@ import ProjectCard from "./project-card";
 
 export default function Projects() {
   return (
-    <div className="relative bg-slate-900">
+    <section className="relative">
       <WaveSeparatorTop />
       <SectionWrapper>
         <div className="flex flex-col items-center justify-center gap-16">
@@ -23,6 +23,6 @@ export default function Projects() {
         </div>
       </SectionWrapper>
       <WaveSeparatorBottom />
-    </div>
+    </section>
   );
 }

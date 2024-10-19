@@ -3,15 +3,22 @@
 import { useRef } from "react";
 import { Button } from "./ui/button";
 import TypographyH1 from "./ui/typography/h1";
-import { useScroll, useTransform, motion } from "framer-motion";
+import {
+  useScroll,
+  useTransform,
+  motion,
+  useMotionValueEvent,
+} from "framer-motion";
 
 export default function Hero() {
   const container = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["end 0.62", "end start"],
+    offset: ["end 0.63", "end start"],
   });
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "-20dvh"]);
+
+  useMotionValueEvent(scrollYProgress, "change", (e) => console.log(e));
 
   return (
     <motion.div
