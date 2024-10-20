@@ -29,7 +29,7 @@ export default function Hero() {
       transition={{
         duration: 0.5,
       }}
-      className="flex flex-col items-center justify-center gap-14"
+      className="flex flex-col items-center justify-center gap-14 pb-[40px]"
     >
       <div className="flex flex-col items-center justify-center gap-3 whitespace-nowrap text-center sm:gap-4">
         <p className="text-[clamp(1.125rem,5vw,1.5rem)]/[clamp(1.75rem,5vw+1rem,2rem)]">
