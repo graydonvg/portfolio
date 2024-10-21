@@ -13,7 +13,12 @@ import {
 import { projects } from "@/lib/constants";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { useScroll, useTransform, motion } from "framer-motion";
+import {
+  useScroll,
+  useTransform,
+  motion,
+  useMotionValueEvent,
+} from "framer-motion";
 import { useRef } from "react";
 
 const MotionCard = motion.create(Card);
@@ -31,9 +36,11 @@ export default function ProjectCard({ project, isEven }: Props) {
   });
   const scale = useTransform(
     scrollYProgress,
-    [0, 0.25, 0.75, 1],
+    [0, 0.3, 0.7, 1],
     [0.8, 1, 1, 0.8],
   );
+
+  useMotionValueEvent(scale, "change", (e) => console.log(e));
 
   return (
     <MotionCard
