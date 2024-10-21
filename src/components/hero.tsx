@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { Button } from "./ui/button";
+// import { Button } from "./ui/button";
 import TypographyH1 from "./ui/typography/h1";
 import { useScroll, useTransform, motion } from "framer-motion";
 
