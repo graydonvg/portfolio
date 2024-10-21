@@ -22,7 +22,7 @@ export default function Hero() {
       transition={{
         duration: 0.5,
       }}
-      className="flex flex-col items-center justify-center gap-14 pb-[40px]"
+      className="flex flex-col items-center justify-center gap-14"
     >
       <div className="flex flex-col items-center justify-center gap-3 whitespace-nowrap text-center sm:gap-4">
         <p className="text-[clamp(1.125rem,5vw,1.5rem)]/[clamp(1.75rem,5vw+1rem,2rem)]">
@@ -33,7 +33,11 @@ export default function Hero() {
           <span className="text-white">specializing in ReactJS</span>
         </TypographyH1>
       </div>
-      <Button>View my resume</Button>
+      {/* <Button>View my resume</Button> */}
+      <button className="button button--bestia">
+        <div className="button__bg"></div>
+        <span>View my resume</span>
+      </button>
     </motion.div>
   );
 }

@@ -3,7 +3,6 @@
 import { Star } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
 
 type Star = {
   id: number;
@@ -52,11 +51,11 @@ export default function StarsBackground() {
       transition={{
         duration: 0.3,
       }}
-      className={cn("fixed left-0 top-0 -z-50 h-full w-full overflow-hidden")}
+      className="fixed left-0 top-0 -z-50 h-full w-full overflow-hidden"
     >
       {stars.map((star) => {
         return (
-          <div
+          <span
             key={star.id}
             className="absolute rounded-full bg-star-radial"
             style={{

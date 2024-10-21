@@ -1,4 +1,5 @@
 import LightBeams from "./light-beams";
+import ShootingStar from "./shooting-star";
 import StarsBackground from "./stars-background";
 
 export default function BackgroundElements() {
@@ -6,6 +7,7 @@ export default function BackgroundElements() {
     <>
       <LightBeams />
       <StarsBackground />
+      <ShootingStar />
     </>
   );
 }

@@ -102,13 +102,13 @@ export default function ContactForm() {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-[1.125rem]">Name</FormLabel>
+                <FormLabel className="text-lg">Name</FormLabel>
                 <FormControl>
                   <Input
                     {...field}
                     type="text"
                     placeholder="John Doe *"
-                    className={cn("text-[1.125rem]", {
+                    className={cn("text-lg", {
                       "outline outline-red-500 focus:ring-red-500":
                         form.formState.errors.name &&
                         form.formState.errors.name.message,
@@ -124,13 +124,13 @@ export default function ContactForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-[1.125rem]">Email</FormLabel>
+                <FormLabel className="text-lg">Email</FormLabel>
                 <FormControl>
                   <Input
                     {...field}
                     type="text"
                     placeholder="john@doe.com *"
-                    className={cn("text-[1.125rem]", {
+                    className={cn("text-lg", {
                       "outline outline-red-500 focus:ring-red-500":
                         form.formState.errors.email &&
                         form.formState.errors.email.message,
@@ -146,12 +146,12 @@ export default function ContactForm() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-[1.125rem]">Message</FormLabel>
+                <FormLabel className="text-lg">Message</FormLabel>
                 <FormControl>
                   <Textarea
                     {...field}
                     placeholder="Your message *"
-                    className={cn("min-h-52 text-[1.125rem]", {
+                    className={cn("min-h-52 text-lg", {
                       "outline outline-red-500 focus:ring-red-500":
                         form.formState.errors.message &&
                         form.formState.errors.message.message,
