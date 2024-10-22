@@ -161,7 +161,8 @@
     rgba(148, 163, 184, 1) 0%,
     rgba(148, 163, 184, 0) 100%
   );
-  animation: animate-shooting-star 3s linear forwards;
+  animation: animate-shooting-star var(--shooting-star-animation-duration)
+    linear forwards;
 }
 
 .shooting-star::before {
@@ -189,7 +190,7 @@
   100% {
     opacity: 0;
     transform: rotate(var(--shooting-star-rotation))
-      translateX(var(--shooting-star-travel-distance, -110dvh));
+      translateX(var(--shooting-star-travel-distance));
   }
 }
 
