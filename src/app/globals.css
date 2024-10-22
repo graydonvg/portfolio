@@ -161,6 +161,7 @@
     rgba(148, 163, 184, 1) 0%,
     rgba(148, 163, 184, 0) 100%
   );
+  /* transform: rotate(90deg); */
   animation: animate-shooting-star 3s linear forwards;
 }
 
@@ -169,8 +170,9 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  height: 1px;
-  width: 300px;
+  height: var(--shooting-star-tail-heigh, 1px);
+  backdrop-filter: blur(20px);
+  width: var(--shooting-star-tail-width, 300px);
   transform: translateY(-50%);
   border-radius: 9999px;
   background: linear-gradient(90deg, rgba(148, 163, 184, 0.5), transparent);
@@ -179,7 +181,7 @@
 @keyframes animate-shooting-star {
   0% {
     opacity: 0;
-    transform: rotate(var(--rotation, 315deg)) translateX(0dvh);
+    transform: rotate(var(--shooting-star-rotation)) translateX(0);
   }
   30%,
   70% {
@@ -187,7 +189,8 @@
   }
   100% {
     opacity: 0;
-    transform: rotate(var(--rotation, 315deg)) translate(-110dvh);
+    transform: rotate(var(--shooting-star-rotation))
+      translateX(var(--shooting-star-travel-distance, -110dvh));
   }
 }
 

@@ -9,23 +9,36 @@ type Star = {
   left: string;
   size: string;
   rotation: string;
+  tailHeight: string;
+  tailWidth: string;
+  travelDistance: string;
 };
 
 function getRandomRotation() {
   let rotation;
+
   do {
     rotation = Math.floor(Math.random() * 360);
   } while (rotation % 90 === 0);
+
   return `${rotation}deg`;
 }
 
 function createStar(): Star {
+  const starSize = 4 + Math.random() * 16;
+  const tailHeight = Math.max(1, starSize / 10);
+  const tailWidth = 15 * starSize;
+  const travelDistance = Math.max(window.innerWidth, window.innerHeight);
+
   return {
     id: Math.random(),
     top: `${Math.random() * 100}%`,
     left: `${Math.random() * 100}%`,
-    size: `${4 + Math.random() * 16}px`,
+    size: `${starSize}px`,
     rotation: getRandomRotation(),
+    tailHeight: `${tailHeight}px`,
+    tailWidth: `${tailWidth}px`,
+    travelDistance: `-${travelDistance}px`,
   };
 }
 
@@ -37,18 +50,10 @@ export default function ShootingStar() {
     setStars([createStar()]);
   }, []);
 
-  function addStar() {
-    setStars([createStar()]);
-  }
-
-  function removeStar(id: number) {
-    setStars((prevStars) => prevStars.filter((star) => star.id !== id));
-  }
-
-  async function handleAnimationEnd(id: number) {
-    removeStar(id);
+  async function handleAnimationEnd() {
+    setStars([]);
     await wait(4000);
-    addStar();
+    setStars([createStar()]);
   }
 
   return (
@@ -64,11 +69,14 @@ export default function ShootingStar() {
                 left: star.left,
                 width: star.size,
                 height: star.size,
-                "--rotation": star.rotation,
+                "--shooting-star-rotation": star.rotation,
+                "--shooting-star-tail-height": star.tailHeight,
+                "--shooting-star-tail-width": star.tailWidth,
+                "--shooting-star-travel-distance": star.travelDistance,
               } as React.CSSProperties
             }
             className="shooting-star"
-            onAnimationEnd={() => handleAnimationEnd(star.id)}
+            onAnimationEnd={handleAnimationEnd}
           />
         );
       })}
