@@ -17,9 +17,19 @@ type Star = {
 function getRandomRotation() {
   let rotation;
 
+  function isInExcludedRange(angle: number) {
+    return (
+      (angle >= 60 && angle <= 120) ||
+      (angle >= 150 && angle <= 210) ||
+      (angle >= 240 && angle <= 300) ||
+      angle >= 330 ||
+      angle < 30
+    );
+  }
+
   do {
     rotation = Math.floor(Math.random() * 360);
-  } while (rotation % 90 === 0);
+  } while (rotation % 90 === 0 || isInExcludedRange(rotation));
 
   return `${rotation}deg`;
 }

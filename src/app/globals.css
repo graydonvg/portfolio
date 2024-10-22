@@ -161,7 +161,6 @@
     rgba(148, 163, 184, 1) 0%,
     rgba(148, 163, 184, 0) 100%
   );
-  /* transform: rotate(90deg); */
   animation: animate-shooting-star 3s linear forwards;
 }
 
