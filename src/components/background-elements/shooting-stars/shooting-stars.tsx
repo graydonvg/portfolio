@@ -1,19 +1,9 @@
 "use client";
 
 import { wait } from "@/lib/utils";
-import { useEffect, useRef, useState } from "react";
-
-type ShootingStar = {
-  id: number;
-  top: string;
-  left: string;
-  size: string;
-  rotation: string;
-  tailHeight: string;
-  tailWidth: string;
-  travelDistance: string;
-  animationDuration: string;
-};
+import { useEffect, useState } from "react";
+import ShootingStar from "./shooting-star";
+import { ShootingStarType } from "@/lib/types";
 
 function calculateRandomAngleTowardsCenter(x: number, y: number) {
   const viewportWidth = window.innerWidth;
@@ -39,18 +29,18 @@ function calculateRandomAngleTowardsCenter(x: number, y: number) {
   return angleDegrees;
 }
 
-function createShootingStar(): ShootingStar {
+function createShootingStar() {
   const top = Math.random() * window.innerHeight;
   const left = Math.random() * window.innerWidth;
   const starSize = 4 + Math.random() * 16;
   const tailHeight = Math.max(1, starSize / 10);
   const tailWidth = 15 * starSize;
   const angle = calculateRandomAngleTowardsCenter(left, top);
-  // Get the maximum possible travel distance. The intersection observer will remove the shooting star once it exits the viewport
+  // Get the maximum possible travel distance (hypotenuse). The intersection observer will remove the shooting star once it exits the viewport
   const maxTravelDistance = Math.sqrt(
     Math.pow(window.innerWidth, 2) + Math.pow(window.innerHeight, 2),
   );
-  // Duration increases as the viewport increases increases to prevent the shooting star from traveling too fast
+  // Animation duration increases as the viewport increases increases to prevent the shooting star from traveling too fast
   const animationDuration = 2.5 + maxTravelDistance * 0.0007;
 
   return {
@@ -66,8 +56,8 @@ function createShootingStar(): ShootingStar {
   };
 }
 
-export default function ShootingStar() {
-  const [shootingStars, setShootingStars] = useState<ShootingStar[]>([]);
+export default function ShootingStars() {
+  const [shootingStars, setShootingStars] = useState<ShootingStarType[]>([]);
 
   useEffect(() => {
     async function addShootingStar() {
@@ -86,68 +76,12 @@ export default function ShootingStar() {
   return (
     <div className="fixed left-0 top-0 -z-50 h-full w-full overflow-hidden">
       {shootingStars.map((shootingStar) => (
-        <ShootingStarItem
+        <ShootingStar
           key={shootingStar.id}
           shootingStar={shootingStar}
           onLeaveViewport={handleAnimationEnd}
         />
       ))}
     </div>
-  );
-}
-
-type ShootingStarItemProps = {
-  shootingStar: ShootingStar;
-  onLeaveViewport: () => void;
-};
-
-function ShootingStarItem({
-  shootingStar,
-  onLeaveViewport,
-}: ShootingStarItemProps) {
-  const shootingStarRef = useRef<HTMLSpanElement | null>(null);
-
-  useEffect(() => {
-    const currentStar = shootingStarRef.current;
-
-    // Use IntersectionObserver to remove shooting star once it exits the viewport
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) {
-          onLeaveViewport();
-        }
-      },
-      { threshold: 0 }, // Trigger when the element is no longer visible at all.
-    );
-
-    if (currentStar) {
-      observer.observe(currentStar);
-    }
-
-    return () => {
-      if (currentStar) {
-        observer.unobserve(currentStar);
-      }
-    };
-  }, [onLeaveViewport, shootingStar.animationDuration]);
-
-  return (
-    <span
-      ref={shootingStarRef}
-      style={
-        {
-          top: shootingStar.top,
-          left: shootingStar.left,
-          width: shootingStar.size,
-          height: shootingStar.size,
-          "--shooting-star-rotation": shootingStar.rotation,
-          "--shooting-star-tail-height": shootingStar.tailHeight,
-          "--shooting-star-tail-width": shootingStar.tailWidth,
-          "--shooting-star-travel-distance": shootingStar.travelDistance,
-          "--shooting-star-animation-duration": shootingStar.animationDuration,
-        } as React.CSSProperties
-      }
-      className="shooting-star"
-    />
   );
 }

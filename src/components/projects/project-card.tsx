@@ -81,16 +81,18 @@ export default function ProjectCard({ project, isEven }: Props) {
         </CardContent>
         <CardFooter className="flex h-full w-full flex-wrap items-end gap-4 p-0 pt-12">
           <Link
+            tabIndex={-1}
             href={project.links.repository}
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1"
           >
-            <Button variant="outline" className="w-full">
+            <Button variant="outlined" className="w-full">
               Repository
             </Button>
           </Link>
           <Link
+            tabIndex={-1}
             href={project.links.website}
             target="_blank"
             rel="noopener noreferrer"

@@ -74,6 +74,12 @@ const config: Config = {
 
         "hover-hover": { raw: "(hover: hover)" },
       },
+      transitionDuration: {
+        "400": "400ms",
+      },
+      transitionTimingFunction: {
+        "gentle-ease-in-out": "cubic-bezier(0.1,0,0.3,1)",
+      },
     },
   },
   plugins: [tailwindcssAnimate],

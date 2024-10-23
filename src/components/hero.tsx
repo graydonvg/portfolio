@@ -4,6 +4,7 @@ import { useRef } from "react";
 // import { Button } from "./ui/button";
 import TypographyH1 from "./ui/typography/h1";
 import { useScroll, useTransform, motion } from "framer-motion";
+import { Button } from "./ui/button";
 
 export default function Hero() {
   const container = useRef<HTMLDivElement | null>(null);
@@ -33,11 +34,7 @@ export default function Hero() {
           <span className="text-white">specializing in ReactJS</span>
         </TypographyH1>
       </div>
-      {/* <Button>View my resume</Button> */}
-      <button className="button button--bestia">
-        <div className="button__bg"></div>
-        <span>View my resume</span>
-      </button>
+      <Button>View my resume</Button>
     </motion.div>
   );
 }
