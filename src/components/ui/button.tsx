@@ -42,7 +42,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         <div
           className={cn(
-            "duration-400 ease-gentle-ease-in-out absolute left-0 top-0 h-full w-full overflow-hidden rounded-full bg-primary transition-transform hover-hover:group-hover:scale-x-[1.1] hover-hover:group-hover:scale-y-[1.1] hover-hover:group-active:scale-x-[1] hover-hover:group-active:scale-y-[1]",
+            "duration-400 ease-gentle-ease-in-out absolute left-0 top-0 h-full w-full overflow-hidden rounded-full bg-primary transition-transform group-active:scale-x-[0.9] group-active:scale-y-[0.9] hover-hover:group-hover:scale-x-[1.1] hover-hover:group-hover:scale-y-[1.1] hover-hover:group-active:scale-x-[1] hover-hover:group-active:scale-y-[1]",
             {
               "bg-background":
                 variant === "secondary" || variant === "outlined",
