@@ -51,7 +51,6 @@ export default function StarsBackground() {
       transition={{
         duration: 0.3,
       }}
-      className="fixed left-0 top-0 -z-50 h-full w-full overflow-hidden"
     >
       {stars.map((star) => {
         return (

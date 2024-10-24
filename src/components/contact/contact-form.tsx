@@ -151,7 +151,7 @@ export default function ContactForm() {
                   <Textarea
                     {...field}
                     placeholder="Your message *"
-                    className={cn("min-h-52 text-lg", {
+                    className={cn("h-[300px] resize-none text-lg", {
                       "outline outline-red-500 focus:ring-red-500":
                         form.formState.errors.message &&
                         form.formState.errors.message.message,

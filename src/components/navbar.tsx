@@ -20,7 +20,7 @@ export default function Navbar() {
       transition={{
         duration: 0.5,
       }}
-      className="absolute left-0 top-0 flex w-full items-center justify-between px-20 py-8"
+      className="absolute left-0 top-0 hidden w-full items-center justify-between px-20 py-8 lg:flex"
     >
       <span className="text-xl/[1.875rem]">Graydon von Gossler</span>
       <div className="flex gap-4">

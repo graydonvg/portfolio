@@ -74,7 +74,7 @@ export default function ShootingStars() {
   }
 
   return (
-    <div className="fixed left-0 top-0 -z-50 h-full w-full overflow-hidden">
+    <>
       {shootingStars.map((shootingStar) => (
         <ShootingStar
           key={shootingStar.id}
@@ -82,6 +82,6 @@ export default function ShootingStars() {
           onLeaveViewport={handleAnimationEnd}
         />
       ))}
-    </div>
+    </>
   );
 }
