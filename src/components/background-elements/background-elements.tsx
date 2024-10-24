@@ -10,14 +10,11 @@ export default function BackgroundElements() {
     typeof window !== "undefined"
       ? document.querySelector("#techSection")
       : null;
-  const [distanceFromBottom, setDistanceFromBottom] = useState("100%");
+  const [distanceFromTop, setDistanceFromTop] = useState("100%");
   const [isInView, setIsInView] = useState(false);
 
-  console.log(isInView);
-  console.log(distanceFromBottom);
-
   useEffect(() => {
-    // Use IntersectionObserver to remove shooting star once it exits the viewport
+    // Use IntersectionObserver to check when the technologies section is visible to start clipping the background elements
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -26,7 +23,7 @@ export default function BackgroundElements() {
           setIsInView(false);
         }
       },
-      { threshold: 0 }, // Trigger when the element is no longer visible at all.
+      { threshold: 0 },
     );
 
     if (techSection) {
@@ -43,26 +40,24 @@ export default function BackgroundElements() {
   useEffect(() => {
     if (!isInView) return;
 
-    const calculateDistanceFromBottom = () => {
+    const calculateDistanceFromTop = () => {
       if (!techSection) return;
 
       const rect = techSection.getBoundingClientRect();
-      // const viewportHeight = window.innerHeight;
 
       // Distance between the bottom of the element and the top of the viewport
       const distance = 0 + rect.bottom;
-      setDistanceFromBottom(`${distance}px`);
+      setDistanceFromTop(`${distance}px`);
     };
 
-    // Calculate on scroll and resize
-    window.addEventListener("scroll", calculateDistanceFromBottom);
-    window.addEventListener("resize", calculateDistanceFromBottom);
+    window.addEventListener("scroll", calculateDistanceFromTop);
+    window.addEventListener("resize", calculateDistanceFromTop);
 
-    calculateDistanceFromBottom(); // Initial calculation
+    calculateDistanceFromTop();
 
     return () => {
-      window.removeEventListener("scroll", calculateDistanceFromBottom);
-      window.removeEventListener("resize", calculateDistanceFromBottom);
+      window.removeEventListener("scroll", calculateDistanceFromTop);
+      window.removeEventListener("resize", calculateDistanceFromTop);
     };
   }, [techSection, isInView]);
 
@@ -71,9 +66,9 @@ export default function BackgroundElements() {
       <LightBeams />
       <div
         style={{
-          clipPath: `inset(0 0 calc(100% - ${distanceFromBottom}) 0`,
+          clipPath: `inset(0 0 calc(100% - ${distanceFromTop}) 0`,
         }}
-        className="pointer-events-none fixed left-0 top-0 -z-50 h-full w-full overflow-hidden"
+        className="pointer-events-none fixed inset-0 -z-50 h-full w-full overflow-hidden"
       >
         <StarsBackground />
         <ShootingStars />
