@@ -14,7 +14,7 @@ export default function BackgroundElements() {
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-    // Use IntersectionObserver to check when the technologies section is visible to start clipping the background elements
+    // Use IntersectionObserver to check when the technologies section is visible to start clipping the background elements to hide them in the footer section.
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -46,6 +46,7 @@ export default function BackgroundElements() {
       const rect = techSection.getBoundingClientRect();
 
       // Distance between the bottom of the element and the top of the viewport
+      // The amount the backgroundElements need to be clipped starting from the bottom of the viewport
       const distance = 0 + rect.bottom;
       setDistanceFromTop(`${distance}px`);
     };

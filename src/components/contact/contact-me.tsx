@@ -1,54 +1,9 @@
-"use client";
-
 import ContactForm from "./contact-form";
 import TypographyP from "../ui/typography/p";
 import Link from "next/link";
 import { EMAIL_ADDRESS, LINKS } from "@/lib/constants";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-}
 
 export default function ContactMe() {
-  const footer =
-    typeof window !== "undefined" ? document.querySelector("footer") : null;
-
-  useGSAP(() => {
-    // we never want it to overlap more than the height of the screen
-    function getOverlap() {
-      if (!footer) return 0;
-      return Math.min(window.innerHeight, footer.offsetHeight);
-    }
-
-    // adjusts the margin-top of the footer to overlap the proper amount
-    function adjustFooterOverlap() {
-      if (!footer) return;
-      footer.style.marginTop = `-${getOverlap()}px`;
-    }
-
-    adjustFooterOverlap(); // Set initial footer margin
-
-    // to make it responsive, re-calculate the margin-top on the footer when the ScrollTriggers revert
-    // @ts-expect-error supported event 'revert' but not included in types
-    ScrollTrigger.addEventListener("revert", adjustFooterOverlap);
-
-    ScrollTrigger.create({
-      trigger: footer,
-      start: () => `top ${window.innerHeight - getOverlap()}`,
-      end: () => `+=${getOverlap()}`,
-      pin: true,
-    });
-
-    return () => {
-      // @ts-expect-error supported event 'revert' but not included in types
-      ScrollTrigger.removeEventListener("revert", adjustFooterOverlap);
-      ScrollTrigger.killAll(); // Remove all ScrollTriggers
-    };
-  });
-
   return (
     <div className="mx-auto grid max-w-screen-2xl grid-cols-1 gap-12 px-4 py-12 text-secondary sm:py-24 md:px-8 md:pt-36 lg:grid-cols-2 lg:gap-20 lg:px-12 xl:px-[13.5rem]">
       <div>
