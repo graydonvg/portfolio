@@ -5,7 +5,7 @@ import { EMAIL_ADDRESS, LINKS } from "@/lib/constants";
 
 export default function ContactMe() {
   return (
-    <div className="mx-auto grid max-w-screen-2xl grid-cols-1 gap-12 px-4 py-12 text-secondary sm:py-24 md:px-8 md:pt-36 lg:grid-cols-2 lg:gap-20 lg:px-12 xl:px-[13.5rem]">
+    <div className="mx-auto grid max-w-screen-2xl grid-cols-1 gap-12 px-4 py-16 text-secondary sm:py-24 md:px-8 md:pt-36 lg:grid-cols-2 lg:gap-20 lg:px-12 xl:px-[13.5rem]">
       <div>
         <h2 className="text-pretty text-[2.5rem] font-semibold leading-[2.75rem] tracking-tight">
           I&apos;m seeking a full-time front-end developer role.

@@ -49,7 +49,7 @@ export default function ShootingStar({ shootingStar, onLeaveViewport }: Props) {
           "--shooting-star-animation-duration": shootingStar.animationDuration,
         } as React.CSSProperties
       }
-      className="shooting-star"
+      className="shooting-star absolute bg-star-radial"
     />
   );
 }

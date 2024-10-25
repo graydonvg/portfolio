@@ -1,22 +1,32 @@
 "use client";
 
-import { useRef } from "react";
+import { MutableRefObject } from "react";
 import TypographyH1 from "./ui/typography/h1";
-import { useScroll, useTransform, motion } from "framer-motion";
+import {
+  useScroll,
+  useTransform,
+  motion,
+  useMotionValueEvent,
+} from "framer-motion";
 import { Button } from "./ui/button";
 
-export default function Hero() {
-  const container = useRef<HTMLDivElement | null>(null);
+type Props = {
+  headerRef: MutableRefObject<HTMLElement | null>;
+};
+
+export default function Hero({ headerRef }: Props) {
   const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["end 0.63", "end start"],
+    target: headerRef,
+    offset: ["start start", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-20dvh"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-10dvh"]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
+
+  useMotionValueEvent(scrollYProgress, "change", (e) => console.log(e));
 
   return (
     <motion.div
-      ref={container}
-      style={{ y }}
+      style={{ y, scale }}
       initial={{ opacity: 0, scale: 0, filter: "blur(50px)" }}
       animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
       transition={{
