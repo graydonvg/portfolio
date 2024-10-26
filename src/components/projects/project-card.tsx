@@ -97,7 +97,9 @@ export default function ProjectCard({ project, isEven }: Props) {
             rel="noopener noreferrer"
             className="flex-1"
           >
-            <Button className="w-full">View website</Button>
+            <Button showBorderOnHover className="w-full">
+              View website
+            </Button>
           </Link>
         </CardFooter>
       </div>

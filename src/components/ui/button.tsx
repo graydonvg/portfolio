@@ -14,7 +14,7 @@ const buttonVariants = cva(
         outlined: "text-foreground",
       },
       size: {
-        default: "px-8 py-4 h-14",
+        default: "h-[58px]",
       },
     },
     defaultVariants: {
@@ -27,12 +27,24 @@ const buttonVariants = cva(
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
+  showBorderOnHover?: boolean;
   asChild?: boolean;
   children: string;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, children, ...props }, ref) => {
+  (
+    {
+      className,
+      variant,
+      size,
+      showBorderOnHover = false,
+      asChild = false,
+      children,
+      ...props
+    },
+    ref,
+  ) => {
     const Comp = asChild ? Slot : "button";
     return (
       <Comp
@@ -42,33 +54,53 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         <div
           className={cn(
-            "absolute left-0 top-0 h-full w-full overflow-hidden rounded-full bg-primary transition-transform duration-400 ease-gentle-ease-in-out group-active:scale-x-[0.9] group-active:scale-y-[0.9] hover-hover:group-hover:scale-x-[1.1] hover-hover:group-hover:scale-y-[1.1] hover-hover:group-active:scale-x-[1] hover-hover:group-active:scale-y-[1]",
-            {
-              "bg-background":
-                variant === "secondary" || variant === "outlined",
-            },
+            "absolute left-0 top-0 h-full w-full overflow-hidden rounded-full transition-transform duration-400 ease-gentle-ease-in-out group-active:scale-x-[0.9] group-active:scale-y-[0.9] hover-hover:group-hover:scale-x-[1.1] hover-hover:group-hover:scale-y-[1.1] hover-hover:group-active:scale-x-[1] hover-hover:group-active:scale-y-[1]",
           )}
         >
           <div
-            className={cn(
-              "absolute left-1/2 top-1/2 w-[110%] -translate-x-1/2 -translate-y-1/2 scale-0 rounded-full bg-background pb-[110%] opacity-0 transition-transform duration-400 ease-gentle-ease-in-out hover-hover:group-hover:-translate-x-1/2 hover-hover:group-hover:-translate-y-1/2 hover-hover:group-hover:scale-100 hover-hover:group-hover:opacity-100",
-              {
-                "bg-primary": variant === "secondary" || variant === "outlined",
-              },
+            id="background"
+            className={cn("absolute inset-0 m-[1px] rounded-full bg-primary", {
+              "border border-foreground bg-background":
+                variant === "secondary" || variant === "outlined",
+            })}
+          >
+            <div
+              id="as-before"
+              className={cn(
+                "absolute left-1/2 top-1/2 w-[110%] -translate-x-1/2 -translate-y-1/2 scale-0 rounded-full bg-background pb-[110%] opacity-0 transition-transform duration-400 ease-gentle-ease-in-out hover-hover:group-hover:-translate-x-1/2 hover-hover:group-hover:-translate-y-1/2 hover-hover:group-hover:scale-100 hover-hover:group-hover:opacity-100",
+                {
+                  "bg-primary":
+                    variant === "secondary" || variant === "outlined",
+                },
+              )}
+            ></div>
+            <div
+              id="as-after"
+              className={cn(
+                "absolute left-0 top-0 h-full w-full rounded-full bg-background opacity-0 transition-opacity duration-300 hover-hover:group-hover:opacity-100 hover-hover:group-hover:delay-300 hover-hover:group-hover:duration-0",
+                {
+                  "bg-primary":
+                    variant === "secondary" || variant === "outlined",
+                },
+              )}
+            ></div>
+            {showBorderOnHover && (
+              <div
+                id="border"
+                className={cn(
+                  "absolute left-0 top-0 h-full w-full rounded-full",
+                  {
+                    "border-foreground hover-hover:group-hover:border":
+                      variant !== "secondary" && variant !== "outlined",
+                  },
+                )}
+              ></div>
             )}
-          ></div>
-          <div
-            className={cn(
-              "absolute left-0 top-0 h-full w-full rounded-full bg-background opacity-0 transition-opacity duration-300 hover-hover:group-hover:opacity-100 hover-hover:group-hover:delay-300 hover-hover:group-hover:duration-0",
-              {
-                "bg-primary": variant === "secondary" || variant === "outlined",
-              },
-            )}
-          ></div>
+          </div>
         </div>
         <span
           className={cn(
-            "relative font-semibold transition-all duration-400 ease-gentle-ease-in-out hover-hover:group-hover:text-foreground",
+            "relative px-8 py-4 font-semibold transition-all duration-400 ease-gentle-ease-in-out hover-hover:group-hover:text-foreground",
             {
               "hover-hover:group-hover:text-white":
                 variant === "secondary" || variant === "outlined",
@@ -84,5 +116,3 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = "Button";
 
 export { Button, buttonVariants };
-
-// outline -outline-offset-[1px] outline-primary

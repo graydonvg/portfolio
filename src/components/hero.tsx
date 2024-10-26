@@ -2,12 +2,7 @@
 
 import { MutableRefObject } from "react";
 import TypographyH1 from "./ui/typography/h1";
-import {
-  useScroll,
-  useTransform,
-  motion,
-  useMotionValueEvent,
-} from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 import { Button } from "./ui/button";
 
 type Props = {
@@ -21,8 +16,6 @@ export default function Hero({ headerRef }: Props) {
   });
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "-10dvh"]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
-
-  useMotionValueEvent(scrollYProgress, "change", (e) => console.log(e));
 
   return (
     <motion.div
