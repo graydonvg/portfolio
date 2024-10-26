@@ -9,7 +9,7 @@ type Star = {
   top: string;
   left: string;
   size: string;
-  animationDuration: number;
+  animationDuration: string;
 };
 
 function createStar(): Star {
@@ -18,7 +18,7 @@ function createStar(): Star {
     top: `${Math.random() * 100}%`,
     left: `${Math.random() * 100}%`,
     size: `${2 + Math.random() * 6}px`,
-    animationDuration: 15 + Math.random() * 15,
+    animationDuration: `${15 + Math.random() * 15}s`,
   };
 }
 
@@ -56,14 +56,14 @@ export default function StarsBackground() {
         return (
           <span
             key={star.id}
-            className="absolute rounded-full bg-star-radial"
             style={{
               top: star.top,
               left: star.left,
               width: star.size,
               height: star.size,
-              animation: `star-pulse-fade ${star.animationDuration}s ease-in-out forwards`,
+              animation: `star-pulse-fade ${star.animationDuration} ease-in-out forwards`,
             }}
+            className="absolute rounded-full bg-star-radial"
             onAnimationEnd={() => handleAnimationEnd(star.id)}
           />
         );

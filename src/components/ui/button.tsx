@@ -42,7 +42,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         <div
           className={cn(
-            "duration-400 ease-gentle-ease-in-out absolute left-0 top-0 h-full w-full overflow-hidden rounded-full bg-primary transition-transform group-active:scale-x-[0.9] group-active:scale-y-[0.9] hover-hover:group-hover:scale-x-[1.1] hover-hover:group-hover:scale-y-[1.1] hover-hover:group-active:scale-x-[1] hover-hover:group-active:scale-y-[1]",
+            "absolute left-0 top-0 h-full w-full overflow-hidden rounded-full bg-primary transition-transform duration-400 ease-gentle-ease-in-out group-active:scale-x-[0.9] group-active:scale-y-[0.9] hover-hover:group-hover:scale-x-[1.1] hover-hover:group-hover:scale-y-[1.1] hover-hover:group-active:scale-x-[1] hover-hover:group-active:scale-y-[1]",
             {
               "bg-background":
                 variant === "secondary" || variant === "outlined",
@@ -51,7 +51,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         >
           <div
             className={cn(
-              "duration-400 ease-gentle-ease-in-out absolute left-1/2 top-1/2 w-[110%] -translate-x-1/2 -translate-y-1/2 scale-0 rounded-full bg-background pb-[110%] opacity-0 transition-transform hover-hover:group-hover:-translate-x-1/2 hover-hover:group-hover:-translate-y-1/2 hover-hover:group-hover:scale-100 hover-hover:group-hover:opacity-100",
+              "absolute left-1/2 top-1/2 w-[110%] -translate-x-1/2 -translate-y-1/2 scale-0 rounded-full bg-background pb-[110%] opacity-0 transition-transform duration-400 ease-gentle-ease-in-out hover-hover:group-hover:-translate-x-1/2 hover-hover:group-hover:-translate-y-1/2 hover-hover:group-hover:scale-100 hover-hover:group-hover:opacity-100",
               {
                 "bg-primary": variant === "secondary" || variant === "outlined",
               },
@@ -68,7 +68,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         </div>
         <span
           className={cn(
-            "ease-gentle-ease-in-out duration-400 relative font-semibold transition-all hover-hover:group-hover:text-foreground",
+            "relative font-semibold transition-all duration-400 ease-gentle-ease-in-out hover-hover:group-hover:text-foreground",
             {
               "hover-hover:group-hover:text-white":
                 variant === "secondary" || variant === "outlined",
@@ -84,3 +84,5 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = "Button";
 
 export { Button, buttonVariants };
+
+// outline -outline-offset-[1px] outline-primary

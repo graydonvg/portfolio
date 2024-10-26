@@ -42,14 +42,14 @@ export default function ShootingStar({ shootingStar, onLeaveViewport }: Props) {
           left: shootingStar.left,
           width: shootingStar.size,
           height: shootingStar.size,
-          "--shooting-star-rotation": shootingStar.rotation,
-          "--shooting-star-tail-height": shootingStar.tailHeight,
           "--shooting-star-tail-width": shootingStar.tailWidth,
+          "--shooting-star-tail-height": shootingStar.tailHeight,
+          "--shooting-star-rotation": shootingStar.rotation,
           "--shooting-star-travel-distance": shootingStar.travelDistance,
-          "--shooting-star-animation-duration": shootingStar.animationDuration,
+          animation: `animate-shooting-star ${shootingStar.animationDuration} linear forwards`,
         } as React.CSSProperties
       }
-      className="shooting-star absolute bg-star-radial"
+      className="shooting-star before:bg-shooting-star-tail absolute bg-star-radial before:absolute before:left-1/2 before:top-1/2 before:h-[var(--shooting-star-tail-height)] before:w-[var(--shooting-star-tail-width)] before:-translate-y-1/2 before:rounded-full before:backdrop-blur-[20px]"
     />
   );
 }

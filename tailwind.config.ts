@@ -62,7 +62,9 @@ const config: Config = {
       },
       backgroundImage: {
         "star-radial":
-          "radial-gradient(50% 50% at 50% 50%, hsl(var(--star-light) / 0.5) 0%, hsl(var(--star-light) / 0) 100%)",
+          "radial-gradient(50% 50% at 50% 50%, hsl(var(--star-light) / 0.5), transparent)",
+        "shooting-star-tail":
+          "linear-gradient(90deg, hsl(var(--star-light) / 0.5), transparent)",
         "light-beam-conic":
           "conic-gradient(from 0deg at 50% 40px, transparent 47%, hsl(var(--light-beam) / 0.2) 49%, hsl(var(--light-beam) / 0.3) 50%, hsl(var(--light-beam) / 0.2) 51%, transparent 53%)",
       },

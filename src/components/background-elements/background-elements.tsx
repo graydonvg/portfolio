@@ -8,7 +8,7 @@ import StarsBackground from "./stars-background";
 export default function BackgroundElements() {
   const techSection =
     typeof window !== "undefined"
-      ? document.querySelector("#techSection")
+      ? document.getElementById("#techSection")
       : null;
   const [distanceFromTop, setDistanceFromTop] = useState("100%");
   const [isInView, setIsInView] = useState(false);
