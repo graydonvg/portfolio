@@ -1,12 +1,7 @@
 "use client";
 
 import TypographyH1 from "./ui/typography/h1";
-import {
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "./ui/button";
 import { useRef } from "react";
 
