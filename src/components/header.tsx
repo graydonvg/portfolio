@@ -12,7 +12,6 @@ export default function Header() {
     offset: ["start start", "end start"],
   });
   const y = useTransform(scrollYProgress, [0, 1], ["0dvh", "-40dvh"]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
 
   return (
     <header
@@ -20,7 +19,7 @@ export default function Header() {
       className="relative flex min-h-dvh flex-col items-center justify-center px-4 py-[122px] text-slate-300"
     >
       <Navbar />
-      <Hero y={y} scale={scale} />
+      <Hero y={y} />
     </header>
   );
 }

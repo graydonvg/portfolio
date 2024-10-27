@@ -4,13 +4,12 @@ import { Button } from "./ui/button";
 
 type Props = {
   y: MotionValue<string>;
-  scale: MotionValue<number>;
 };
 
-export default function Hero({ y, scale }: Props) {
+export default function Hero({ y }: Props) {
   return (
     <motion.div
-      style={{ y, scale }}
+      style={{ y }}
       initial={{ opacity: 0, scale: 0, filter: "blur(50px)" }}
       animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
       transition={{
