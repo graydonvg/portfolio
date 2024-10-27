@@ -14,7 +14,7 @@ export default function Hero({ headerRef }: Props) {
     target: headerRef,
     offset: ["start start", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-10dvh"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0dvh", "-40dvh"]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
 
   return (
