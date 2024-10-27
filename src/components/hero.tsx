@@ -15,11 +15,10 @@ export default function Hero({ headerRef }: Props) {
     offset: ["start start", "end start"],
   });
   const y = useTransform(scrollYProgress, [0, 1], ["0dvh", "-40dvh"]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
 
   return (
     <motion.div
-      style={{ y, scale }}
+      style={{ y }}
       initial={{ opacity: 0, scale: 0, filter: "blur(50px)" }}
       animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
       transition={{
