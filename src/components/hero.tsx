@@ -18,8 +18,6 @@ export default function Hero() {
   });
   const y = useTransform(scrollYProgress, [0, 1], ["0dvh", "-25dvh"]);
 
-  useMotionValueEvent(scrollYProgress, "change", (e) => console.log(e));
-
   return (
     <motion.div
       ref={heroRef}
