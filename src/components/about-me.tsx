@@ -7,7 +7,7 @@ export default function AboutMe() {
   return (
     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 xl:gap-16">
       <div className="hidden aspect-square w-full rounded-2xl bg-slate-200 md:block"></div>
-      <div className="flex flex-col justify-center gap-4">
+      <div className="flex flex-col items-center justify-center gap-6 md:items-start">
         <TypographyH2>About me</TypographyH2>
         <div className="block aspect-square w-full rounded-2xl bg-slate-200 md:hidden"></div>
         <div>
