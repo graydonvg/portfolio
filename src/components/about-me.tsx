@@ -1,3 +1,5 @@
+"use client";
+
 import TypographyH2 from "./ui/typography/h2";
 import TypographyP from "./ui/typography/p";
 
@@ -7,6 +9,7 @@ export default function AboutMe() {
       <div className="hidden aspect-square w-full rounded-2xl bg-slate-200 md:block"></div>
       <div className="flex flex-col justify-center gap-4">
         <TypographyH2>About me</TypographyH2>
+        <div className="block aspect-square w-full rounded-2xl bg-slate-200 md:hidden"></div>
         <div>
           <TypographyP>
             I started my career in hospitality as a restaurant manager, but I
