@@ -42,14 +42,14 @@ export default function LightBeams() {
       transition={{
         duration: 0.3,
       }}
-      className="pointer-events-none absolute inset-0 -z-40 h-full w-full overflow-hidden"
+      className="pointer-events-none absolute inset-0 -z-30 h-full w-full overflow-hidden"
     >
       {/* Light beams for larger screens */}
       <div className="hidden sm:flex">
         {Array.from(Array(5)).map((_, i) => (
           <div
             key={i}
-            className={`light-beam hero-light-beam-intro light-beam-${i + 1} bg-light-beam-conic pointer-events-none absolute -top-20 left-1/2 h-[130dvh] w-[800px] origin-[50%_0%] -translate-x-1/2 blur-[20px]`}
+            className={`light-beam hero-light-beam-intro light-beam-${i + 1} pointer-events-none absolute -top-20 left-1/2 h-[130dvh] w-[800px] origin-[50%_0%] -translate-x-1/2 bg-light-beam-conic blur-[20px]`}
           ></div>
         ))}
       </div>
@@ -59,7 +59,7 @@ export default function LightBeams() {
         {Array.from(Array(3)).map((_, i) => (
           <div
             key={i}
-            className={`light-beam hero-light-beam-intro light-beam-${i + 1} bg-light-beam-conic pointer-events-none absolute -top-20 left-1/2 h-[130dvh] w-[800px] origin-[50%_0%] -translate-x-1/2 blur-[20px]`}
+            className={`light-beam hero-light-beam-intro light-beam-${i + 1} pointer-events-none absolute -top-20 left-1/2 h-[130dvh] w-[800px] origin-[50%_0%] -translate-x-1/2 bg-light-beam-conic blur-[20px]`}
           ></div>
         ))}
       </div>
