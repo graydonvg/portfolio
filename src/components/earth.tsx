@@ -8,15 +8,23 @@ import { motion as motion3d } from "framer-motion-3d";
 
 export default function Earth() {
   const container = useRef(null);
-  const scene = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["65dvh", "-30dvh"]);
-  const rotationX = useTransform(scrollYProgress, [0, 1], [-0, -1]);
-  const rotationY = useTransform(scrollYProgress, [0, 1], [4, 5]);
+  const initialRotationX = 0;
+  const initialRotationY = 4;
+  const rotationX = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [initialRotationX, -1],
+  );
+  const rotationY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [initialRotationY, 5],
+  );
 
   const [map, normalMap, aoMap] = useLoader(TextureLoader, [
     "/earth/color.jpg",
@@ -27,20 +35,25 @@ export default function Earth() {
   return (
     <motion2d.div
       ref={container}
-      initial={{ y: "100dvh", opacity: 0 }}
-      whileInView={{ y: "65dvh", opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{
-        duration: 0.5,
-      }}
-      style={{ y }}
       className="pointer-events-none absolute -z-20 h-full w-full"
     >
-      <Canvas ref={scene}>
+      <Canvas>
         <ambientLight intensity={1} />
         <directionalLight intensity={10} position={[0, 1, 0.25]} />
         <motion3d.mesh
-          scale={2.5}
+          initial={{
+            scale: 0,
+            rotateX: initialRotationX + 1,
+            rotateY: initialRotationY - 3,
+          }}
+          animate={{
+            scale: 2.5,
+            rotateX: initialRotationX,
+            rotateY: initialRotationY,
+          }}
+          transition={{
+            duration: 2,
+          }}
           rotation-x={rotationX}
           rotation-y={rotationY}
         >

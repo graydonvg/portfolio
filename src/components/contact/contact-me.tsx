@@ -28,7 +28,7 @@ export default function ContactMe() {
               href={LINKS.GITHUB}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-400 visited:text-purple-400 hover:text-blue-500 hover:underline visited:hover:text-purple-500"
+              className="text-blue-400 hover:text-blue-500 hover:underline"
             >
               Github
             </Link>{" "}
@@ -37,7 +37,7 @@ export default function ContactMe() {
               href={LINKS.LINKEDIN}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-400 visited:text-purple-400 hover:text-blue-500 hover:underline visited:hover:text-purple-500"
+              className="text-blue-400 hover:text-blue-500 hover:underline"
             >
               LinkedIn
             </Link>

@@ -20,7 +20,7 @@ export default function Home() {
       <div className="relative z-10 bg-slate-950">
         <header className="relative flex min-h-dvh flex-col items-center justify-center overflow-hidden px-4 py-[122px] text-slate-300">
           <Navbar />
-          <Hero />
+          {Earth && <Hero />}
           <Earth />
         </header>
         <main>
