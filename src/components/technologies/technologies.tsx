@@ -5,7 +5,7 @@ import Technology from "./technology";
 export default function Technologies() {
   return (
     <div
-      id="techSection"
+      id="tech-section"
       className="grid grid-cols-1 gap-16 px-4 md:px-14 lg:grid-cols-2 xl:px-0"
     >
       <div className="flex flex-col items-start justify-center text-center lg:text-start">

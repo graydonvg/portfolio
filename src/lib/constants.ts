@@ -1,4 +1,4 @@
-import projectImage from "/public/mystore-mockup.jpg";
+import projectImage from "/public/mockups/mystore-mockup.jpg";
 
 export const EMAIL_ADDRESS = "graydonvg@gmail.com";
 

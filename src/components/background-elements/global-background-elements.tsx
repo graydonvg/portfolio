@@ -1,14 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import LightBeams from "./light-beams";
-import ShootingStars from "./shooting-stars/shooting-stars";
-import StarsBackground from "./stars-background";
+import ShootingStars from "./elements/shooting-stars/shooting-stars";
+import StarsBackground from "./elements/stars-background";
 
-export default function BackgroundElements() {
+export default function GlobalBackgroundElements() {
   const techSection =
     typeof window !== "undefined"
-      ? document.getElementById("techSection")
+      ? document.getElementById("tech-section")
       : null;
   const [distanceFromTop, setDistanceFromTop] = useState("100%");
   const [isInView, setIsInView] = useState(false);
@@ -63,17 +62,14 @@ export default function BackgroundElements() {
   }, [techSection, isInView]);
 
   return (
-    <>
-      <LightBeams />
-      <div
-        style={{
-          clipPath: `inset(0 0 calc(100% - ${distanceFromTop}) 0`,
-        }}
-        className="pointer-events-none fixed inset-0 -z-50 h-full w-full overflow-hidden"
-      >
-        <StarsBackground />
-        <ShootingStars />
-      </div>
-    </>
+    <div
+      style={{
+        clipPath: `inset(0 0 calc(100% - ${distanceFromTop}) 0)`,
+      }}
+      className="pointer-events-none fixed inset-0 -z-50 h-full w-full overflow-hidden"
+    >
+      <StarsBackground />
+      <ShootingStars />
+    </div>
   );
 }

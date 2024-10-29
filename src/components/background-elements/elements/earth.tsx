@@ -27,19 +27,34 @@ export default function Earth() {
   );
 
   const [map, normalMap, aoMap] = useLoader(TextureLoader, [
-    "/earth/color.jpg",
-    "/earth/normal.png",
-    "/earth/occlusion.jpg",
+    "/earth/map.jpg",
+    "/earth/normalMap.png",
+    "/earth/aoMap.jpg",
   ]);
+
+  function getCSSVariable(name: string) {
+    return getComputedStyle(document.documentElement)
+      .getPropertyValue(name)
+      .trim()
+      .split(" ")
+      .join(", ");
+  }
+
+  const directionalLightColor = `hsl(${getCSSVariable("--directional-light")})`;
 
   return (
     <motion2d.div
       ref={container}
-      className="pointer-events-none absolute -z-20 h-full w-full"
+      className="pointer-events-none absolute inset-0 -z-30 h-full w-full"
     >
       <Canvas>
-        <ambientLight intensity={1} />
-        <directionalLight intensity={10} position={[0, 1, 0.25]} />
+        <ambientLight intensity={0.5} />
+        <directionalLight
+          intensity={10}
+          position={[0, 1, 0.25]}
+          color={directionalLightColor}
+          castShadow
+        />
         <motion3d.mesh
           initial={{
             scale: 0,

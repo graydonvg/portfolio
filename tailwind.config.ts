@@ -66,7 +66,7 @@ const config: Config = {
         "shooting-star-tail":
           "linear-gradient(90deg, hsl(var(--star-light) / 0.5), transparent)",
         "light-beam-conic":
-          "conic-gradient(from 0deg at 50% 40px, transparent 47%, hsl(var(--light-beam) / 0.2) 49%, hsl(var(--light-beam) / 0.3) 50%, hsl(var(--light-beam) / 0.2) 51%, transparent 53%)",
+          "conic-gradient(from 0deg at 50% 40px, transparent 47%, hsl(var(--primary) / 0.2) 49%, hsl(var(--primary) / 0.3) 50%, hsl(var(--primary) / 0.2) 51%, transparent 53%)",
       },
       screens: {
         // xs: "420px",

@@ -40,7 +40,7 @@ function createShootingStar() {
   const maxTravelDistance = Math.sqrt(
     Math.pow(window.innerWidth, 2) + Math.pow(window.innerHeight, 2),
   );
-  // Animation duration increases as the viewport increases increases to prevent the shooting star from traveling too fast
+  // Animation duration increases as the viewport increases to prevent the shooting star from traveling too fast
   const animationDuration = 2.5 + maxTravelDistance * 0.0007;
 
   return {

@@ -42,7 +42,7 @@ export default function LightBeams() {
       transition={{
         duration: 0.3,
       }}
-      className="pointer-events-none absolute inset-0 -z-30 h-full w-full overflow-hidden"
+      className="pointer-events-none absolute inset-0 -z-40 h-full w-full overflow-hidden"
     >
       {/* Light beams for larger screens */}
       <div className="hidden sm:flex">
