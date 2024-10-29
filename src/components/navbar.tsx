@@ -4,15 +4,9 @@ import { Button } from "./ui/button";
 import Link from "next/link";
 import { LINKS } from "@/lib/constants";
 import { motion } from "framer-motion";
+import { scrollToContactForm } from "@/lib/utils";
 
 export default function Navbar() {
-  function scrollToContactForm() {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: "smooth",
-    });
-  }
-
   return (
     <motion.nav
       initial={{ y: -100, opacity: 0 }}

@@ -1,7 +1,10 @@
+"use client";
+
 import ContactForm from "./contact-form";
 import TypographyP from "../ui/typography/p";
 import Link from "next/link";
 import { EMAIL_ADDRESS, LINKS } from "@/lib/constants";
+import { scrollToContactForm } from "@/lib/utils";
 
 export default function ContactMe() {
   return (
@@ -20,6 +23,7 @@ export default function ContactMe() {
             <Link
               href={`mailto:${EMAIL_ADDRESS}`}
               className="text-blue-400 hover:text-blue-500 hover:underline"
+              onFocus={scrollToContactForm}
             >
               {EMAIL_ADDRESS}
             </Link>{" "}
@@ -29,6 +33,7 @@ export default function ContactMe() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-400 hover:text-blue-500 hover:underline"
+              onFocus={scrollToContactForm}
             >
               Github
             </Link>{" "}
@@ -38,6 +43,7 @@ export default function ContactMe() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-400 hover:text-blue-500 hover:underline"
+              onFocus={scrollToContactForm}
             >
               LinkedIn
             </Link>

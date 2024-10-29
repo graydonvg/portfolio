@@ -8,3 +8,10 @@ export function cn(...inputs: ClassValue[]) {
 export async function wait(delay: number) {
   return new Promise((resolve) => setTimeout(resolve, delay));
 }
+
+export function scrollToContactForm() {
+  window.scrollTo({
+    top: document.documentElement.scrollHeight,
+    behavior: "smooth",
+  });
+}
