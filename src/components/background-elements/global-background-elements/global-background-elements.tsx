@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ShootingStars from "./elements/shooting-stars/shooting-stars";
 import StarsBackground from "./elements/stars-background";
+import ShootingStars from "./elements/shooting-stars/shooting-stars";
 
 export default function GlobalBackgroundElements() {
   const techSection =

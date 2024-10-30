@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode, useEffect } from "react";
-import Lenis from "lenis";
+import { ReactLenis } from "lenis/react";
 
 type Props = {
   children: ReactNode;
@@ -10,16 +10,7 @@ type Props = {
 export default function SmoothScroll({ children }: Props) {
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    const lenis = new Lenis();
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
   }, []);
 
-  return children;
+  return <ReactLenis root>{children}</ReactLenis>;
 }

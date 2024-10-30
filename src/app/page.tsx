@@ -4,31 +4,15 @@ import Projects from "@/components/projects/projects";
 import Technologies from "@/components/technologies/technologies";
 import Section from "@/components/section";
 import FixedFooter from "@/components/fixed-footer";
-import Navbar from "@/components/navbar";
-import Hero from "@/components/hero";
 import SmoothScroll from "@/components/smooth-scroll";
-import LightBeams from "@/components/background-elements/header-background-elements/light-beams";
 import GlobalBackgroundElements from "@/components/background-elements/global-background-elements/global-background-elements";
-import dynamic from "next/dynamic";
-
-const Earth = dynamic(
-  () =>
-    import("@/components/background-elements/header-background-elements/earth"),
-  {
-    ssr: false,
-  },
-);
+import Header from "@/components/header";
 
 export default function Home() {
   return (
     <SmoothScroll>
       <div className="relative z-10 bg-spaceBackground">
-        <header className="relative flex min-h-dvh flex-col items-center justify-center overflow-hidden px-4 py-[122px]">
-          <Navbar />
-          <LightBeams />
-          <Earth />
-          <Hero />
-        </header>
+        <Header />
         <main>
           <Section className="bg-background">
             <AboutMe />

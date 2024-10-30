@@ -101,10 +101,13 @@ export default function ContactForm() {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-lg">Name</FormLabel>
+                <FormLabel htmlFor="name" className="text-lg">
+                  Name
+                </FormLabel>
                 <FormControl>
                   <Input
                     {...field}
+                    id="name"
                     type="text"
                     placeholder="John Doe *"
                     autoComplete="name"
@@ -124,10 +127,13 @@ export default function ContactForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-lg">Email</FormLabel>
+                <FormLabel htmlFor="email" className="text-lg">
+                  Email
+                </FormLabel>
                 <FormControl>
                   <Input
                     {...field}
+                    id="email"
                     type="text"
                     placeholder="john@doe.com *"
                     autoComplete="email"
@@ -147,10 +153,13 @@ export default function ContactForm() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-lg">Message</FormLabel>
+                <FormLabel htmlFor="message" className="text-lg">
+                  Message
+                </FormLabel>
                 <FormControl>
                   <Textarea
                     {...field}
+                    id="message"
                     placeholder="Your message *"
                     className={cn("h-[300px] resize-none text-lg", {
                       "outline outline-red-500 focus:ring-red-500":

@@ -49,7 +49,7 @@ export default function Earth() {
         <ambientLight intensity={0.5} />
         <directionalLight
           intensity={10}
-          position={[0, 1, 0.25]}
+          position={[0, 1, 0.1]}
           color={directionalLightColor}
           castShadow
         />
@@ -60,7 +60,7 @@ export default function Earth() {
             rotateY: INITIAL_ROTATION_Y - 3,
           }}
           animate={{
-            scale: 2,
+            scale: 1.9,
             rotateX: INITIAL_ROTATION_X,
             rotateY: INITIAL_ROTATION_Y,
           }}
