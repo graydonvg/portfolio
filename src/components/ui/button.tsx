@@ -60,7 +60,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           <div
             id="background"
             className={cn("absolute inset-0 m-[1px] rounded-full bg-primary", {
-              "bg-secondary": variant === "secondary" || variant === "outlined",
+              "bg-secondary": variant === "secondary",
+              "bg-transparent": variant === "outlined",
               "border border-foreground": variant === "outlined",
             })}
           >

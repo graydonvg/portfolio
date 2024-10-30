@@ -16,7 +16,7 @@ export default function Navbar() {
       }}
       className="absolute left-0 top-0 hidden w-full items-center justify-between px-20 py-8 lg:flex"
     >
-      <span className="text-xl/[1.875rem]">Graydon von Gossler</span>
+      <span className="text-xl/[1.875rem] text-muted">Graydon von Gossler</span>
       <div className="flex gap-4">
         <Link
           tabIndex={-1}
