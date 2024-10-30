@@ -107,6 +107,7 @@ export default function ContactForm() {
                     {...field}
                     type="text"
                     placeholder="John Doe *"
+                    autoComplete="name"
                     className={cn("text-lg", {
                       "outline outline-red-500 focus:ring-red-500":
                         form.formState.errors.name &&
@@ -129,6 +130,7 @@ export default function ContactForm() {
                     {...field}
                     type="text"
                     placeholder="john@doe.com *"
+                    autoComplete="email"
                     className={cn("text-lg", {
                       "outline outline-red-500 focus:ring-red-500":
                         form.formState.errors.email &&
