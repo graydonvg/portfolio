@@ -1,8 +1,7 @@
-import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
-
 import { cn } from "@/lib/utils";
+import { ButtonHTMLAttributes, forwardRef } from "react";
 
 const buttonVariants = cva(
   "inline-flex relative items-center justify-center whitespace-nowrap ring-offset-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-base group rounded-full before:absolute before:top-0 before:left-0 before:w-full before:h-full after:absolute after:top-0 after:left-0 after:w-full after:h-full",
@@ -25,14 +24,14 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   showBorderOnHover?: boolean;
   asChild?: boolean;
   children: string;
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       className,

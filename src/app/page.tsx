@@ -8,8 +8,8 @@ import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
 import SmoothScroll from "@/components/smooth-scroll";
 import GlobalBackgroundElements from "@/components/global-background-elements/global-background-elements";
-import dynamic from "next/dynamic";
 import LightBeams from "@/components/global-background-elements/elements/light-beams";
+import dynamic from "next/dynamic";
 
 const Earth = dynamic(
   () => import("@/components/global-background-elements/elements/earth"),
@@ -21,7 +21,7 @@ const Earth = dynamic(
 export default function Home() {
   return (
     <SmoothScroll>
-      <div className="bg-spaceBackground relative z-10">
+      <div className="relative z-10 bg-spaceBackground">
         <header className="relative flex min-h-dvh flex-col items-center justify-center overflow-hidden px-4 py-[122px]">
           <Navbar />
           <LightBeams />
