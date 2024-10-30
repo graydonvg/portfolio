@@ -53,7 +53,7 @@ export default function ProjectCard({ project, isEven }: Props) {
           alt={`${project.title} mockup`}
           className="rounded-md"
           priority
-          sizes="750px"
+          sizes="(min-width: 1280px) 576px, (min-width: 768px) 526px, calc(100vw - 64px)"
         />
       </div>
       <div
