@@ -26,9 +26,9 @@ export default function Earth() {
     [INITIAL_ROTATION_Y, 5],
   );
   const [map, normalMap, aoMap] = useLoader(TextureLoader, [
-    "/earth/map.jpg",
-    "/earth/normalMap.png",
-    "/earth/aoMap.jpg",
+    "/earth/map.webp",
+    "/earth/normalMap.webp",
+    "/earth/aoMap.webp",
   ]);
   const directionalLightColor = `hsl(${getCSSVariable("--directional-light")})`;
 
