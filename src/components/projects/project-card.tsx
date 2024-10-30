@@ -50,9 +50,10 @@ export default function ProjectCard({ project, isEven }: Props) {
       >
         <Image
           src={project.image}
-          alt="Project screenshot"
+          alt={`${project.title} mockup`}
           className="rounded-md"
           priority
+          sizes="750px"
         />
       </div>
       <div
