@@ -20,13 +20,13 @@ export default function Home() {
           <HeaderBackgroundElements />
         </header>
         <main>
-          <Section className="border-b-4 border-t-4 border-primary bg-background">
+          <Section className="bg-background">
             <AboutMe />
           </Section>
           <Section>
             <Projects />
           </Section>
-          <Section className="border-b-4 border-t-4 border-primary bg-background shadow-[0_60px_50px_rgba(0,0,0,0.75)]">
+          <Section className="bg-background shadow-[0_60px_50px_rgba(0,0,0,0.75)]">
             <Technologies />
           </Section>
         </main>
