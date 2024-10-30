@@ -7,12 +7,13 @@ import FixedFooter from "@/components/fixed-footer";
 import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
 import SmoothScroll from "@/components/smooth-scroll";
-import GlobalBackgroundElements from "@/components/global-background-elements/global-background-elements";
-import LightBeams from "@/components/global-background-elements/elements/light-beams";
+import LightBeams from "@/components/background-elements/header-background-elements/light-beams";
+import GlobalBackgroundElements from "@/components/background-elements/global-background-elements/global-background-elements";
 import dynamic from "next/dynamic";
 
 const Earth = dynamic(
-  () => import("@/components/global-background-elements/elements/earth"),
+  () =>
+    import("@/components/background-elements/header-background-elements/earth"),
   {
     ssr: false,
   },

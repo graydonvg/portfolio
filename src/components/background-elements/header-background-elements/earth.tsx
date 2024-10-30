@@ -60,7 +60,7 @@ export default function Earth() {
             rotateY: INITIAL_ROTATION_Y - 3,
           }}
           animate={{
-            scale: 2.5,
+            scale: 2,
             rotateX: INITIAL_ROTATION_X,
             rotateY: INITIAL_ROTATION_Y,
           }}
