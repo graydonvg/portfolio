@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: dark;
+}
+
 .pin-spacer {
   width: 100% !important;
 }
@@ -11,6 +15,7 @@
     text-wrap: balance;
   }
 }
+
 @layer base {
   :root {
     --space-background: 240 10% 3.9%;
@@ -39,12 +44,11 @@
     /* for --directional-light, if --primary is violet-700, use violet-300 */
     --directional-light: 229.7 93.5% 81.8%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background font-inter text-foreground;
   }
