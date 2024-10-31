@@ -4,6 +4,7 @@ import { wait } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import ShootingStar from "./shooting-star";
 import { ShootingStarType } from "@/lib/types";
+import { TOTAL_TYPEWRITER_DURATION } from "@/lib/constants";
 
 function calculateRandomAngleTowardsCenter(x: number, y: number) {
   const viewportWidth = window.innerWidth;
@@ -61,7 +62,7 @@ export default function ShootingStars() {
 
   useEffect(() => {
     async function addShootingStar() {
-      await wait(2000);
+      await wait(TOTAL_TYPEWRITER_DURATION + 2000);
       setShootingStars([createShootingStar()]);
     }
 

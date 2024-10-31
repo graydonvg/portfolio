@@ -3,19 +3,11 @@
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { LINKS } from "@/lib/constants";
-import { motion } from "framer-motion";
 import { scrollToContactForm } from "@/lib/utils";
 
 export default function Navbar() {
   return (
-    <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{
-        duration: 0.5,
-      }}
-      className="absolute left-0 top-0 hidden w-full items-center justify-between px-20 py-8 lg:flex"
-    >
+    <nav className="absolute left-0 top-0 hidden w-full items-center justify-between px-20 py-8 lg:flex">
       <span className="text-xl/[1.875rem] text-muted">Graydon von Gossler</span>
       <div className="flex gap-4">
         <Link
@@ -36,6 +28,6 @@ export default function Navbar() {
         </Link>
         <Button onClick={scrollToContactForm}>Contact me</Button>
       </div>
-    </motion.nav>
+    </nav>
   );
 }

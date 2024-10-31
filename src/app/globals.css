@@ -6,6 +6,11 @@
   color-scheme: dark;
 }
 
+body {
+  /* page transition and nav drawer toggle set this to visible */
+  overflow: hidden;
+}
+
 .pin-spacer {
   width: 100% !important;
 }
@@ -88,7 +93,7 @@
   animation:
     light-beam-pulsate calc(var(--duration, 5s)) linear infinite
       var(--delay, 0s) alternate,
-    light-beam-transform 5s forwards;
+    light-beam-transform 5s 4.5s forwards;
 }
 
 .hero-light-beam-pulsate {
@@ -173,5 +178,61 @@
     opacity: 0;
     transform: rotate(var(--shooting-star-rotation))
       translateX(var(--shooting-star-travel-distance));
+  }
+}
+
+.typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.5rem solid white; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation:
+    typing 1.2s steps(40, end),
+    blink-caret 0.75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+.typewriter {
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.5rem solid;
+  animation:
+    typing 1s steps(22),
+    blink 0.5s step-end infinite alternate;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
   }
 }

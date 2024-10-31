@@ -1,3 +1,5 @@
+"use client";
+
 import dynamic from "next/dynamic";
 import LightBeams from "./background-elements/header-background-elements/light-beams";
 import Hero from "./hero";

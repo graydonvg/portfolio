@@ -3,6 +3,11 @@
 import TypographyH1 from "./ui/typography/h1";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
+import {
+  PAGE_TRANSITION_DELAY,
+  PAGE_TRANSITION_DURATION,
+  TOTAL_TYPEWRITER_DURATION,
+} from "@/lib/constants";
 
 export default function Hero() {
   return (
@@ -11,7 +16,11 @@ export default function Hero() {
       animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
       transition={{
         duration: 0.5,
-        delay: 2,
+        delay:
+          (TOTAL_TYPEWRITER_DURATION +
+            PAGE_TRANSITION_DELAY +
+            PAGE_TRANSITION_DURATION) /
+          1000,
       }}
       className="flex flex-col items-center justify-center gap-14"
     >

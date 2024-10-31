@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import PageTransition from "@/components/page-transition";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({
         suppressHydrationWarning
         className={cn("antialiased", inter.variable)}
       >
+        <PageTransition />
         {children}
       </body>
     </html>

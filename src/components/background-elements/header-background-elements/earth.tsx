@@ -5,6 +5,10 @@ import { useRef } from "react";
 import { useScroll, useTransform, motion as motion2d } from "framer-motion";
 import { TextureLoader } from "three";
 import { motion as motion3d } from "framer-motion-3d";
+import {
+  PAGE_TRANSITION_DELAY,
+  TOTAL_TYPEWRITER_DURATION,
+} from "@/lib/constants";
 
 const INITIAL_ROTATION_X = 0;
 const INITIAL_ROTATION_Y = 4;
@@ -25,6 +29,7 @@ export default function Earth() {
     [0, 1],
     [INITIAL_ROTATION_Y, 5],
   );
+
   const [map, normalMap, aoMap] = useLoader(TextureLoader, [
     "/earth/map.webp",
     "/earth/normalMap.webp",
@@ -66,6 +71,7 @@ export default function Earth() {
           }}
           transition={{
             duration: 2,
+            delay: (TOTAL_TYPEWRITER_DURATION + PAGE_TRANSITION_DELAY) / 1000,
           }}
           rotation-x={rotationX}
           rotation-y={rotationY}

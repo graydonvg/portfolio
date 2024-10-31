@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { TOTAL_TYPEWRITER_DURATION } from "@/lib/constants";
 
 export default function LightBeams() {
   useEffect(() => {
@@ -41,6 +42,7 @@ export default function LightBeams() {
       animate={{ opacity: 1 }}
       transition={{
         duration: 0.3,
+        delay: TOTAL_TYPEWRITER_DURATION / 1000,
       }}
       className="pointer-events-none absolute inset-0 -z-40 h-full w-full overflow-hidden"
     >

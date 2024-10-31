@@ -37,8 +37,6 @@ export function NavDrawer() {
   const lenis = useLenis();
 
   useEffect(() => {
-    const originalOverflow = document.body.style.overflow;
-
     if (isOpen) {
       lenis?.stop();
       document.body.style.overflow = "hidden";
@@ -46,12 +44,12 @@ export function NavDrawer() {
 
     if (!isOpen) {
       lenis?.start();
-      document.body.style.overflow = originalOverflow;
+      document.body.style.overflow = "visible";
     }
 
     return () => {
       lenis?.start();
-      document.body.style.overflow = originalOverflow;
+      document.body.style.overflow = "visible";
     };
   }, [isOpen, lenis]);
 
