@@ -49,7 +49,7 @@ export default function FixedFooter({ children }: Props) {
     };
   });
   return (
-    <footer ref={footerRef} className="bg-spaceBackground !w-full !max-w-full">
+    <footer ref={footerRef} className="!w-full !max-w-full bg-spaceBackground">
       {children}
     </footer>
   );

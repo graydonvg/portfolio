@@ -27,13 +27,9 @@ export default function ProjectCard({ project, isEven }: Props) {
   const cardRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
-    offset: ["start end", "end start"],
+    offset: ["start end", "start center"],
   });
-  const scale = useTransform(
-    scrollYProgress,
-    [0, 0.3, 0.7, 1],
-    [0.8, 1, 1, 0.8],
-  );
+  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
 
   return (
     <MotionCard
