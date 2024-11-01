@@ -38,6 +38,25 @@ export default function LightBeams() {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    function stopIntroOnResize() {
+      const beams = document.querySelectorAll(".hero-light-beam-intro");
+
+      if (beams.length === 0) return;
+
+      // Remove the transform animation and keep only the pulsate animation
+      // This prevents the beams from all pointing down if the viewport is resized before the intro animation completes
+      beams.forEach((beam) => {
+        beam.classList.add("hero-light-beam-pulsate");
+        beam.classList.remove("hero-light-beam-intro");
+      });
+    }
+
+    window.addEventListener("resize", stopIntroOnResize);
+
+    return () => window.removeEventListener("resize", stopIntroOnResize);
+  }, []);
+
   return (
     <div
       style={

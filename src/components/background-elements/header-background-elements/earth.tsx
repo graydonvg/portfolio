@@ -17,9 +17,9 @@ export default function Earth() {
   const earthIntroDelay =
     (TOTAL_TYPEWRITER_DURATION_IN_MS + LOADING_SCREEN_TRANSITION_DELAY_IN_MS) /
     1000;
-  const container = useRef(null);
+  const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
-    target: container,
+    target: containerRef,
     offset: ["start start", "end start"],
   });
   const rotationX = useTransform(
@@ -50,7 +50,7 @@ export default function Earth() {
 
   return (
     <motion2d.div
-      ref={container}
+      ref={containerRef}
       className="pointer-events-none absolute inset-0 -z-30 h-full w-full"
     >
       <Canvas>

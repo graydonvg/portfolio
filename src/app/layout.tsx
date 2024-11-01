@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import LoadingScreen from "@/components/loading-screen";
+import LoadingScreen from "@/components/loading-screen/loading-screen";
 import { ReactLenis } from "lenis/react";
 import Providers from "./providers";
 

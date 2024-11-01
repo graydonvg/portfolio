@@ -1,15 +1,15 @@
 "use client";
 
-import { CSSProperties, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLenis } from "lenis/react";
 import {
   LOADING_SCREEN_TRANSITION_DELAY_IN_MS,
   LOADING_SCREEN_TRANSITION_DURATION_IN_MS,
   TOTAL_LOADING_SCREEN_TRANSITION_DURATION_IN_MS,
-  TYPEWRITER_DURATION_IN_MS,
 } from "@/lib/constants";
 import useLoadingScreenStatus from "@/hooks/use-loading-screen-status";
 import { useEarthLoading } from "@/context/earth-loading-context";
+import Typewriter from "./typewriter";
 
 export default function LoadingScreen() {
   const { isEarthLoading, loadingProgress } = useEarthLoading();
@@ -69,52 +69,18 @@ export default function LoadingScreen() {
   if (!isLoadingScreenVisible) return null;
 
   const text = [
-    `Loading Earth... ${loadingProgress.toFixed(2)}%`,
+    `Loading Earth... ${loadingProgress.toFixed(0)}%`,
     "Hello, World!",
   ];
 
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-50 h-full w-full bg-black"
+      className="pointer-events-none fixed inset-0 z-50 flex h-full w-full flex-col items-center justify-center bg-black"
       style={{
         mask: `radial-gradient(circle, transparent ${maskTransparency}%, black 0%)`,
       }}
     >
       <Typewriter textArray={text} isEarthLoading={isEarthLoading} />
-    </div>
-  );
-}
-
-function Typewriter({
-  textArray,
-  isEarthLoading,
-}: {
-  textArray: string[];
-  isEarthLoading: boolean;
-}) {
-  const typewriterDuration = TYPEWRITER_DURATION_IN_MS / 1000;
-  const [textIndex, setTextIndex] = useState(0);
-
-  useEffect(() => {
-    if (isEarthLoading || textIndex === textArray.length - 1) return;
-
-    setTextIndex((prevIndex) => prevIndex + 1);
-  }, [textIndex, textArray.length, isEarthLoading]);
-
-  return (
-    <div className="fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 text-lg text-muted sm:text-3xl">
-      {/* Setting the key to textIndex forces React to treat the p element as a new element on each text change, which effectively resets the CSS animation. */}
-      <p
-        key={textIndex}
-        className="typewriter"
-        style={
-          {
-            "--typewriter-duration": `${typewriterDuration}s`,
-          } as CSSProperties
-        }
-      >
-        {textArray[textIndex]}
-      </p>
     </div>
   );
 }

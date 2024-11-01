@@ -4,6 +4,8 @@
 
 :root {
   color-scheme: dark;
+  /* position relative to remove framer motion warning */
+  position: relative;
 }
 
 body {
@@ -12,6 +14,7 @@ body {
 }
 
 .pin-spacer {
+  /* make sure the gsap spacer around the footer is always 100% wide */
   width: 100% !important;
 }
 
@@ -55,7 +58,7 @@ body {
   }
 
   body {
-    @apply bg-background font-inter text-foreground;
+    @apply font-inter text-foreground;
   }
 }
 
@@ -182,39 +185,6 @@ body {
 }
 
 .typewriter {
-  overflow: hidden;
-  border-right: 0.5rem solid white;
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: 0.15em;
-  animation:
-    typing 1.2s steps(40, end),
-    blink-caret 0.75s step-end infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: white;
-  }
-}
-
-.typewriter {
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 0.5rem solid;
   animation:
     typing var(--typewriter-duration, 1s) steps(22),
     blink 0.5s step-end infinite alternate;
