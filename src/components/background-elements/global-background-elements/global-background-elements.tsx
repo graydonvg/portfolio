@@ -3,8 +3,10 @@
 import { useEffect, useState } from "react";
 import StarsBackground from "./elements/stars-background";
 import ShootingStars from "./elements/shooting-stars/shooting-stars";
+import { useEarthLoading } from "@/context/earth-loading-context";
 
 export default function GlobalBackgroundElements() {
+  const { isEarthLoading } = useEarthLoading();
   const techSection =
     typeof window !== "undefined"
       ? document.getElementById("tech-section")
@@ -68,8 +70,12 @@ export default function GlobalBackgroundElements() {
       }}
       className="pointer-events-none fixed inset-0 -z-50 h-full w-full overflow-hidden"
     >
-      <StarsBackground />
-      <ShootingStars />
+      {!isEarthLoading && (
+        <>
+          <StarsBackground />
+          <ShootingStars />
+        </>
+      )}
     </div>
   );
 }

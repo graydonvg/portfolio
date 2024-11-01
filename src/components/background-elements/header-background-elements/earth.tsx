@@ -6,14 +6,17 @@ import { useScroll, useTransform, motion as motion2d } from "framer-motion";
 import { TextureLoader } from "three";
 import { motion as motion3d } from "framer-motion-3d";
 import {
-  PAGE_TRANSITION_DELAY,
-  TOTAL_TYPEWRITER_DURATION,
+  LOADING_SCREEN_TRANSITION_DELAY_IN_MS,
+  TOTAL_TYPEWRITER_DURATION_IN_MS,
 } from "@/lib/constants";
 
 const INITIAL_ROTATION_X = 0;
 const INITIAL_ROTATION_Y = 4;
 
 export default function Earth() {
+  const earthIntroDelay =
+    (TOTAL_TYPEWRITER_DURATION_IN_MS + LOADING_SCREEN_TRANSITION_DELAY_IN_MS) /
+    1000;
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
@@ -71,7 +74,7 @@ export default function Earth() {
           }}
           transition={{
             duration: 2,
-            delay: (TOTAL_TYPEWRITER_DURATION + PAGE_TRANSITION_DELAY) / 1000,
+            delay: earthIntroDelay,
           }}
           rotation-x={rotationX}
           rotation-y={rotationY}

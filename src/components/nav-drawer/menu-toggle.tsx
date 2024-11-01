@@ -5,10 +5,10 @@ function Path(props: SVGMotionProps<SVGPathElement>) {
 }
 
 type MenuToggleProps = {
-  toggleMenu: () => void;
+  onMenuClick: () => void;
 };
 
-export function MenuToggle({ toggleMenu }: MenuToggleProps) {
+export function MenuToggle({ onMenuClick }: MenuToggleProps) {
   return (
     <motion.button
       initial={{ opacity: 0 }}
@@ -17,7 +17,7 @@ export function MenuToggle({ toggleMenu }: MenuToggleProps) {
         duration: 0.3,
       }}
       className="absolute left-4 top-7 z-50 cursor-pointer select-none rounded-full border-none outline-none lg:hidden"
-      onClick={toggleMenu}
+      onClick={onMenuClick}
       aria-label="navigation menu button"
     >
       <svg

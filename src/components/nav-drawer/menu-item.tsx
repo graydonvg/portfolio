@@ -27,12 +27,12 @@ type Props = {
     link?: string;
     scrollTo?: () => void;
   };
-  toggleMenu: () => void;
+  onMenuClick: () => void;
 };
 
-export function MenuItem({ option, toggleMenu }: Props) {
+export function MenuItem({ option, onMenuClick }: Props) {
   async function handleScrollTo() {
-    toggleMenu();
+    onMenuClick();
     await wait(300);
     option.scrollTo?.();
   }
@@ -45,7 +45,7 @@ export function MenuItem({ option, toggleMenu }: Props) {
       className="z-50 list-none pl-2 text-2xl text-spaceForeground"
     >
       {option.link ? (
-        <Link href={option.link} onClick={toggleMenu} target="_blank">
+        <Link href={option.link} onClick={onMenuClick} target="_blank">
           {option.label}
         </Link>
       ) : (

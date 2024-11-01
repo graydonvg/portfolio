@@ -1,6 +1,6 @@
-"use client";
+// "use client";
 
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import { ReactLenis } from "lenis/react";
 
 type Props = {
@@ -8,9 +8,5 @@ type Props = {
 };
 
 export default function SmoothScroll({ children }: Props) {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return <ReactLenis root>{children}</ReactLenis>;
 }

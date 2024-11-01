@@ -12,7 +12,7 @@ const variants = {
 };
 
 type Props = {
-  toggleMenu: () => void;
+  onMenuClick: () => void;
 };
 
 const NAV_OPTIONS = [
@@ -30,7 +30,7 @@ const NAV_OPTIONS = [
   },
 ];
 
-export function Navigation({ toggleMenu }: Props) {
+export function Navigation({ onMenuClick }: Props) {
   return (
     <nav className="fixed left-0 top-[120px] z-40 w-[300px] px-4">
       <motion.ul variants={variants} className="space-y-6">
@@ -38,7 +38,7 @@ export function Navigation({ toggleMenu }: Props) {
           <MenuItem
             key={option.label}
             option={option}
-            toggleMenu={toggleMenu}
+            onMenuClick={onMenuClick}
           />
         ))}
       </motion.ul>

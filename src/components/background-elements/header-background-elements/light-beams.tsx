@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect } from "react";
-import { motion } from "framer-motion";
-import { TOTAL_TYPEWRITER_DURATION } from "@/lib/constants";
+import { CSSProperties, useEffect } from "react";
+import { LOADING_SCREEN_TRANSITION_DELAY_IN_MS } from "@/lib/constants";
 
 export default function LightBeams() {
+  const lightBeamIntroAnimationDelay =
+    LOADING_SCREEN_TRANSITION_DELAY_IN_MS / 1000;
+
   useEffect(() => {
     const beams = document.querySelectorAll(".light-beam");
 
@@ -22,7 +24,7 @@ export default function LightBeams() {
     };
 
     const transformDuration =
-      beams.length > 0 ? getAnimationDuration(beams[0]) : 5700;
+      beams.length > 0 ? getAnimationDuration(beams[0]) : 7000;
 
     const timer = setTimeout(() => {
       beams.forEach((beam) => {
@@ -37,13 +39,12 @@ export default function LightBeams() {
   }, []);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        duration: 0.3,
-        delay: TOTAL_TYPEWRITER_DURATION / 1000,
-      }}
+    <div
+      style={
+        {
+          "--light-beam-intro-delay": `${lightBeamIntroAnimationDelay}s`,
+        } as CSSProperties
+      }
       className="pointer-events-none absolute inset-0 -z-40 h-full w-full overflow-hidden"
     >
       {/* Light beams for larger screens */}
@@ -65,6 +66,6 @@ export default function LightBeams() {
           ></div>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 }

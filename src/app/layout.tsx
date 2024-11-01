@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import PageTransition from "@/components/page-transition";
+import LoadingScreen from "@/components/loading-screen";
+import { ReactLenis } from "lenis/react";
+import Providers from "./providers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,8 +27,10 @@ export default function RootLayout({
         suppressHydrationWarning
         className={cn("antialiased", inter.variable)}
       >
-        <PageTransition />
-        {children}
+        <Providers>
+          <LoadingScreen />
+          <ReactLenis root>{children}</ReactLenis>
+        </Providers>
       </body>
     </html>
   );

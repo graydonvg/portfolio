@@ -6,6 +6,9 @@ import { useEffect, useState } from "react";
 import { MenuToggle } from "./menu-toggle";
 import { Navigation } from "./navigation";
 import { useLenis } from "lenis/react";
+import useLoadingScreenStatus from "@/hooks/use-loading-screen-status";
+import { useEarthLoading } from "@/context/earth-loading-context";
+import { TOTAL_LOADING_SCREEN_TRANSITION_DURATION_IN_MS } from "@/lib/constants";
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -28,15 +31,23 @@ const sidebar = {
 };
 
 export function NavDrawer() {
+  const lenis = useLenis();
   const [isOpen, setIsOpen] = useState(false);
+  const { isEarthLoading } = useEarthLoading();
+  const isLoadingScreenVisible = useLoadingScreenStatus(
+    isEarthLoading,
+    TOTAL_LOADING_SCREEN_TRANSITION_DURATION_IN_MS,
+  );
   const element =
     typeof window !== "undefined"
       ? document.getElementById("nav-drawer-bg")
       : null;
   const dimensions = useDimensions(element);
-  const lenis = useLenis();
 
   useEffect(() => {
+    // Prevent overflow = "visible" before transition is complete
+    if (isLoadingScreenVisible) return;
+
     if (isOpen) {
       lenis?.stop();
       document.body.style.overflow = "hidden";
@@ -51,7 +62,7 @@ export function NavDrawer() {
       lenis?.start();
       document.body.style.overflow = "visible";
     };
-  }, [isOpen, lenis]);
+  }, [isLoadingScreenVisible, isOpen, lenis]);
 
   return (
     <motion.div
@@ -59,7 +70,7 @@ export function NavDrawer() {
       animate={isOpen ? "open" : "closed"}
       custom={dimensions?.height}
     >
-      <MenuToggle toggleMenu={() => setIsOpen((prev) => !prev)} />
+      <MenuToggle onMenuClick={() => setIsOpen((prev) => !prev)} />
       <motion.div
         className="fixed bottom-0 left-0 top-0 z-20 w-full bg-zinc-900/80"
         variants={sidebar}
@@ -69,7 +80,7 @@ export function NavDrawer() {
           className="fixed bottom-0 left-0 top-0 z-30 w-[300px] bg-zinc-900"
           variants={sidebar}
         >
-          <Navigation toggleMenu={() => setIsOpen((prev) => !prev)} />
+          <Navigation onMenuClick={() => setIsOpen((prev) => !prev)} />
         </motion.div>
       </motion.div>
     </motion.div>

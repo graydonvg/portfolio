@@ -2,8 +2,6 @@
 
 import { Star } from "lucide-react";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { TOTAL_TYPEWRITER_DURATION } from "@/lib/constants";
 
 type Star = {
   id: number;
@@ -46,14 +44,7 @@ export default function StarsBackground() {
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        duration: 4,
-        delay: TOTAL_TYPEWRITER_DURATION / 1000,
-      }}
-    >
+    <>
       {stars.map((star) => {
         return (
           <span
@@ -70,6 +61,6 @@ export default function StarsBackground() {
           />
         );
       })}
-    </motion.div>
+    </>
   );
 }
