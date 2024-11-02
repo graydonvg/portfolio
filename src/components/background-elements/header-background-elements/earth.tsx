@@ -22,15 +22,16 @@ export default function Earth() {
     target: containerRef,
     offset: ["start start", "end start"],
   });
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "20vh"]);
   const rotationX = useTransform(
     scrollYProgress,
     [0, 1],
-    [INITIAL_ROTATION_X, -1],
+    [INITIAL_ROTATION_X, -0.5],
   );
   const rotationY = useTransform(
     scrollYProgress,
     [0, 1],
-    [INITIAL_ROTATION_Y, 5],
+    [INITIAL_ROTATION_Y, 4.5],
   );
 
   const [map, normalMap, aoMap] = useLoader(TextureLoader, [
@@ -51,6 +52,7 @@ export default function Earth() {
   return (
     <motion2d.div
       ref={containerRef}
+      style={{ y }}
       className="pointer-events-none absolute inset-0 -z-30 h-full w-full"
     >
       <Canvas>

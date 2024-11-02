@@ -1,13 +1,23 @@
 "use client";
 
 import TypographyH1 from "./ui/typography/h1";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "./ui/button";
 import { TOTAL_LOADING_SCREEN_TRANSITION_DURATION_IN_MS } from "@/lib/constants";
+import { useRef } from "react";
 
 export default function Hero() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["center", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-20vh"]);
+
   return (
     <motion.div
+      style={{ y }}
+      ref={containerRef}
       initial={{ opacity: 0, scale: 0, filter: "blur(50px)" }}
       animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
       transition={{
