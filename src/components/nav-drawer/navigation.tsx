@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { MenuItem } from "./menu-item";
-import { scrollToContactForm } from "@/lib/utils";
+import { NAV_OPTIONS } from "@/lib/constants";
 
 const variants = {
   open: {
@@ -14,21 +14,6 @@ const variants = {
 type Props = {
   onMenuClick: () => void;
 };
-
-const NAV_OPTIONS = [
-  {
-    label: "GitHub",
-    link: "https://github.com/graydonvg",
-  },
-  {
-    label: "LinkedIn",
-    link: "https://www.linkedin.com/",
-  },
-  {
-    label: "Contact Me",
-    scrollTo: scrollToContactForm,
-  },
-];
 
 export function Navigation({ onMenuClick }: Props) {
   return (

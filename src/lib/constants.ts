@@ -1,3 +1,4 @@
+import { scrollToContactForm } from "./utils";
 import projectImage from "/public/mockups/mystore-mockup.jpg";
 
 export const EMAIL_ADDRESS = "graydonvg@gmail.com";
@@ -6,6 +7,21 @@ export const LINKS = {
   GITHUB: "https://github.com/graydonvg",
   LINKEDIN: "https://www.linkedin.com/",
 };
+
+export const NAV_OPTIONS = [
+  {
+    label: "GitHub",
+    link: "https://github.com/graydonvg",
+  },
+  {
+    label: "LinkedIn",
+    link: "https://www.linkedin.com/",
+  },
+  {
+    label: "Contact me",
+    scrollTo: scrollToContactForm,
+  },
+];
 
 export const projects = [
   {
