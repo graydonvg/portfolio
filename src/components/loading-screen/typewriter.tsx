@@ -4,13 +4,17 @@ import { TYPEWRITER_DURATION_IN_MS } from "@/lib/constants";
 import { CSSProperties, useEffect, useState } from "react";
 
 type Props = {
-  textArray: string[];
   isEarthLoading: boolean;
+  loadingProgress: number;
 };
 
-export default function Typewriter({ textArray, isEarthLoading }: Props) {
+export default function Typewriter({ isEarthLoading, loadingProgress }: Props) {
   const typewriterDuration = TYPEWRITER_DURATION_IN_MS / 1000;
   const [textIndex, setTextIndex] = useState(0);
+  const textArray = [
+    `Loading Earth... ${loadingProgress.toFixed(0)}%`,
+    "Hello, World!",
+  ];
 
   useEffect(() => {
     if (isEarthLoading || textIndex === textArray.length - 1) return;

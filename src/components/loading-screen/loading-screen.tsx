@@ -17,7 +17,8 @@ export default function LoadingScreen() {
     isEarthLoading,
     TOTAL_LOADING_SCREEN_TRANSITION_DURATION_IN_MS,
   );
-  const [maskTransparency, setMaskTransparency] = useState(0);
+  const [maskHoleSize, setMaskHoleSize] = useState(0);
+  const [displayText, setDisplayText] = useState(true);
   const lenis = useLenis();
 
   useEffect(() => {
@@ -41,46 +42,48 @@ export default function LoadingScreen() {
   useEffect(() => {
     if (isEarthLoading) return;
 
-    function adjustMaskTransparency(duration: number) {
-      const interval = 50; // Update every 50 milliseconds
-      const totalSteps = duration / interval; // Total steps based on the duration
-      const increment = Math.ceil(100 / totalSteps); // Calculate how much to increment
-      let currentTransparency = 0;
+    function adjustMaskHoleSize(duration: number) {
+      const maxPercentage = 100;
+      const interval = 16.67; // Update every 16.67 milliseconds for 60fps
+      const totalSteps = duration / interval;
+      const incrementPercentage = Math.ceil(maxPercentage / totalSteps);
+      let currentPercentage = 0;
 
-      const counterInterval = setInterval(() => {
-        currentTransparency += increment;
+      const incrementInterval = setInterval(() => {
+        currentPercentage += incrementPercentage;
 
-        if (currentTransparency >= 100) {
-          currentTransparency = 100; // Ensure it doesn't go above 100
-          clearInterval(counterInterval); // Stop the interval when reaching 100
+        if (currentPercentage >= maxPercentage) {
+          currentPercentage = maxPercentage; // Ensure it doesn't go above maxPercentage
+          clearInterval(incrementInterval); // Stop the interval when reaching maxPercentage
         }
 
-        setMaskTransparency(currentTransparency);
+        setMaskHoleSize(currentPercentage);
       }, interval);
     }
 
-    const timer = setTimeout(() => {
-      adjustMaskTransparency(LOADING_SCREEN_TRANSITION_DURATION_IN_MS);
+    const timeoutId = setTimeout(() => {
+      adjustMaskHoleSize(LOADING_SCREEN_TRANSITION_DURATION_IN_MS);
+      setDisplayText(false);
     }, LOADING_SCREEN_TRANSITION_DELAY_IN_MS);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(timeoutId);
   }, [isEarthLoading]);
 
   if (!isLoadingScreenVisible) return null;
-
-  const text = [
-    `Loading Earth... ${loadingProgress.toFixed(0)}%`,
-    "Hello, World!",
-  ];
 
   return (
     <div
       className="pointer-events-none fixed inset-0 z-50 flex h-full w-full flex-col items-center justify-center bg-black"
       style={{
-        mask: `radial-gradient(circle, transparent ${maskTransparency}%, black 0%)`,
+        mask: `radial-gradient(circle, transparent ${maskHoleSize}%, black 0%)`,
       }}
     >
-      <Typewriter textArray={text} isEarthLoading={isEarthLoading} />
+      {displayText && (
+        <Typewriter
+          loadingProgress={loadingProgress}
+          isEarthLoading={isEarthLoading}
+        />
+      )}
     </div>
   );
 }
