@@ -31,7 +31,7 @@ export default function Earth() {
   const rotationY = useTransform(
     scrollYProgress,
     [0, 1],
-    [INITIAL_ROTATION_Y, 4.5],
+    [INITIAL_ROTATION_Y, 5],
   );
 
   const [map, normalMap, aoMap] = useLoader(TextureLoader, [
