@@ -53,7 +53,7 @@ export default function Earth() {
     <motion2d.div
       ref={containerRef}
       style={{ y }}
-      className="pointer-events-none absolute inset-0 -z-30 h-full w-full"
+      className="pointer-events-none absolute inset-0 -z-30 h-screen w-full"
     >
       <Canvas>
         <ambientLight intensity={0.5} />

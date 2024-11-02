@@ -19,7 +19,7 @@ export default function Header() {
   const { isEarthLoading } = useEarthLoading();
 
   return (
-    <header className="relative flex min-h-dvh flex-col items-center justify-center overflow-hidden px-4 py-[122px]">
+    <header className="relative flex h-screen flex-col items-center justify-center overflow-hidden px-4 py-[122px]">
       {!isEarthLoading && (
         <>
           <NavDrawer />

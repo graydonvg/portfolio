@@ -73,7 +73,7 @@ export default function LoadingScreen() {
 
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-50 flex h-full w-full flex-col items-center justify-center bg-black"
+      className="pointer-events-none fixed inset-0 z-50 flex h-screen w-full flex-col items-center justify-center bg-black"
       style={{
         mask: `radial-gradient(circle, transparent ${maskHoleSize}%, black 0%)`,
       }}

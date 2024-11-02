@@ -23,7 +23,7 @@ export default function Typewriter({ isEarthLoading, loadingProgress }: Props) {
   }, [textIndex, textArray.length, isEarthLoading]);
 
   return (
-    <div className="top-1/2 z-50 text-lg text-muted sm:text-3xl">
+    <div className="fixed left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 text-lg text-muted sm:text-3xl">
       {/* Setting the key to textIndex forces React to treat the p element as a new element on each text change, which effectively resets the CSS animation. */}
       <p
         key={textIndex}

@@ -68,7 +68,7 @@ export default function GlobalBackgroundElements() {
       style={{
         clipPath: `inset(0 0 calc(100% - ${distanceFromTop}) 0)`,
       }}
-      className="pointer-events-none fixed inset-0 -z-50 h-full w-full overflow-hidden"
+      className="pointer-events-none fixed inset-0 -z-50 h-screen w-full overflow-hidden"
     >
       {!isEarthLoading && (
         <>
