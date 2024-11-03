@@ -85,7 +85,7 @@ export default function LightBeams() {
         ))}
       </div>
 
-      {/* Light beams for mobile screens */}
+      {/* Light beams for smaller screens */}
       <div className="flex sm:hidden">
         {Array.from(Array(3)).map((_, i) => (
           <div

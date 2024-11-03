@@ -6,10 +6,10 @@ import TypographyP from "./ui/typography/p";
 export default function AboutMe() {
   return (
     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 xl:gap-16">
-      <div className="hidden aspect-square w-full rounded-2xl bg-spaceBackground md:block"></div>
+      <div className="hidden aspect-square w-full rounded-2xl bg-background md:block"></div>
       <div className="flex flex-col items-center justify-center gap-6 md:items-start">
         <TypographyH2>About me</TypographyH2>
-        <div className="block aspect-square w-full rounded-2xl bg-spaceBackground md:hidden"></div>
+        <div className="block aspect-square w-full rounded-2xl bg-background md:hidden"></div>
         <div>
           <TypographyP>
             I started my career in hospitality as a restaurant manager, but I

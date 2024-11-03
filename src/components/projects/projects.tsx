@@ -6,7 +6,7 @@ export default function Projects() {
   return (
     <div className="flex flex-col items-center justify-center gap-16">
       <TypographyH2>
-        <span className="text-spaceForeground">Projects</span>
+        <span>Projects</span>
       </TypographyH2>
       {projects.map((project, index) => {
         const isEven = index % 2 === 0;

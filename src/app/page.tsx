@@ -10,16 +10,16 @@ import Header from "@/components/header";
 export default function Home() {
   return (
     <>
-      <div className="relative z-10 bg-spaceBackground">
+      <div className="relative z-10">
         <Header />
         <main>
-          <Section className="bg-background">
+          <Section className="border-b-4 border-t-4 border-primary bg-card">
             <AboutMe />
           </Section>
           <Section>
             <Projects />
           </Section>
-          <Section className="bg-background shadow-[0_60px_50px_rgba(0,0,0,0.75)]">
+          <Section className="border-b-4 border-t-4 border-primary bg-card shadow-[0_60px_50px_rgba(0,0,0,0.75)]">
             <Technologies />
           </Section>
         </main>

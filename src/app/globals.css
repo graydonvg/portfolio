@@ -26,14 +26,12 @@ body {
 
 @layer base {
   :root {
-    --space-background: 240 10% 3.9%;
-    --space-foreground: 0 0% 98%;
-    --background: 0 0% 98%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 5.9% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 5.9% 10%;
+    --popover-foreground: 0 0% 98%;
     --primary: 243.4 75.4% 58.6%;
     --primary-foreground: 0 0% 98%;
     --secondary: 240 4.8% 95.9%;
@@ -44,8 +42,9 @@ body {
     --accent-foreground: 240 5.9% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
+    --input: 240 4.8% 95.9%;
+    --input-foreground: 240 5.9% 10%;
     --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
     --ring: 243.4 75.4% 58.6%;
     --radius: 0.5rem;
     --star-light: 215 20% 65%;
@@ -58,7 +57,7 @@ body {
   }
 
   body {
-    @apply font-inter text-foreground;
+    @apply bg-background font-inter text-foreground;
   }
 }
 

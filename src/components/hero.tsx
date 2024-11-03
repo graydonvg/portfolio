@@ -31,8 +31,8 @@ export default function Hero() {
           Hello, I&apos;m Graydon!
         </p>
         <TypographyH1>
-          <span className="text-spaceForeground">Front-end web developer </span>
-          <span className="text-spaceForeground">specializing in ReactJS</span>
+          <span>Front-end web developer </span>
+          <span>specializing in ReactJS</span>
         </TypographyH1>
       </div>
       <Button>View my resume</Button>

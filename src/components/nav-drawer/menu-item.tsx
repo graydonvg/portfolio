@@ -42,7 +42,7 @@ export function MenuItem({ option, onMenuClick }: Props) {
       variants={variants}
       whileHover={{ scale: 1.1, cursor: "pointer" }}
       whileTap={{ scale: 0.95 }}
-      className="z-50 list-none pl-2 text-2xl text-spaceForeground"
+      className="z-50 list-none pl-2 text-2xl"
     >
       {option.link ? (
         <Link href={option.link} onClick={onMenuClick} target="_blank">

@@ -8,12 +8,11 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "text-white",
-        secondary: "text-foreground",
-        outlined: "text-foreground",
+        default: "text-foreground",
+        secondary: "text-secondary-foreground",
       },
       size: {
-        default: "h-[58px]",
+        default: "h-14",
       },
     },
     defaultVariants: {
@@ -26,24 +25,12 @@ const buttonVariants = cva(
 export interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  showBorderOnHover?: boolean;
   asChild?: boolean;
   children: string;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      className,
-      variant,
-      size,
-      showBorderOnHover = false,
-      asChild = false,
-      children,
-      ...props
-    },
-    ref,
-  ) => {
+  ({ className, variant, size, asChild = false, children, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
     return (
       <Comp
@@ -60,8 +47,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             id="background"
             className={cn("absolute inset-0 m-[1px] rounded-full bg-primary", {
               "bg-secondary": variant === "secondary",
-              "bg-transparent": variant === "outlined",
-              "border border-foreground": variant === "outlined",
             })}
           >
             <div
@@ -69,8 +54,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
               className={cn(
                 "absolute left-1/2 top-1/2 w-[110%] -translate-x-1/2 -translate-y-1/2 scale-0 rounded-full bg-secondary pb-[110%] opacity-0 transition-transform duration-400 ease-gentle-ease-in-out hover-hover:group-hover:-translate-x-1/2 hover-hover:group-hover:-translate-y-1/2 hover-hover:group-hover:scale-100 hover-hover:group-hover:opacity-100",
                 {
-                  "bg-primary":
-                    variant === "secondary" || variant === "outlined",
+                  "bg-primary": variant === "secondary",
                 },
               )}
             ></div>
@@ -79,31 +63,18 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
               className={cn(
                 "absolute left-0 top-0 h-full w-full rounded-full bg-secondary opacity-0 transition-opacity duration-300 hover-hover:group-hover:opacity-100 hover-hover:group-hover:delay-300 hover-hover:group-hover:duration-0",
                 {
-                  "bg-primary":
-                    variant === "secondary" || variant === "outlined",
+                  "bg-primary": variant === "secondary",
                 },
               )}
             ></div>
-            {showBorderOnHover && (
-              <div
-                id="border"
-                className={cn(
-                  "absolute left-0 top-0 h-full w-full rounded-full",
-                  {
-                    "border-foreground hover-hover:group-hover:border":
-                      variant !== "secondary" && variant !== "outlined",
-                  },
-                )}
-              ></div>
-            )}
           </div>
         </div>
         <span
           className={cn(
-            "relative px-8 py-4 font-semibold transition-all duration-400 ease-gentle-ease-in-out hover-hover:group-hover:text-foreground",
+            "relative px-8 py-4 font-semibold transition-all duration-400 ease-gentle-ease-in-out hover-hover:group-hover:text-secondary-foreground",
             {
-              "hover-hover:group-hover:text-white":
-                variant === "secondary" || variant === "outlined",
+              "hover-hover:group-hover:text-foreground":
+                variant === "secondary",
             },
           )}
         >

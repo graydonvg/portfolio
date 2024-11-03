@@ -72,12 +72,12 @@ export function NavDrawer() {
     >
       <MenuToggle onMenuClick={() => setIsOpen((prev) => !prev)} />
       <motion.div
-        className="fixed bottom-0 left-0 top-0 z-20 w-full bg-zinc-900/80"
+        className="fixed bottom-0 left-0 top-0 z-20 w-full bg-popover/80"
         variants={sidebar}
       >
         <motion.div
           id="nav-drawer-bg"
-          className="fixed bottom-0 left-0 top-0 z-30 w-[300px] bg-zinc-900"
+          className="fixed bottom-0 left-0 top-0 z-30 w-[300px] bg-popover"
           variants={sidebar}
         >
           <Navigation onMenuClick={() => setIsOpen((prev) => !prev)} />
