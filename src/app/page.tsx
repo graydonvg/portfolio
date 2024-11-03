@@ -13,13 +13,13 @@ export default function Home() {
       <div className="relative z-10">
         <Header />
         <main>
-          <Section className="border-b-2 border-t-2 border-primary bg-card">
+          <Section className="bg-card">
             <AboutMe />
           </Section>
           <Section>
             <Projects />
           </Section>
-          <Section className="border-b-2 border-t-2 border-primary bg-card shadow-[0_60px_50px_rgba(0,0,0,0.75)]">
+          <Section className="bg-card shadow-[0_60px_50px_rgba(0,0,0,0.75)]">
             <Technologies />
           </Section>
         </main>

@@ -40,7 +40,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       >
         <div
           className={cn(
-            "absolute left-0 top-0 h-full w-full overflow-hidden rounded-full transition-transform duration-400 ease-gentle-ease-in-out group-active:scale-x-[0.9] group-active:scale-y-[0.9] hover-hover:group-hover:scale-x-[1.1] hover-hover:group-hover:scale-y-[1.1] hover-hover:group-active:scale-x-[1] hover-hover:group-active:scale-y-[1]",
+            "can-hover:group-hover:scale-x-[1.1] can-hover:group-hover:scale-y-[1.1] can-hover:group-active:scale-x-[1] can-hover:group-active:scale-y-[1] absolute left-0 top-0 h-full w-full overflow-hidden rounded-full transition-transform duration-400 ease-gentle-ease-in-out group-active:scale-x-[0.9] group-active:scale-y-[0.9]",
           )}
         >
           <div
@@ -52,7 +52,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             <div
               id="as-before"
               className={cn(
-                "absolute left-1/2 top-1/2 w-[110%] -translate-x-1/2 -translate-y-1/2 scale-0 rounded-full bg-secondary pb-[110%] opacity-0 transition-transform duration-400 ease-gentle-ease-in-out hover-hover:group-hover:-translate-x-1/2 hover-hover:group-hover:-translate-y-1/2 hover-hover:group-hover:scale-100 hover-hover:group-hover:opacity-100",
+                "can-hover:group-hover:-translate-x-1/2 can-hover:group-hover:-translate-y-1/2 can-hover:group-hover:scale-100 can-hover:group-hover:opacity-100 absolute left-1/2 top-1/2 w-[110%] -translate-x-1/2 -translate-y-1/2 scale-0 rounded-full bg-secondary pb-[110%] opacity-0 transition-transform duration-400 ease-gentle-ease-in-out",
                 {
                   "bg-primary": variant === "secondary",
                 },
@@ -61,7 +61,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             <div
               id="as-after"
               className={cn(
-                "absolute left-0 top-0 h-full w-full rounded-full bg-secondary opacity-0 transition-opacity duration-300 hover-hover:group-hover:opacity-100 hover-hover:group-hover:delay-300 hover-hover:group-hover:duration-0",
+                "can-hover:group-hover:opacity-100 can-hover:group-hover:delay-300 can-hover:group-hover:duration-0 absolute left-0 top-0 h-full w-full rounded-full bg-secondary opacity-0 transition-opacity duration-300",
                 {
                   "bg-primary": variant === "secondary",
                 },
@@ -71,10 +71,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         </div>
         <span
           className={cn(
-            "relative px-8 py-4 font-semibold transition-all duration-400 ease-gentle-ease-in-out hover-hover:group-hover:text-secondary-foreground",
+            "can-hover:group-hover:text-secondary-foreground relative px-8 py-4 font-semibold transition-all duration-400 ease-gentle-ease-in-out",
             {
-              "hover-hover:group-hover:text-foreground":
-                variant === "secondary",
+              "can-hover:group-hover:text-foreground": variant === "secondary",
             },
           )}
         >

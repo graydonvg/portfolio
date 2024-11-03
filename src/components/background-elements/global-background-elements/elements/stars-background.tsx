@@ -25,6 +25,7 @@ export default function StarsBackground() {
   const [stars, setStars] = useState<Star[]>([]);
 
   useEffect(() => {
+    //adjust according to vw
     const initialStars = Array.from({ length: 75 }, createStar);
     setStars(initialStars);
   }, []);

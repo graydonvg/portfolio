@@ -67,7 +67,7 @@ const config: Config = {
       screens: {
         // xs: "420px",
 
-        "hover-hover": { raw: "(hover: hover)" },
+        "can-hover": { raw: "(hover: hover)" },
       },
       transitionDuration: {
         "400": "400ms",
