@@ -10,7 +10,8 @@ import Header from "@/components/header";
 export default function Home() {
   return (
     <>
-      <div className="relative z-10">
+      {/* Must include a bg color to hide the footer */}
+      <div className="relative z-10 bg-background">
         <Header />
         <main>
           <Section className="bg-card">
