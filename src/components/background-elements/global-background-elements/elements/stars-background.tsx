@@ -1,7 +1,10 @@
 "use client";
 
-import { Star } from "lucide-react";
 import { useEffect, useState } from "react";
+
+const BASE_STARS = 35;
+const MAX_STARS = 250;
+const MAX_WIDTH = 5120;
 
 type Star = {
   id: number;
@@ -25,9 +28,39 @@ export default function StarsBackground() {
   const [stars, setStars] = useState<Star[]>([]);
 
   useEffect(() => {
-    //adjust according to vw
-    const initialStars = Array.from({ length: 75 }, createStar);
-    setStars(initialStars);
+    function updateStars() {
+      // Adjust the number of stars relative to the viewport width
+      const viewportWidth = window.innerWidth;
+      const targetStarCount = Math.floor(
+        BASE_STARS + ((MAX_STARS - BASE_STARS) * viewportWidth) / MAX_WIDTH,
+      );
+
+      setStars((prevStars) => {
+        if (prevStars.length < targetStarCount) {
+          return [
+            ...prevStars,
+            ...Array.from(
+              { length: targetStarCount - prevStars.length },
+              createStar,
+            ),
+          ];
+        }
+
+        if (prevStars.length > targetStarCount) {
+          return prevStars.slice(0, targetStarCount);
+        }
+
+        return prevStars;
+      });
+    }
+
+    updateStars();
+
+    window.addEventListener("resize", updateStars);
+
+    return () => {
+      window.removeEventListener("resize", updateStars);
+    };
   }, []);
 
   function addStar() {
@@ -46,22 +79,20 @@ export default function StarsBackground() {
 
   return (
     <>
-      {stars.map((star) => {
-        return (
-          <span
-            key={star.id}
-            style={{
-              top: star.top,
-              left: star.left,
-              width: star.size,
-              height: star.size,
-              animation: `star-pulse-fade ${star.animationDuration} ease-in-out forwards`,
-            }}
-            className="absolute rounded-full bg-star-radial"
-            onAnimationEnd={() => handleAnimationEnd(star.id)}
-          />
-        );
-      })}
+      {stars.map((star) => (
+        <span
+          key={star.id}
+          style={{
+            top: star.top,
+            left: star.left,
+            width: star.size,
+            height: star.size,
+            animation: `star-pulse-fade ${star.animationDuration} ease-in-out forwards`,
+          }}
+          className="absolute rounded-full bg-star-radial"
+          onAnimationEnd={() => handleAnimationEnd(star.id)}
+        />
+      ))}
     </>
   );
 }
