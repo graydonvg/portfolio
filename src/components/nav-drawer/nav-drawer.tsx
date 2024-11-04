@@ -45,7 +45,7 @@ export function NavDrawer() {
   const dimensions = useDimensions(element);
 
   useEffect(() => {
-    // Prevent overflow = "visible" before transition is complete
+    // Prevent overflow = "visible" before loading screen is complete
     if (isLoadingScreenVisible) return;
 
     if (isOpen) {

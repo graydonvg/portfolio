@@ -14,7 +14,7 @@ body {
 }
 
 .pin-spacer {
-  /* make sure the gsap spacer around the footer is always 100% wide */
+  /* ensure the gsap spacer around the footer is always 100% wide */
   width: 100% !important;
 }
 
