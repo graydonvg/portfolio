@@ -11,7 +11,7 @@ import {
 } from "@/lib/constants";
 
 const INITIAL_ROTATION_X = 0;
-const INITIAL_ROTATION_Y = 4;
+const INITIAL_ROTATION_Y = 4.3;
 
 export default function Earth() {
   const earthIntroDelay =
@@ -31,7 +31,7 @@ export default function Earth() {
   const rotationY = useTransform(
     scrollYProgress,
     [0, 1],
-    [INITIAL_ROTATION_Y, 5],
+    [INITIAL_ROTATION_Y, 5.3],
   );
 
   const [map, normalMap, aoMap] = useLoader(TextureLoader, [
