@@ -7,6 +7,7 @@ import { ShootingStarType } from "@/lib/types";
 import { TOTAL_LOADING_SCREEN_TRANSITION_DURATION_IN_MS } from "@/lib/constants";
 
 function calculateRandomAngleTowardsCenter(x: number, y: number) {
+  // Make shooting star travel towards the center to prevent it from starting on the edge and exiting immediately
   const viewportWidth = window.innerWidth;
   const viewportHeight = window.innerHeight;
 
@@ -20,8 +21,8 @@ function calculateRandomAngleTowardsCenter(x: number, y: number) {
   // Convert to degrees and normalize to 0-360 degrees
   let angleDegrees = (angleRadians * 180) / Math.PI;
 
-  // Add a random offset within ±80 degrees for natural variation
-  const randomOffset = Math.random() * 160 - 80;
+  // Add a random offset within ±70 degrees for natural variation
+  const randomOffset = Math.random() * 140 - 70;
   // Ensure the angle is positive
   const nonNegativeAngle = angleDegrees + randomOffset + 360;
   // Ensure the angle stays withing 0 - 359 (at 360 the angle is 0 again)

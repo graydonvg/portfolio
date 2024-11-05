@@ -63,20 +63,6 @@ export default function StarsBackground() {
     };
   }, []);
 
-  function addStar() {
-    const newStar = createStar();
-    setStars((prevStars) => [...prevStars, newStar]);
-  }
-
-  function removeStar(id: number) {
-    setStars((prevStars) => prevStars.filter((star) => star.id !== id));
-  }
-
-  function handleAnimationEnd(id: number) {
-    removeStar(id);
-    addStar();
-  }
-
   return (
     <>
       {stars.map((star) => (
@@ -87,10 +73,9 @@ export default function StarsBackground() {
             left: star.left,
             width: star.size,
             height: star.size,
-            animation: `star-pulse-fade ${star.animationDuration} ease-in-out forwards`,
+            animation: `star-pulse ${star.animationDuration} linear infinite alternate`,
           }}
           className="absolute rounded-full bg-star-radial"
-          onAnimationEnd={() => handleAnimationEnd(star.id)}
         />
       ))}
     </>
