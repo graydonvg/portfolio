@@ -38,11 +38,11 @@ export function NavDrawer() {
     isEarthLoading,
     TOTAL_LOADING_SCREEN_TRANSITION_DURATION_IN_MS,
   );
-  const element =
+  const navDrawerBg =
     typeof window !== "undefined"
       ? document.getElementById("nav-drawer-bg")
       : null;
-  const dimensions = useDimensions(element);
+  const dimensions = useDimensions(navDrawerBg);
 
   useEffect(() => {
     // Prevent overflow = "visible" before loading screen is complete

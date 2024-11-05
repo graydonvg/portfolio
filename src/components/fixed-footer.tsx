@@ -15,15 +15,20 @@ type Props = {
 
 export default function FixedFooter({ children }: Props) {
   const footerRef = useRef<HTMLElement | null>(null);
+  const hero =
+    typeof window !== "undefined" ? document.getElementById("hero") : null;
 
   useGSAP(() => {
-    // we never want it to overlap more than the height of the screen
+    // We never want it to overlap more than the height of the screen
+    // Mobile devices calculate the browser viewport as (top bar + document + bottom bar) = 100vh
+    // Using hero height because it is 100vh
+    // This ensures that the footer is set to fixed
     function getOverlap() {
       if (!footerRef.current) return 0;
-      return Math.min(window.innerHeight, footerRef.current.offsetHeight);
+      return Math.min(hero!.offsetHeight, footerRef.current.offsetHeight);
     }
 
-    // adjusts the margin-top of the footer to overlap the proper amount
+    // Adjusts the margin-top of the footer to overlap the proper amount
     function adjustFooterOverlap() {
       if (!footerRef.current) return;
       footerRef.current.style.marginTop = `-${getOverlap()}px`;
@@ -31,13 +36,13 @@ export default function FixedFooter({ children }: Props) {
 
     adjustFooterOverlap(); // Set initial footer margin
 
-    // to make it responsive, re-calculate the margin-top on the footer when the ScrollTriggers revert
+    // To make it responsive, re-calculate the margin-top on the footer when the ScrollTriggers revert
     // @ts-expect-error supported event 'revert' but not included in types
     ScrollTrigger.addEventListener("revert", adjustFooterOverlap);
 
     ScrollTrigger.create({
       trigger: footerRef.current,
-      start: () => `top ${window.innerHeight - getOverlap()}`,
+      start: () => `top ${hero!.offsetHeight - getOverlap()}`,
       end: () => `+=${getOverlap()}`,
       pin: true,
     });
@@ -45,7 +50,7 @@ export default function FixedFooter({ children }: Props) {
     return () => {
       // @ts-expect-error supported event 'revert' but not included in types
       ScrollTrigger.removeEventListener("revert", adjustFooterOverlap);
-      ScrollTrigger.killAll(); // Remove all ScrollTriggers
+      ScrollTrigger.killAll();
     };
   });
   return (

@@ -6,6 +6,7 @@ import Section from "@/components/section";
 import FixedFooter from "@/components/fixed-footer";
 import GlobalBackgroundElements from "@/components/background-elements/global-background-elements/global-background-elements";
 import Header from "@/components/header";
+import Hero from "@/components/hero";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <div className="relative z-10 bg-background">
         <Header />
         <main>
+          <Hero />
           <Section className="bg-card">
             <AboutMe />
           </Section>
