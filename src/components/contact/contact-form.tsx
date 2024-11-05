@@ -5,7 +5,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import emailjs from "@emailjs/browser";
 import { Flip, toast } from "react-toastify";
 import { cn } from "@/lib/utils";
-import Toast from "../ui/toast";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
@@ -93,93 +92,90 @@ export default function ContactForm() {
   }
 
   return (
-    <>
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel htmlFor="name" className="text-lg">
-                  Name
-                </FormLabel>
-                <FormControl>
-                  <Input
-                    {...field}
-                    id="name"
-                    type="text"
-                    placeholder="John Doe *"
-                    autoComplete="name"
-                    className={cn("text-lg", {
-                      "outline outline-red-500 focus:ring-red-500":
-                        form.formState.errors.name &&
-                        form.formState.errors.name.message,
-                    })}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel htmlFor="email" className="text-lg">
-                  Email
-                </FormLabel>
-                <FormControl>
-                  <Input
-                    {...field}
-                    id="email"
-                    type="text"
-                    placeholder="john@doe.com *"
-                    autoComplete="email"
-                    className={cn("text-lg", {
-                      "outline outline-red-500 focus:ring-red-500":
-                        form.formState.errors.email &&
-                        form.formState.errors.email.message,
-                    })}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="message"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel htmlFor="message" className="text-lg">
-                  Message
-                </FormLabel>
-                <FormControl>
-                  <Textarea
-                    {...field}
-                    id="message"
-                    placeholder="Your message *"
-                    className={cn("h-[300px] resize-none text-lg", {
-                      "outline outline-red-500 focus:ring-red-500":
-                        form.formState.errors.message &&
-                        form.formState.errors.message.message,
-                    })}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <div>
-            <Button type="submit" className="mt-4 px-10 sm:mt-6">
-              Send
-            </Button>
-          </div>
-        </form>
-      </Form>
-      <Toast />
-    </>
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <FormField
+          control={form.control}
+          name="name"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel htmlFor="name" className="text-lg">
+                Name
+              </FormLabel>
+              <FormControl>
+                <Input
+                  {...field}
+                  id="name"
+                  type="text"
+                  placeholder="John Doe *"
+                  autoComplete="name"
+                  className={cn("text-lg", {
+                    "outline outline-red-500 focus:ring-red-500":
+                      form.formState.errors.name &&
+                      form.formState.errors.name.message,
+                  })}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel htmlFor="email" className="text-lg">
+                Email
+              </FormLabel>
+              <FormControl>
+                <Input
+                  {...field}
+                  id="email"
+                  type="text"
+                  placeholder="john@doe.com *"
+                  autoComplete="email"
+                  className={cn("text-lg", {
+                    "outline outline-red-500 focus:ring-red-500":
+                      form.formState.errors.email &&
+                      form.formState.errors.email.message,
+                  })}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="message"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel htmlFor="message" className="text-lg">
+                Message
+              </FormLabel>
+              <FormControl>
+                <Textarea
+                  {...field}
+                  id="message"
+                  placeholder="Your message *"
+                  className={cn("h-[300px] resize-none text-lg", {
+                    "outline outline-red-500 focus:ring-red-500":
+                      form.formState.errors.message &&
+                      form.formState.errors.message.message,
+                  })}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <div>
+          <Button type="submit" className="mt-4 px-10 sm:mt-6">
+            Send
+          </Button>
+        </div>
+      </form>
+    </Form>
   );
 }
