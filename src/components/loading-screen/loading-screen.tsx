@@ -23,8 +23,6 @@ export default function LoadingScreen() {
 
   useEffect(() => {
     if (isLoadingScreenVisible) {
-      // Fix scrollTo not working
-      window.scrollTo(0, 0);
       lenis?.stop();
       document.body.style.overflow = "hidden";
     }
@@ -63,6 +61,7 @@ export default function LoadingScreen() {
     }
 
     const timeoutId = setTimeout(() => {
+      window.scrollTo(0, 0);
       adjustMaskHoleSize(LOADING_SCREEN_TRANSITION_DURATION_IN_MS);
       setDisplayText(false);
     }, LOADING_SCREEN_TRANSITION_DELAY_IN_MS);
