@@ -1,19 +1,16 @@
 "use client";
 
-import { ReactNode, useRef } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import ContactMe from "./contact/contact-me";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, useGSAP);
 }
 
-type Props = {
-  children: ReactNode;
-};
-
-export default function FixedFooter({ children }: Props) {
+export default function FixedFooter() {
   const footerRef = useRef<HTMLElement | null>(null);
   const hero =
     typeof window !== "undefined" ? document.getElementById("hero") : null;
@@ -55,7 +52,7 @@ export default function FixedFooter({ children }: Props) {
   });
   return (
     <footer ref={footerRef} className="!w-full !max-w-full">
-      {children}
+      <ContactMe />
     </footer>
   );
 }
