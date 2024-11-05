@@ -20,7 +20,7 @@ export default function Home() {
           <Section>
             <Projects />
           </Section>
-          <Section className="bg-card shadow-[0_60px_50px_rgba(0,0,0,0.75)]">
+          <Section className="bg-card">
             <Technologies />
           </Section>
         </main>

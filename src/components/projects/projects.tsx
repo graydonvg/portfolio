@@ -4,7 +4,7 @@ import ProjectCard from "./project-card";
 
 export default function Projects() {
   return (
-    <div className="flex flex-col items-center justify-center gap-16">
+    <div className="flex flex-col items-center justify-center gap-8 sm:gap-16">
       <TypographyH2>
         <span>Projects</span>
       </TypographyH2>

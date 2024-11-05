@@ -173,7 +173,7 @@ export default function ContactForm() {
             )}
           />
           <div>
-            <Button type="submit" className="mt-6 px-10">
+            <Button type="submit" className="mt-4 px-10 sm:mt-6">
               Send
             </Button>
           </div>

@@ -23,6 +23,7 @@ export default function LoadingScreen() {
 
   useEffect(() => {
     if (isLoadingScreenVisible) {
+      // Fix scrollTo not working
       window.scrollTo(0, 0);
       lenis?.stop();
       document.body.style.overflow = "hidden";

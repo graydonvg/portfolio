@@ -37,7 +37,7 @@ export default function ProjectCard({ project, isEven }: Props) {
       style={{
         scale,
       }}
-      className="z-10 grid grid-cols-1 gap-8 p-4 md:grid-cols-2 md:p-8 lg:gap-12 lg:p-12"
+      className="z-10 grid grid-cols-1 gap-6 border border-border/50 p-4 sm:gap-8 md:grid-cols-2 md:p-8 lg:gap-12 lg:p-12"
     >
       <div
         className={cn("order-1", {
@@ -75,7 +75,7 @@ export default function ProjectCard({ project, isEven }: Props) {
             ))}
           </ul>
         </CardContent>
-        <CardFooter className="flex h-full w-full flex-wrap items-end gap-4 p-0 pt-12">
+        <CardFooter className="flex h-full w-full flex-wrap items-end gap-4 p-0 pt-8 sm:pt-12">
           <Link
             tabIndex={-1}
             href={project.links.repository}
