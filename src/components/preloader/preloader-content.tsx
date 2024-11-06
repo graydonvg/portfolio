@@ -24,7 +24,7 @@ export default function PreloaderContent() {
       <Typewriter duration={TYPEWRITER_DURATION_IN_SEC}>
         Hello, World!
       </Typewriter>
-      <span className="absolute bottom-6 right-6 text-muted-foreground">
+      <span className="absolute bottom-6 right-6 text-muted-foreground sm:bottom-8 sm:right-8">
         {loadingProgress.toFixed(0)}%
       </span>
     </motion.div>

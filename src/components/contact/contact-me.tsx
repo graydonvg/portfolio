@@ -10,7 +10,7 @@ export default function ContactMe() {
   const navOptionsWithLinks = NAV_OPTIONS.filter((option) => option.link);
 
   return (
-    <div className="mx-auto grid max-w-screen-2xl grid-cols-1 gap-8 px-4 pb-8 pt-16 text-secondary sm:gap-12 sm:pb-12 sm:pt-24 md:px-8 md:pb-24 md:pt-36 lg:grid-cols-2 lg:gap-20 lg:px-12 lg:pb-16 xl:px-[13.5rem]">
+    <div className="mx-auto grid max-w-screen-2xl grid-cols-1 gap-8 px-4 py-16 text-secondary sm:gap-12 sm:py-24 md:px-8 md:py-36 lg:grid-cols-2 lg:gap-20 lg:px-12 xl:px-[13.5rem]">
       <div>
         <h2 className="text-pretty text-[2.5rem] font-semibold leading-[2.75rem] tracking-tight">
           I&apos;m seeking a full-time front-end developer role.
