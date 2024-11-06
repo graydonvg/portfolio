@@ -3,11 +3,11 @@
 import TypographyH1 from "./ui/typography/h1";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "./ui/button";
-import { TOTAL_LOADING_SCREEN_TRANSITION_DURATION_IN_MS } from "@/lib/constants";
 import { useRef } from "react";
 import LightBeams from "./background-elements/hero-background-elements/light-beams";
 import dynamic from "next/dynamic";
-import { useEarthLoading } from "@/context/earth-loading-context";
+import usePreloaderStatus from "@/hooks/use-preloader-status";
+import { HERO_DELAY_IN_SEC } from "@/lib/constants";
 
 const Earth = dynamic(
   () =>
@@ -18,7 +18,7 @@ const Earth = dynamic(
 );
 
 export default function Hero() {
-  const { isEarthLoading } = useEarthLoading();
+  const isLoading = usePreloaderStatus();
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -34,15 +34,15 @@ export default function Hero() {
       // If h-screen changes, change how the footer calculates the overlap
       className="flex h-screen flex-col items-center justify-center overflow-hidden px-4 py-[122px]"
     >
-      {!isEarthLoading && (
+      {!isLoading && (
         <>
           <motion.div
             style={{ y }}
             initial={{ opacity: 0, scale: 0, filter: "blur(50px)" }}
             animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
             transition={{
+              delay: HERO_DELAY_IN_SEC,
               duration: 0.5,
-              delay: TOTAL_LOADING_SCREEN_TRANSITION_DURATION_IN_MS / 1000,
             }}
             className="flex flex-col items-center justify-center gap-14"
           >

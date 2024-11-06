@@ -6,9 +6,7 @@ import { useEffect, useState } from "react";
 import { MenuToggle } from "./menu-toggle";
 import { Navigation } from "./navigation";
 import { useLenis } from "lenis/react";
-import useLoadingScreenStatus from "@/hooks/use-loading-screen-status";
-import { useEarthLoading } from "@/context/earth-loading-context";
-import { TOTAL_LOADING_SCREEN_TRANSITION_DURATION_IN_MS } from "@/lib/constants";
+import usePreloaderStatus from "@/hooks/use-preloader-status";
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -33,11 +31,7 @@ const sidebar = {
 export function NavDrawer() {
   const lenis = useLenis();
   const [isOpen, setIsOpen] = useState(false);
-  const { isEarthLoading } = useEarthLoading();
-  const isLoadingScreenVisible = useLoadingScreenStatus(
-    isEarthLoading,
-    TOTAL_LOADING_SCREEN_TRANSITION_DURATION_IN_MS,
-  );
+  const isLoading = usePreloaderStatus();
   const navDrawerBg =
     typeof window !== "undefined"
       ? document.getElementById("nav-drawer-bg")
@@ -46,7 +40,7 @@ export function NavDrawer() {
 
   useEffect(() => {
     // Prevent overflow = "visible" before loading screen is complete
-    if (isLoadingScreenVisible) return;
+    if (isLoading) return;
 
     if (isOpen) {
       lenis?.stop();
@@ -62,7 +56,7 @@ export function NavDrawer() {
       lenis?.start();
       document.body.style.overflow = "visible";
     };
-  }, [isLoadingScreenVisible, isOpen, lenis]);
+  }, [isLoading, isOpen, lenis]);
 
   return (
     <motion.div

@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { STARS_DELAY_IN_SEC } from "@/lib/constants";
 
 const BASE_STARS = 35;
 const MAX_STARS = 250;
@@ -66,8 +68,14 @@ export default function StarsBackground() {
   return (
     <>
       {stars.map((star) => (
-        <span
+        <motion.span
           key={star.id}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            delay: STARS_DELAY_IN_SEC,
+            duration: 1,
+          }}
           style={{
             top: star.top,
             left: star.left,

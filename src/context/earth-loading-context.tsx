@@ -1,7 +1,5 @@
 "use client";
 
-import { TOTAL_TYPEWRITER_DURATION_IN_MS } from "@/lib/constants";
-import { wait } from "@/lib/utils";
 import {
   createContext,
   useContext,
@@ -21,23 +19,14 @@ export function EarthLoadingProvider({ children }: { children: ReactNode }) {
   const [loadingProgress, setLoadingProgress] = useState(0);
 
   useEffect(() => {
-    DefaultLoadingManager.onLoad = async () => {
-      // Wait for the first typewriter animation to complete else the second typewriter animation will start before the first completes
-
-      await wait(TOTAL_TYPEWRITER_DURATION_IN_MS);
+    DefaultLoadingManager.onLoad = () => {
       setIsEarthLoading(false);
     };
 
-    DefaultLoadingManager.onProgress = async (
-      _url,
-      itemsLoaded,
-      itemsTotal,
-    ) => {
+    DefaultLoadingManager.onProgress = (_url, itemsLoaded, itemsTotal) => {
       setLoadingProgress((itemsLoaded / itemsTotal) * 100);
 
       if (itemsLoaded === itemsTotal) {
-        // Wait for the first typewriter animation to complete else the second typewriter animation will start before the first completes
-        await wait(TOTAL_TYPEWRITER_DURATION_IN_MS);
         setIsEarthLoading(false);
       }
     };

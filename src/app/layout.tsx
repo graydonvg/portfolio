@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import LoadingScreen from "@/components/loading-screen/loading-screen";
 import { ReactLenis } from "lenis/react";
 import Providers from "./providers";
+import Preloader from "@/components/preloader/preloader";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,7 +28,7 @@ export default function RootLayout({
         className={cn("antialiased", inter.variable)}
       >
         <Providers>
-          <LoadingScreen />
+          <Preloader />
           <ReactLenis root>{children}</ReactLenis>
         </Providers>
       </body>

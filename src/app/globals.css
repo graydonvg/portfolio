@@ -6,6 +6,7 @@
   color-scheme: dark;
   /* position relative to remove framer motion warning */
   position: relative;
+  scrollbar-width: none;
 }
 
 body {

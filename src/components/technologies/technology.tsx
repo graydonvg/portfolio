@@ -14,7 +14,6 @@ export default function Technology({ name, iconPath }: Props) {
       initial={{ scale: 0 }}
       whileInView={{ scale: 1 }}
       transition={{
-        ease: "easeIn",
         duration: 0.5,
         type: "spring",
         stiffness: 50,

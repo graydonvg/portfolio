@@ -1,12 +1,10 @@
 "use client";
 
 import { CSSProperties, useEffect, useRef } from "react";
-import { LOADING_SCREEN_TRANSITION_DELAY_IN_MS } from "@/lib/constants";
 import { useScroll, motion, useTransform } from "framer-motion";
+import { LIGHT_BEAM_DELAY_IN_SEC } from "@/lib/constants";
 
 export default function LightBeams() {
-  const lightBeamIntroAnimationDelay =
-    LOADING_SCREEN_TRANSITION_DELAY_IN_MS / 1000;
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -70,7 +68,7 @@ export default function LightBeams() {
       style={
         {
           y,
-          "--light-beam-intro-delay": `${lightBeamIntroAnimationDelay}s`,
+          "--light-beam-intro-delay": `${LIGHT_BEAM_DELAY_IN_SEC}s`,
         } as CSSProperties
       }
       className="pointer-events-none absolute inset-0 -z-40 h-screen w-full overflow-hidden"
