@@ -3,21 +3,16 @@
 import TypographyH1 from "./ui/typography/h1";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "./ui/button";
-import { useRef } from "react";
-import LightBeams from "./background-elements/hero-background-elements/light-beams";
-import dynamic from "next/dynamic";
+import { ReactNode, useRef } from "react";
+import LightBeams from "./background-elements/hero-background-elements/light-beams/light-beams";
 import usePreloaderStatus from "@/hooks/use-preloader-status";
 import { HERO_DELAY_IN_SEC } from "@/lib/constants";
 
-const Earth = dynamic(
-  () =>
-    import("@/components/background-elements/hero-background-elements/earth"),
-  {
-    ssr: false,
-  },
-);
+type Props = {
+  children: ReactNode;
+};
 
-export default function Hero() {
+export default function Hero({ children }: Props) {
   const isLoading = usePreloaderStatus();
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -32,7 +27,7 @@ export default function Hero() {
       id="hero"
       ref={heroRef}
       // If h-screen changes, change how the footer calculates the overlap
-      className="flex h-screen flex-col items-center justify-center overflow-hidden px-4 py-[122px]"
+      className="relative flex h-screen flex-col items-center justify-center overflow-hidden px-4 py-[122px]"
     >
       {!isLoading && (
         <>
@@ -60,7 +55,7 @@ export default function Hero() {
           <LightBeams />
         </>
       )}
-      <Earth />
+      {children}
     </section>
   );
 }

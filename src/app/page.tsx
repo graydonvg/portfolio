@@ -6,6 +6,16 @@ import GlobalBackgroundElements from "@/components/background-elements/global-ba
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 import Toast from "@/components/ui/toast";
+import dynamic from "next/dynamic";
+
+// Earth is in hero component. Import here to make sure it is ready asap.
+const Earth = dynamic(
+  () =>
+    import("@/components/background-elements/hero-background-elements/earth"),
+  {
+    ssr: false,
+  },
+);
 
 export default function Home() {
   return (
@@ -14,7 +24,9 @@ export default function Home() {
       <div className="relative z-10 bg-background">
         <Header />
         <main>
-          <Hero />
+          <Hero>
+            <Earth />
+          </Hero>
           <AboutMe />
           <Projects />
           <Technologies />
