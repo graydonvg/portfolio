@@ -36,10 +36,6 @@ const config: Config = {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
         },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
@@ -48,8 +44,6 @@ const config: Config = {
           DEFAULT: "hsl(var(--input))",
           foreground: "hsl(var(--input-foreground))",
         },
-        border: "hsl(var(--border))",
-        ring: "hsl(var(--ring))",
       },
       borderRadius: {
         lg: "var(--radius)",

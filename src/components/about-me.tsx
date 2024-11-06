@@ -6,7 +6,7 @@ import TypographyP from "./ui/typography/p";
 
 export default function AboutMe() {
   return (
-    <Section className="bg-card">
+    <Section className="bg-card text-card-foreground">
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 xl:gap-16">
         <div className="hidden aspect-square w-full rounded-2xl bg-background md:block"></div>
         <div className="flex flex-col items-center justify-center gap-8 md:items-start">

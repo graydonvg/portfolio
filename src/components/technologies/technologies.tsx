@@ -5,7 +5,7 @@ import Section from "../section";
 
 export default function Technologies() {
   return (
-    <Section className="bg-card shadow-[0_60px_50px_rgba(0,0,0,0.75)]">
+    <Section className="bg-card text-card-foreground shadow-[0_60px_50px_rgba(0,0,0,0.75)]">
       <div
         id="tech-section"
         className="grid grid-cols-1 gap-8 px-4 md:px-14 lg:grid-cols-2 xl:px-0"

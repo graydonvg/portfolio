@@ -37,7 +37,7 @@ export default function ProjectCard({ project, isEven }: Props) {
       style={{
         scale,
       }}
-      className="z-10 grid grid-cols-1 gap-6 border border-border/50 p-4 sm:gap-8 md:grid-cols-2 md:p-8 lg:gap-12 lg:p-12"
+      className="z-10 grid grid-cols-1 gap-6 p-4 sm:gap-8 md:grid-cols-2 md:p-8 lg:gap-12 lg:p-12"
     >
       <div
         className={cn("order-1", {
@@ -59,7 +59,7 @@ export default function ProjectCard({ project, isEven }: Props) {
       >
         <CardHeader className="p-0 pb-6">
           <CardTitle className="md:text4xl text-3xl">{project.title}</CardTitle>
-          <CardDescription className="text-pretty pt-[10px] text-base/5">
+          <CardDescription className="text-pretty pt-[10px] text-base/5 text-card-foreground">
             {project.description}
           </CardDescription>
         </CardHeader>
@@ -68,7 +68,7 @@ export default function ProjectCard({ project, isEven }: Props) {
             {project.tags.map((tag) => (
               <li
                 key={tag}
-                className="flex items-center justify-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider text-muted/60 shadow-[inset_0_0_0_1px] md:text-sm/5"
+                className="flex items-center justify-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground shadow-[inset_0_0_0_1px] md:text-sm/5"
               >
                 {tag}
               </li>
@@ -83,7 +83,7 @@ export default function ProjectCard({ project, isEven }: Props) {
             rel="noopener noreferrer"
             className="flex-1"
           >
-            <Button variant="secondary" className="w-full">
+            <Button variant="outlined" className="w-full">
               Repository
             </Button>
           </Link>
@@ -94,7 +94,9 @@ export default function ProjectCard({ project, isEven }: Props) {
             rel="noopener noreferrer"
             className="flex-1"
           >
-            <Button className="w-full">View website</Button>
+            <Button showBorderOnHover className="w-full">
+              View website
+            </Button>
           </Link>
         </CardFooter>
       </div>
