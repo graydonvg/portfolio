@@ -63,9 +63,9 @@ export default function ProjectCard({ project, isEven }: Props) {
         })}
       >
         <CardHeader className="p-0 pb-6">
-          <CardTitle className="md:text4xl flex items-center text-3xl">
+          <CardTitle className="md:text4xl flex flex-col text-3xl">
             {project.title}
-            <span className="ml-4 text-base text-muted-foreground">
+            <span className="text-base text-muted-foreground/70">
               {"(Work in progress)"}
             </span>
           </CardTitle>
