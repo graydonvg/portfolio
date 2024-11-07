@@ -12,6 +12,7 @@ export default function AboutMe() {
         <Image
           src="/silhouette.png"
           alt="silhouette"
+          priority
           fill
           sizes={sizes}
           style={{ objectFit: "contain" }}
