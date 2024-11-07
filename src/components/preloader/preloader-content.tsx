@@ -4,12 +4,10 @@ import {
   PRELOADER_TRANSITION_DURATION_IN_SEC,
   TYPEWRITER_DURATION_IN_SEC,
 } from "@/lib/constants";
-import { useEarthLoading } from "@/context/earth-loading-context";
 import Typewriter from "./typewriter";
+import PreloaderProgress from "./preloader-progress";
 
 export default function PreloaderContent() {
-  const { loadingProgress } = useEarthLoading();
-
   return (
     <motion.div
       initial={{ y: "0" }}
@@ -24,9 +22,7 @@ export default function PreloaderContent() {
       <Typewriter duration={TYPEWRITER_DURATION_IN_SEC}>
         Hello, World!
       </Typewriter>
-      <span className="absolute bottom-6 right-6 text-muted-foreground sm:bottom-8 sm:right-8">
-        {loadingProgress.toFixed(0)}%
-      </span>
+      <PreloaderProgress />
     </motion.div>
   );
 }
