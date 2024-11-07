@@ -40,7 +40,7 @@ export default function ProjectCard({ project, isEven }: Props) {
       className="z-10 grid grid-cols-1 gap-6 p-4 sm:gap-8 md:grid-cols-2 md:p-8 lg:gap-12 lg:p-12"
     >
       <div
-        className={cn("order-1", {
+        className={cn("relative order-1", {
           "md:order-2": !isEven,
         })}
       >
@@ -49,8 +49,13 @@ export default function ProjectCard({ project, isEven }: Props) {
           alt={`${project.title} mockup`}
           className="rounded-md"
           priority
-          sizes="(min-width: 1280px) 576px, (min-width: 768px) 526px, calc(100vw - 64px)"
+          sizes="(min-width: 1620px) 576px, (min-width: 1280px) calc(40vw - 64px), (min-width: 1040px) calc(50vw - 104px), (min-width: 780px) calc(50vw - 80px), calc(100vw - 96px)"
         />
+        {project.links.website.length === 0 && (
+          <div className="absolute inset-0 flex h-full w-full items-center justify-center rounded-2xl bg-zinc-950/80 text-center text-2xl text-white">
+            Coming soon
+          </div>
+        )}
       </div>
       <div
         className={cn("order-2 flex flex-col items-start", {
@@ -58,7 +63,12 @@ export default function ProjectCard({ project, isEven }: Props) {
         })}
       >
         <CardHeader className="p-0 pb-6">
-          <CardTitle className="md:text4xl text-3xl">{project.title}</CardTitle>
+          <CardTitle className="md:text4xl flex items-center text-3xl">
+            {project.title}
+            <span className="ml-4 text-base text-muted-foreground">
+              {"(Work in progress)"}
+            </span>
+          </CardTitle>
           <CardDescription className="text-pretty pt-[10px] text-base/5 text-card-foreground">
             {project.description}
           </CardDescription>
@@ -92,9 +102,20 @@ export default function ProjectCard({ project, isEven }: Props) {
             href={project.links.website}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1"
+            onClick={(e) => {
+              if (project.links.website.length === 0) {
+                e.preventDefault();
+              }
+            }}
+            className={cn("flex-1", {
+              "cursor-not-allowed": project.links.website.length === 0,
+            })}
           >
-            <Button showBorderOnHover className="w-full">
+            <Button
+              showBorderOnHover
+              className="w-full"
+              disabled={project.links.website.length === 0}
+            >
               View website
             </Button>
           </Link>
