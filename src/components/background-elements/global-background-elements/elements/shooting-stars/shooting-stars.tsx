@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import ShootingStar from "./shooting-star";
 import { ShootingStarType } from "@/lib/types";
 import { SHOOTING_STAR_DELAY_IN_MS } from "@/lib/constants";
+import usePreloaderStatus from "@/hooks/use-preloader-status";
 
 function calculateRandomAngleTowardsCenter(x: number, y: number) {
   // Make shooting star travel towards the center to prevent it from starting on the edge and exiting immediately
@@ -59,9 +60,11 @@ function createShootingStar() {
 }
 
 export default function ShootingStars() {
+  const isLoading = usePreloaderStatus();
   const [shootingStars, setShootingStars] = useState<ShootingStarType[]>([]);
 
   useEffect(() => {
+    if (isLoading) return;
     async function addShootingStar() {
       await wait(SHOOTING_STAR_DELAY_IN_MS);
 
@@ -69,7 +72,7 @@ export default function ShootingStars() {
     }
 
     addShootingStar();
-  }, []);
+  }, [isLoading]);
 
   async function handleAnimationEnd() {
     await wait(4000);

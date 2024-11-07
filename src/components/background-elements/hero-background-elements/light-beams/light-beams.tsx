@@ -64,31 +64,29 @@ export default function LightBeams() {
   }, []);
 
   return (
-    <>
-      <motion.div
-        ref={containerRef}
-        style={
-          {
-            y,
-            "--light-beam-intro-delay": `${LIGHT_BEAM_DELAY_IN_SEC}s`,
-          } as CSSProperties
-        }
-        className="pointer-events-none absolute inset-0 -z-40 h-screen w-full overflow-hidden"
-      >
-        {/* Light beams for larger screens */}
-        <div className="hidden sm:flex">
-          {Array.from(Array(5)).map((_, index) => (
-            <LightBeam key={index} lightBeamNumber={index + 1} />
-          ))}
-        </div>
+    <motion.div
+      ref={containerRef}
+      style={
+        {
+          y,
+          "--light-beam-intro-delay": `${LIGHT_BEAM_DELAY_IN_SEC}s`,
+        } as CSSProperties
+      }
+      className="pointer-events-none absolute inset-0 -z-40 h-screen w-full overflow-hidden"
+    >
+      {/* Light beams for larger screens */}
+      <div className="hidden sm:flex">
+        {Array.from(Array(5)).map((_, index) => (
+          <LightBeam key={index} lightBeamNumber={index + 1} />
+        ))}
+      </div>
 
-        {/* Light beams for smaller screens */}
-        <div className="flex sm:hidden">
-          {Array.from(Array(3)).map((_, index) => (
-            <LightBeam key={index} lightBeamNumber={index + 1} />
-          ))}
-        </div>
-      </motion.div>
-    </>
+      {/* Light beams for smaller screens */}
+      <div className="flex sm:hidden">
+        {Array.from(Array(3)).map((_, index) => (
+          <LightBeam key={index} lightBeamNumber={index + 1} />
+        ))}
+      </div>
+    </motion.div>
   );
 }

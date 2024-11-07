@@ -3,13 +3,13 @@
 import TypographyH1 from "./ui/typography/h1";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "./ui/button";
-import { ReactNode, useRef } from "react";
+import { CSSProperties, ReactNode, useRef } from "react";
 import LightBeams from "./background-elements/hero-background-elements/light-beams/light-beams";
 import usePreloaderStatus from "@/hooks/use-preloader-status";
 import { HERO_DELAY_IN_SEC } from "@/lib/constants";
 
 type Props = {
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 export default function Hero({ children }: Props) {
@@ -32,14 +32,13 @@ export default function Hero({ children }: Props) {
       {!isLoading && (
         <>
           <motion.div
-            style={{ y }}
-            initial={{ opacity: 0, scale: 0, filter: "blur(50px)" }}
-            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-            transition={{
-              delay: HERO_DELAY_IN_SEC,
-              duration: 0.5,
-            }}
-            className="flex flex-col items-center justify-center gap-14"
+            style={
+              {
+                y,
+                "--hero-delay": `${HERO_DELAY_IN_SEC}s`,
+              } as CSSProperties
+            }
+            className="hero-intro flex flex-col items-center justify-center gap-14"
           >
             <div className="flex flex-col items-center justify-center gap-3 whitespace-nowrap text-center sm:gap-4">
               <p className="text-[clamp(1.125rem,5vw,1.5rem)]/[clamp(1.75rem,5vw+1rem,2rem)] text-muted">

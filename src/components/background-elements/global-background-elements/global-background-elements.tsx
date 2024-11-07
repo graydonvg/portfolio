@@ -3,10 +3,8 @@
 import { useEffect, useState } from "react";
 import StarsBackground from "./elements/stars-background";
 import ShootingStars from "./elements/shooting-stars/shooting-stars";
-import usePreloaderStatus from "@/hooks/use-preloader-status";
 
 export default function GlobalBackgroundElements() {
-  const isLoading = usePreloaderStatus();
   const techSection =
     typeof window !== "undefined"
       ? document.getElementById("tech-section")
@@ -70,12 +68,8 @@ export default function GlobalBackgroundElements() {
       }}
       className="pointer-events-none fixed inset-0 -z-50 h-screen w-full overflow-hidden"
     >
-      {!isLoading && (
-        <>
-          <StarsBackground />
-          <ShootingStars />
-        </>
-      )}
+      <StarsBackground />
+      <ShootingStars />
     </div>
   );
 }

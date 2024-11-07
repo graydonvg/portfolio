@@ -123,24 +123,6 @@ body {
   }
 }
 
-@keyframes star-pulse {
-  0%,
-  20%,
-  40%,
-  60%,
-  80%,
-  100% {
-    filter: brightness(0.8);
-  }
-  10%,
-  30%,
-  50%,
-  70%,
-  90% {
-    filter: brightness(2);
-  }
-}
-
 @keyframes animate-shooting-star {
   0% {
     opacity: 0;
@@ -175,5 +157,42 @@ body {
 @keyframes blink {
   50% {
     border-color: transparent;
+  }
+}
+
+.hero-intro {
+  opacity: 0;
+  scale: 0;
+  filter: blur(50px);
+  animation: hero-intro-animation 0.5s var(--hero-delay, 0.2s) ease-out forwards;
+}
+
+@keyframes hero-intro-animation {
+  to {
+    opacity: 1;
+    scale: 1;
+    filter: blur(0px);
+  }
+}
+
+.animate-stars {
+  animation: star-pulse var(--star-duration, 15s) linear infinite alternate;
+}
+
+@keyframes star-pulse {
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    filter: brightness(0.8);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    filter: brightness(2);
   }
 }

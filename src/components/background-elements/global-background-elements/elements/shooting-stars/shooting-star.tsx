@@ -1,5 +1,5 @@
 import { ShootingStarType } from "@/lib/types";
-import { useEffect, useRef } from "react";
+import { CSSProperties, useEffect, useRef } from "react";
 
 type Props = {
   shootingStar: ShootingStarType;
@@ -47,9 +47,9 @@ export default function ShootingStar({ shootingStar, onLeaveViewport }: Props) {
           "--shooting-star-rotation": shootingStar.rotation,
           "--shooting-star-travel-distance": shootingStar.travelDistance,
           animation: `animate-shooting-star ${shootingStar.animationDuration} linear forwards`,
-        } as React.CSSProperties
+        } as CSSProperties
       }
-      className="shooting-star absolute bg-star-radial before:absolute before:left-1/2 before:top-1/2 before:h-[var(--shooting-star-tail-height)] before:w-[var(--shooting-star-tail-width)] before:-translate-y-1/2 before:rounded-full before:bg-shooting-star-tail before:backdrop-blur-[20px]"
+      className="absolute bg-star-radial before:absolute before:left-1/2 before:top-1/2 before:h-[var(--shooting-star-tail-height)] before:w-[var(--shooting-star-tail-width)] before:-translate-y-1/2 before:rounded-full before:bg-shooting-star-tail before:backdrop-blur-[20px]"
     />
   );
 }

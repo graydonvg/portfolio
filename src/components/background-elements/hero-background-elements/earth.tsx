@@ -1,7 +1,7 @@
 "use client";
 
 import { Canvas, useLoader } from "@react-three/fiber";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, motion as motion2d } from "framer-motion";
 import { TextureLoader } from "three";
 import { motion as motion3d } from "framer-motion-3d";
@@ -45,6 +45,14 @@ export default function Earth() {
       .join(", ");
   }
 
+  const [earthDelay, setEarthDelay] = useState(1000);
+
+  useEffect(() => {
+    if (!isLoading) {
+      setEarthDelay(EARTH_DELAY_IN_SEC);
+    }
+  }, [isLoading]);
+
   return (
     <motion2d.div
       ref={containerRef}
@@ -60,33 +68,32 @@ export default function Earth() {
             color={directionalLightColor}
             castShadow
           />
-          {!isLoading && (
-            <motion3d.mesh
-              initial={{
-                scale: 0,
-                rotateX: INITIAL_ROTATION_X + 1,
-                rotateY: INITIAL_ROTATION_Y - 3,
-              }}
-              animate={{
-                scale: 1.9,
-                rotateX: INITIAL_ROTATION_X,
-                rotateY: INITIAL_ROTATION_Y,
-              }}
-              transition={{
-                delay: EARTH_DELAY_IN_SEC,
-                duration: 2,
-              }}
-              rotation-x={rotationX}
-              rotation-y={rotationY}
-            >
-              <sphereGeometry args={[1, 64, 64]} />
-              <meshStandardMaterial
-                map={map}
-                normalMap={normalMap}
-                aoMap={aoMap}
-              />
-            </motion3d.mesh>
-          )}
+          <motion3d.mesh
+            key={earthDelay}
+            initial={{
+              scale: 0,
+              rotateX: INITIAL_ROTATION_X + 1,
+              rotateY: INITIAL_ROTATION_Y - 3,
+            }}
+            animate={{
+              scale: 1.8,
+              rotateX: INITIAL_ROTATION_X,
+              rotateY: INITIAL_ROTATION_Y,
+            }}
+            transition={{
+              delay: earthDelay,
+              duration: 2,
+            }}
+            rotation-x={rotationX}
+            rotation-y={rotationY}
+          >
+            <sphereGeometry args={[1, 64, 64]} />
+            <meshStandardMaterial
+              map={map}
+              normalMap={normalMap}
+              aoMap={aoMap}
+            />
+          </motion3d.mesh>
         </Canvas>
       </div>
     </motion2d.div>

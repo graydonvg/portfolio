@@ -1,8 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { STARS_DELAY_IN_SEC } from "@/lib/constants";
+import { CSSProperties, useEffect, useState } from "react";
 
 const BASE_STARS = 35;
 const MAX_STARS = 250;
@@ -68,22 +66,18 @@ export default function StarsBackground() {
   return (
     <>
       {stars.map((star) => (
-        <motion.span
+        <span
           key={star.id}
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            delay: STARS_DELAY_IN_SEC,
-            duration: 1,
-          }}
-          style={{
-            top: star.top,
-            left: star.left,
-            width: star.size,
-            height: star.size,
-            animation: `star-pulse ${star.animationDuration} linear infinite alternate`,
-          }}
-          className="absolute rounded-full bg-star-radial"
+          style={
+            {
+              top: star.top,
+              left: star.left,
+              width: star.size,
+              height: star.size,
+              "--star-duration": star.animationDuration,
+            } as CSSProperties
+          }
+          className="animate-stars absolute rounded-full bg-star-radial"
         />
       ))}
     </>
