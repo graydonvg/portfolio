@@ -1,7 +1,7 @@
 "use client";
 
 import { Canvas, useLoader } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useScroll, useTransform, motion as motion2d } from "framer-motion";
 import { TextureLoader } from "three";
 import { motion as motion3d } from "framer-motion-3d";
@@ -13,6 +13,7 @@ const INITIAL_ROTATION_Y = 4.3;
 
 export default function Earth() {
   const isLoading = usePreloaderStatus();
+  const [earthDelay, setEarthDelay] = useState(1000);
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -29,23 +30,18 @@ export default function Earth() {
     [0, 1],
     [INITIAL_ROTATION_Y, 5.3],
   );
-
   const [map, normalMap, aoMap] = useLoader(TextureLoader, [
     "/earth/map.webp",
     "/earth/normalMap.webp",
     "/earth/aoMap.webp",
   ]);
-  const directionalLightColor = `hsl(${getCSSVariable("--directional-light")})`;
-
-  function getCSSVariable(name: string) {
-    return getComputedStyle(document.documentElement)
-      .getPropertyValue(name)
+  const directionalLightColor = useMemo(() => {
+    return `hsl(${getComputedStyle(document.documentElement)
+      .getPropertyValue("--directional-light")
       .trim()
       .split(" ")
-      .join(", ");
-  }
-
-  const [earthDelay, setEarthDelay] = useState(1000);
+      .join(", ")})`;
+  }, []);
 
   useEffect(() => {
     if (!isLoading) {
@@ -69,6 +65,7 @@ export default function Earth() {
             castShadow
           />
           <motion3d.mesh
+            // Using key to remount the model reduces lag on mobile compared to conditionally rendering the model
             key={earthDelay}
             initial={{
               scale: 0,
