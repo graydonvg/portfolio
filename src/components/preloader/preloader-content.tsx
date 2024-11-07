@@ -25,4 +25,6 @@ const PreloaderContent = memo(() => {
   );
 });
 
+PreloaderContent.displayName = "PreloaderContent";
+
 export default PreloaderContent;
