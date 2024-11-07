@@ -40,7 +40,7 @@ export default function ProjectCard({ project, isEven }: Props) {
       className="z-10 grid grid-cols-1 gap-6 p-4 sm:gap-8 md:grid-cols-2 md:p-8 lg:gap-12 lg:p-12"
     >
       <div
-        className={cn("relative order-1", {
+        className={cn("relative order-1 h-fit", {
           "md:order-2": !isEven,
         })}
       >

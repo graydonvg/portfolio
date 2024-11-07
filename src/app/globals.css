@@ -144,27 +144,6 @@ body {
   }
 }
 
-.typewriter {
-  animation:
-    typing var(--typewriter-duration, 1s) steps(22),
-    blink 0.5s step-end infinite alternate;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
 .hero-intro {
   opacity: 0;
   scale: 0;
@@ -199,5 +178,28 @@ body {
   70%,
   90% {
     filter: brightness(2);
+  }
+}
+
+@keyframes reveal-character {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes character-blinker {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  10%,
+  90% {
+    opacity: 1;
+  }
+}
+
+@keyframes end-blinker {
+  50% {
+    opacity: 1;
   }
 }
