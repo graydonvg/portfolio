@@ -123,7 +123,12 @@ body {
   }
 }
 
-@keyframes animate-shooting-star {
+.animate-shooting-star {
+  animation: shooting-star-animation var(--shooting-star-duration, 12s) linear
+    forwards;
+}
+
+@keyframes shooting-star-animation {
   0% {
     opacity: 0;
     transform: rotate(var(--shooting-star-rotation)) translateX(0);

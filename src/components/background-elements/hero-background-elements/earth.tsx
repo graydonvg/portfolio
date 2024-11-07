@@ -59,7 +59,7 @@ export default function Earth() {
       style={{ y }}
       className="pointer-events-none absolute inset-0 -z-30 flex h-screen w-full flex-col items-center justify-center"
     >
-      <div className="h-full max-h-[1270px] w-full">
+      <div className="h-full max-h-[79rem] w-full">
         <Canvas>
           <ambientLight intensity={0.5} />
           <directionalLight

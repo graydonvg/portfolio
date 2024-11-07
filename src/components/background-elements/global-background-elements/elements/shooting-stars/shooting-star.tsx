@@ -46,10 +46,10 @@ export default function ShootingStar({ shootingStar, onLeaveViewport }: Props) {
           "--shooting-star-tail-height": shootingStar.tailHeight,
           "--shooting-star-rotation": shootingStar.rotation,
           "--shooting-star-travel-distance": shootingStar.travelDistance,
-          animation: `animate-shooting-star ${shootingStar.animationDuration} linear forwards`,
+          "--shooting-star-duration": shootingStar.animationDuration,
         } as CSSProperties
       }
-      className="absolute bg-star-radial before:absolute before:left-1/2 before:top-1/2 before:h-[var(--shooting-star-tail-height)] before:w-[var(--shooting-star-tail-width)] before:-translate-y-1/2 before:rounded-full before:bg-shooting-star-tail before:backdrop-blur-[20px]"
+      className="animate-shooting-star absolute bg-star-radial before:absolute before:left-1/2 before:top-1/2 before:h-[var(--shooting-star-tail-height)] before:w-[var(--shooting-star-tail-width)] before:-translate-y-1/2 before:rounded-full before:bg-shooting-star-tail before:backdrop-blur-[20px]"
     />
   );
 }
