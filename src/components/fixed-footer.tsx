@@ -16,13 +16,16 @@ export default function FixedFooter() {
     typeof window !== "undefined" ? document.getElementById("hero") : null;
 
   useGSAP(() => {
+    const heroHeight = hero?.offsetHeight ? hero.offsetHeight : 0;
+    const footerHeight = footerRef?.current?.offsetHeight
+      ? footerRef.current.offsetHeight
+      : 0;
     // We never want it to overlap more than the height of the screen
     // Mobile devices calculate the browser viewport as (top bar + document + bottom bar) = 100vh
     // Using hero height because it is 100vh
     // This ensures that the footer is set to fixed
     function getOverlap() {
-      if (!footerRef.current) return 0;
-      return Math.min(hero!.offsetHeight, footerRef.current.offsetHeight);
+      return Math.min(heroHeight, footerHeight);
     }
 
     // Adjusts the margin-top of the footer to overlap the proper amount
@@ -39,7 +42,7 @@ export default function FixedFooter() {
 
     ScrollTrigger.create({
       trigger: footerRef.current,
-      start: () => `top ${hero!.offsetHeight - getOverlap()}`,
+      start: () => `top ${heroHeight - getOverlap()}`,
       end: () => `+=${getOverlap()}`,
       pin: true,
     });
