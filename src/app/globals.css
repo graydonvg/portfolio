@@ -6,7 +6,7 @@
   color-scheme: dark;
   /* position relative to remove framer motion warning */
   position: relative;
-  scrollbar-width: none;
+  /* scrollbar-width: none; */
 }
 
 body {
@@ -120,27 +120,6 @@ body {
   100% {
     transform: translateX(-50%) rotate(calc(var(--rotate, 0deg) * 1))
       scale(var(--scale, 1));
-  }
-}
-
-.animate-shooting-star {
-  animation: shooting-star-animation var(--shooting-star-duration, 12s) linear
-    forwards;
-}
-
-@keyframes shooting-star-animation {
-  0% {
-    opacity: 0;
-    transform: rotate(var(--shooting-star-rotation)) translateX(0);
-  }
-  30%,
-  70% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: rotate(var(--shooting-star-rotation))
-      translateX(var(--shooting-star-travel-distance));
   }
 }
 

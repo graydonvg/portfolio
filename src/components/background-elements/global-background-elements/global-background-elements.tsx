@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import StarsBackground from "./elements/stars-background";
-import ShootingStars from "./elements/shooting-stars/shooting-stars";
+import StarsBackground from "./stars-background/stars-background";
 
 export default function GlobalBackgroundElements() {
   const techSection =
@@ -45,7 +44,7 @@ export default function GlobalBackgroundElements() {
       const rect = techSection.getBoundingClientRect();
 
       // Distance between the bottom of the element and the top of the viewport
-      // The amount the backgroundElements need to be clipped starting from the bottom of the viewport
+      // The amount the GlobalBackgroundElements need to be clipped starting from the bottom of the viewport
       const distance = 0 + rect.bottom;
       setDistanceFromTop(`${distance}px`);
     };
@@ -69,7 +68,6 @@ export default function GlobalBackgroundElements() {
       className="pointer-events-none fixed inset-0 -z-50 h-screen w-full overflow-hidden"
     >
       <StarsBackground />
-      <ShootingStars />
     </div>
   );
 }

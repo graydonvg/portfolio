@@ -19,7 +19,7 @@ export default function Hero({ children }: Props) {
     target: heroRef,
     offset: ["start start", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-33vh"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "12.5vh"]);
 
   return (
     <section

@@ -19,7 +19,7 @@ export default function Earth() {
     target: containerRef,
     offset: ["start start", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "20vh"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "35vh"]);
   const rotationX = useTransform(
     scrollYProgress,
     [0, 1],

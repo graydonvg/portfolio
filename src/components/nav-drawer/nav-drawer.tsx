@@ -1,6 +1,6 @@
 "use client";
 
-import { useDimensions } from "@/hooks/use-dimension";
+import { useElementDimensions } from "@/hooks/use-element-dimension";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { MenuToggle } from "./menu-toggle";
@@ -36,7 +36,7 @@ export function NavDrawer() {
     typeof window !== "undefined"
       ? document.getElementById("nav-drawer-bg")
       : null;
-  const dimensions = useDimensions(navDrawerBg);
+  const dimensions = useElementDimensions(navDrawerBg);
 
   useEffect(() => {
     // Prevent overflow = "visible" before loading screen is complete

@@ -1,12 +1,12 @@
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-export function useDimensions(element: HTMLElement | null) {
+export function useElementDimensions(element: HTMLElement | null) {
   const [dimensions, setDimensions] = useState<{
     width: number;
     height: number;
   } | null>(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     function measure() {
       if (element) {
         setDimensions({
