@@ -1,6 +1,6 @@
 import { scrollToContactForm } from "./utils";
 import myStoreMockup from "/public/mockups/mystore-mockup.jpg";
-import galleryAi from "/public/gallery-ai-screenshot.png";
+import galleryAiMockup from "/public/mockups/gallery-ai-mockup.jpg";
 
 export const EMAIL_ADDRESS = "graydonvg@gmail.com";
 
@@ -41,10 +41,10 @@ export const projects = [
     },
   },
   {
-    image: galleryAi,
+    image: galleryAiMockup,
     title: "Gallery AI",
     description:
-      "Developed a dynamic media gallery platform with advanced management features, allowing users to seamlessly upload and enhance both photos and videos. Key features include Auto-Tagging for efficient categorization and search optimization, Image Optimization for high-quality display across devices, and Smart Editing with AI-driven enhancements.",
+      "Developing a dynamic media gallery platform with advanced management features, allowing users to seamlessly upload and enhance both photos and videos. Key features include Auto-Tagging for efficient categorization and search optimization, Image Optimization for high-quality display across devices, and Smart Editing with AI-driven enhancements.",
     tags: [
       "typescript",
       "react.js",
@@ -52,6 +52,7 @@ export const projects = [
       "redux",
       "supabase",
       "shadcn/ui",
+      "tailwind css",
       "cloudinary",
     ],
     links: {
