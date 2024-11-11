@@ -55,44 +55,44 @@ export default function Earth() {
       style={{ y }}
       className="pointer-events-none absolute inset-0 -z-30 flex h-screen w-full flex-col items-center justify-center"
     >
-      <div className="h-full max-h-[79rem] w-full">
-        <Canvas>
-          <ambientLight intensity={0.5} />
-          <directionalLight
-            intensity={10}
-            position={[0, 1, 0.1]}
-            color={directionalLightColor}
-            castShadow
-          />
-          <motion3d.mesh
-            // Using key to remount the model reduces lag on mobile compared to conditionally rendering the model
-            key={earthDelay}
-            initial={{
-              scale: 0,
-              rotateX: INITIAL_ROTATION_X + 1,
-              rotateY: INITIAL_ROTATION_Y - 3,
-            }}
-            animate={{
-              scale: 1.8,
-              rotateX: INITIAL_ROTATION_X,
-              rotateY: INITIAL_ROTATION_Y,
-            }}
-            transition={{
-              delay: earthDelay,
-              duration: 2,
-            }}
-            rotation-x={rotationX}
-            rotation-y={rotationY}
-          >
-            <sphereGeometry args={[1, 64, 64]} />
-            <meshStandardMaterial
-              map={map}
-              normalMap={normalMap}
-              aoMap={aoMap}
-            />
-          </motion3d.mesh>
-        </Canvas>
-      </div>
+      <Canvas
+        camera={{ position: [0, 0, 2.8] }}
+        onCreated={({ gl }) => {
+          gl.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        }}
+        gl={{ alpha: true }}
+        className="h-full max-h-[79rem] w-full"
+      >
+        <ambientLight intensity={0.5} />
+        <directionalLight
+          intensity={10}
+          position={[0, 1, 0.1]}
+          color={directionalLightColor}
+        />
+        <motion3d.mesh
+          // Using key to remount the model reduces lag on mobile compared to conditionally rendering the model
+          key={earthDelay}
+          initial={{
+            scale: 0,
+            rotateX: INITIAL_ROTATION_X + 1,
+            rotateY: INITIAL_ROTATION_Y - 3,
+          }}
+          animate={{
+            scale: 1,
+            rotateX: INITIAL_ROTATION_X,
+            rotateY: INITIAL_ROTATION_Y,
+          }}
+          transition={{
+            delay: earthDelay,
+            duration: 2,
+          }}
+          rotation-x={rotationX}
+          rotation-y={rotationY}
+        >
+          <sphereGeometry args={[1, 64, 64]} />
+          <meshStandardMaterial map={map} normalMap={normalMap} aoMap={aoMap} />
+        </motion3d.mesh>
+      </Canvas>
     </motion2d.div>
   );
 }

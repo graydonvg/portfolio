@@ -17,7 +17,7 @@ const PreloaderContent = memo(() => {
         duration: PRELOADER_TRANSITION_DURATION_IN_SEC,
         ease: [0.76, 0, 0.24, 1],
       }}
-      className="pointer-events-none fixed inset-0 z-50 flex h-dvh w-screen items-center justify-center bg-black p-12 text-2xl sm:text-3xl"
+      className="pointer-events-none fixed inset-0 z-50 flex h-dvh w-full items-center justify-center bg-black p-12 text-2xl sm:text-3xl"
     >
       <Typewriter>Hello, World!</Typewriter>
       <PreloaderProgress />

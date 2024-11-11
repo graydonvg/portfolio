@@ -3,7 +3,7 @@ import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useMemo, useRef, useState } from "react";
 import { Color, ShaderMaterial } from "three";
 
-const STAR_COUNT = 300;
+const STAR_COUNT = 500;
 
 export default function Stars() {
   const { scrollY } = useScroll();
@@ -15,9 +15,9 @@ export default function Stars() {
   });
 
   const positionX = useMemo(() => {
-    if (window.innerWidth < 900) return { min: -2, max: 2 };
-    if (window.innerWidth < 2000) return { min: -5, max: 5 };
-    if (window.innerWidth < 3500) return { min: -8, max: 8 };
+    if (window.innerWidth < 1000) return { min: -3, max: 3 };
+    if (window.innerWidth < 2000) return { min: -6, max: 6 };
+    if (window.innerWidth < 4000) return { min: -9, max: 9 };
     return { min: -12, max: 12 };
   }, []);
 
