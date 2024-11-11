@@ -16,6 +16,9 @@ const description =
   "Graydon von Gossler's portfolio showcasing front-end development skills including but not limited to JavaScript, TypeScript, React.js, Next.js, and Tailwind CSS.";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
+  ),
   title: "Graydon von Gossler",
   description,
   keywords:
