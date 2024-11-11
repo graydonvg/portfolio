@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { ReactLenis } from "lenis/react";
 import Providers from "./providers";
 import Preloader from "@/components/preloader/preloader";
+import ogImage from "./opengraph-image.png";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -58,11 +59,25 @@ export const metadata: Metadata = {
     description,
     type: "website",
     url: "https://portfolio-iota-ruby-51.vercel.app/",
+    images: [
+      {
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Graydon von Gossler",
     description,
+    images: [
+      {
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
+      },
+    ],
   },
 };
 
