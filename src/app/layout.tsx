@@ -24,7 +24,7 @@ export const metadata: Metadata = {
       rel: "icon",
       type: "image/png",
       sizes: "192x192",
-      url: "/favicon/android-chrome-192x192.png",
+      url: "/public/favicon/android-chrome-192x192.png",
     },
     {
       rel: "icon",
