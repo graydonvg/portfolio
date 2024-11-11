@@ -15,7 +15,7 @@ export default function Stars() {
   });
 
   const positionX = useMemo(() => {
-    if (window.innerWidth < 1000) return { min: -3, max: 3 };
+    if (window.innerWidth < 1000) return { min: -4, max: 4 };
     if (window.innerWidth < 2000) return { min: -6, max: 6 };
     if (window.innerWidth < 4000) return { min: -9, max: 9 };
     return { min: -12, max: 12 };
