@@ -7,6 +7,8 @@ import Providers from "./providers";
 import Preloader from "@/components/preloader/preloader";
 import ogImage from "../../public/opengraph-image.png";
 import type { Viewport } from "next";
+import Head from "next/head";
+import { EMAIL_ADDRESS, GITHUB_URL, LINKED_IN_URL } from "@/lib/constants";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -14,7 +16,7 @@ const inter = Inter({
 });
 
 export const viewport: Viewport = {
-  themeColor: "black",
+  themeColor: "#09090b",
   colorScheme: "dark light",
 };
 
@@ -22,6 +24,7 @@ const NAME = "Graydon von Gossler";
 const TITLE = `${NAME} | Web Developer`;
 const DESCRIPTION =
   "Portfolio showcasing projects and web development skills in JavaScript, TypeScript, React.js, Next.js, Tailwind CSS, and more.";
+const URL = "https://portfolio-iota-ruby-51.vercel.app/";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -72,7 +75,7 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     siteName: NAME,
     type: "website",
-    url: "https://portfolio-iota-ruby-51.vercel.app/",
+    url: URL,
     images: [
       {
         url: ogImage.src,
@@ -90,6 +93,36 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLdSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: NAME,
+  url: URL,
+  sameAs: [LINKED_IN_URL, GITHUB_URL],
+  jobTitle: "Web Developer",
+  worksFor: {
+    "@type": "Organization",
+    name: "Freelance",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "email",
+    email: EMAIL_ADDRESS,
+  },
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  url: URL,
+  name: `${NAME} - Portfolio`,
+  description: DESCRIPTION,
+  publisher: {
+    "@type": "Organization",
+    name: NAME,
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -97,6 +130,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+      </Head>
       <body
         suppressHydrationWarning
         className={cn("antialiased", inter.variable)}

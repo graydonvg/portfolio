@@ -2,16 +2,18 @@ import { scrollToContactForm } from "./utils";
 import myStoreMockup from "/public/mockups/mystore-mockup.jpg";
 import galleryAiMockup from "/public/mockups/gallery-ai-mockup.jpg";
 
+export const GITHUB_URL = "https://github.com/graydonvg";
+export const LINKED_IN_URL = "https://www.linkedin.com/";
 export const EMAIL_ADDRESS = "graydonvg@gmail.com";
 
 export const navOptions = [
   {
     label: "GitHub",
-    link: "https://github.com/graydonvg",
+    link: GITHUB_URL,
   },
   {
     label: "LinkedIn",
-    link: "https://www.linkedin.com/",
+    link: LINKED_IN_URL,
   },
   {
     label: "Contact me",
