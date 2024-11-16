@@ -8,7 +8,12 @@ import Preloader from "@/components/preloader/preloader";
 import ogImage from "../../public/opengraph-image.png";
 import type { Viewport } from "next";
 import Head from "next/head";
-import { EMAIL_ADDRESS, GITHUB_URL, LINKED_IN_URL } from "@/lib/constants";
+import {
+  EMAIL_ADDRESS,
+  GITHUB_URL,
+  LINKED_IN_URL,
+  SITE_URL,
+} from "@/lib/constants";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,9 +29,9 @@ const NAME = "Graydon von Gossler";
 const TITLE = `${NAME} | Web Developer`;
 const DESCRIPTION =
   "Portfolio showcasing projects and web development skills in JavaScript, TypeScript, React.js, Next.js, Tailwind CSS, and more.";
-const URL = "https://portfolio-iota-ruby-51.vercel.app/";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL!),
   title: TITLE,
   description: DESCRIPTION,
   applicationName: `${NAME} - Portfolio`,
@@ -75,7 +80,7 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     siteName: NAME,
     type: "website",
-    url: URL,
+    url: SITE_URL,
     images: [
       {
         url: ogImage.src,
@@ -97,7 +102,7 @@ const jsonLdSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: NAME,
-  url: URL,
+  url: SITE_URL,
   sameAs: [LINKED_IN_URL, GITHUB_URL],
   jobTitle: "Web Developer",
   worksFor: {
@@ -114,7 +119,7 @@ const jsonLdSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  url: URL,
+  url: SITE_URL,
   name: `${NAME} - Portfolio`,
   description: DESCRIPTION,
   publisher: {
