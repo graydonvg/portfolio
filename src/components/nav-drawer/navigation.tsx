@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { MenuItem } from "./menu-item";
-import { NAV_OPTIONS } from "@/lib/constants";
+import { navOptions } from "@/lib/constants";
 
 const variants = {
   open: {
@@ -19,7 +19,7 @@ export function Navigation({ onMenuClick }: Props) {
   return (
     <nav className="fixed left-0 top-[120px] z-40 w-[300px] px-4">
       <motion.ul variants={variants} className="space-y-6">
-        {NAV_OPTIONS.map((option) => (
+        {navOptions.map((option) => (
           <MenuItem
             key={option.label}
             option={option}

@@ -4,7 +4,7 @@ import galleryAiMockup from "/public/mockups/gallery-ai-mockup.jpg";
 
 export const EMAIL_ADDRESS = "graydonvg@gmail.com";
 
-export const NAV_OPTIONS = [
+export const navOptions = [
   {
     label: "GitHub",
     link: "https://github.com/graydonvg",
@@ -65,51 +65,51 @@ export const projects = [
 export const technologies = [
   {
     name: "HTML 5",
-    iconPath: "/icons/html5.svg",
+    icon: "html",
   },
   {
     name: "CSS 3",
-    iconPath: "/icons/css3.svg",
+    icon: "css",
   },
   {
     name: "Tailwind CSS",
-    iconPath: "/icons/tailwindcss.svg",
+    icon: "tailwind",
   },
   {
     name: "JavaScript",
-    iconPath: "/icons/javascript.svg",
+    icon: "javascript",
   },
   {
     name: "TypeScript",
-    iconPath: "/icons/typescript.svg",
+    icon: "typescript",
   },
   {
     name: "React.js",
-    iconPath: "/icons/react.svg",
+    icon: "react",
   },
   {
     name: "Next.js",
-    iconPath: "/icons/nextjs.svg",
+    icon: "netxjs",
   },
   {
     name: "Redux Toolkit",
-    iconPath: "/icons/redux.svg",
+    icon: "redux",
   },
   {
     name: "Supabase",
-    iconPath: "/icons/supabase.svg",
+    icon: "supabase",
   },
   {
     name: "Firebase",
-    iconPath: "/icons/firebase.svg",
+    icon: "firebase",
   },
   {
-    name: "MUI",
-    iconPath: "/icons/mui.svg",
+    name: "Material UI",
+    icon: "mui",
   },
   {
-    name: "Shadcn",
-    iconPath: "/icons/shadcnui.svg",
+    name: "shadcn/ui",
+    icon: "shadcn",
   },
 ];
 
