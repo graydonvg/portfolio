@@ -7,13 +7,13 @@ import Providers from "./providers";
 import Preloader from "@/components/preloader/preloader";
 import ogImage from "../../public/opengraph-image.png";
 import type { Viewport } from "next";
-import Head from "next/head";
 import {
   EMAIL_ADDRESS,
   GITHUB_URL,
   LINKED_IN_URL,
   SITE_URL,
 } from "@/lib/constants";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -123,7 +123,7 @@ const websiteSchema = {
   name: `${NAME} - Portfolio`,
   description: DESCRIPTION,
   publisher: {
-    "@type": "Organization",
+    "@type": "Person",
     name: NAME,
   },
 };
@@ -135,16 +135,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
-      </Head>
       <body
         suppressHydrationWarning
         className={cn("antialiased", inter.variable)}
@@ -154,6 +144,16 @@ export default function RootLayout({
           <ReactLenis root>{children}</ReactLenis>
         </Providers>
       </body>
+      <Script
+        id="jsonLdSchema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
+      />
+      <Script
+        id="websiteSchema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
     </html>
   );
 }
