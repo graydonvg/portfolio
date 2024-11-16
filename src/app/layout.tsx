@@ -31,7 +31,6 @@ const DESCRIPTION =
   "Portfolio showcasing projects and web development skills in JavaScript, TypeScript, React.js, Next.js, Tailwind CSS, and more.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL!),
   title: TITLE,
   description: DESCRIPTION,
   applicationName: `${NAME} - Portfolio`,
