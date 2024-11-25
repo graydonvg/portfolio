@@ -52,7 +52,7 @@ export default function ProjectCard({ project, isEven }: Props) {
           sizes="(min-width: 1620px) 576px, (min-width: 1280px) calc(40vw - 64px), (min-width: 1040px) calc(50vw - 104px), (min-width: 780px) calc(50vw - 80px), calc(100vw - 96px)"
         />
         {project.links.website.length === 0 && (
-          <div className="absolute inset-0 flex h-full w-full items-center justify-center rounded-2xl bg-zinc-950/80 text-center text-2xl text-white">
+          <div className="absolute inset-0 flex h-full w-full items-center justify-center rounded-md bg-zinc-950/80 text-center text-2xl text-white">
             Coming soon
           </div>
         )}
