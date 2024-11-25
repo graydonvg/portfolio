@@ -37,7 +37,6 @@ export const projects = [
       "next.js",
       "redux",
       "supabase",
-      "firebase",
       "mui",
       "stripe",
     ],
@@ -106,16 +105,16 @@ export const technologies = [
     icon: "supabase",
   },
   {
-    name: "Firebase",
-    icon: "firebase",
-  },
-  {
     name: "Material UI",
     icon: "mui",
   },
   {
     name: "shadcn/ui",
     icon: "shadcn",
+  },
+  {
+    name: "VS Code",
+    icon: "vscode",
   },
 ];
 

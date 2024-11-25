@@ -1,6 +1,6 @@
 import type { SVGProps } from "react";
 
-export default function Shadcnui(props: SVGProps<SVGSVGElement>) {
+export default function Shadcn(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       aria-hidden="true"

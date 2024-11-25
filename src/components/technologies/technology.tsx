@@ -3,16 +3,16 @@
 import { motion } from "framer-motion";
 import HTML5 from "../icons/html5";
 import CSS from "../icons/css";
-import Firebase from "../icons/firebase";
 import JavaScript from "../icons/javascript";
 import MUI from "../icons/mui";
 import Nextjs from "../icons/nextjs";
 import React from "../icons/react";
 import Redux from "../icons/redux";
-import Shadcnui from "../icons/shadcn";
+import Shadcn from "../icons/shadcn";
 import Supabase from "../icons/supabase";
 import TailwindCSS from "../icons/tailwind";
 import TypeScript from "../icons/typescript";
+import VSCode from "../icons/vs-code";
 
 const ICONS = {
   html: HTML5,
@@ -24,9 +24,9 @@ const ICONS = {
   netxjs: Nextjs,
   redux: Redux,
   supabase: Supabase,
-  firebase: Firebase,
   mui: MUI,
-  shadcn: Shadcnui,
+  shadcn: Shadcn,
+  vscode: VSCode,
 };
 
 type Props = {
