@@ -56,7 +56,7 @@ export const projects = [
       "next.js",
       "redux",
       "supabase",
-      "shadcn/ui",
+      "shadcn",
       "tailwind css",
       "cloudinary",
     ],
@@ -109,7 +109,7 @@ export const technologies = [
     icon: "mui",
   },
   {
-    name: "shadcn/ui",
+    name: "shadcn",
     icon: "shadcn",
   },
   {
