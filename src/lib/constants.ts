@@ -7,7 +7,7 @@ export const SITE_URL =
     ? "http://localhost:3000/"
     : "https://vercel.com/graydonvgs-projects/portfolio";
 export const GITHUB_URL = "https://github.com/graydonvg";
-export const LINKED_IN_URL = "www.linkedin.com/in/graydon-von-gossler";
+export const LINKED_IN_URL = "https://linkedin.com/in/graydon-von-gossler";
 export const EMAIL_ADDRESS = "graydonvg@gmail.com";
 
 export const navOptions = [
