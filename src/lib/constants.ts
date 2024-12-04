@@ -30,7 +30,7 @@ export const projects = [
     image: myStoreMockup,
     title: "MyStore",
     description:
-      "Developed an e-commerce platform featuring an admin panel with role-based access control to manage users, products, and orders efficiently. Inspired by South African e-commerce store, Superbalist.",
+      "Developed a clothing e-commerce store featuring an admin panel with role-based access control to manage users, products, and orders efficiently. Inspired by South African e-commerce store, Superbalist.",
     tags: [
       "typescript",
       "react.js",
