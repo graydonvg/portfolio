@@ -107,7 +107,7 @@ export default function ContactForm() {
                   {...field}
                   id="name"
                   type="text"
-                  placeholder="John Doe *"
+                  placeholder="Your name *"
                   autoComplete="name"
                   className={cn("text-lg", {
                     "outline outline-red-500 focus:ring-red-500":
@@ -133,7 +133,7 @@ export default function ContactForm() {
                   {...field}
                   id="email"
                   type="text"
-                  placeholder="john@doe.com *"
+                  placeholder="Your email *"
                   autoComplete="email"
                   className={cn("text-lg", {
                     "outline outline-red-500 focus:ring-red-500":
