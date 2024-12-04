@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   creator: NAME,
   publisher: NAME,
   keywords:
-    "portfolio, front-end developer, frontend engineer, web development, web developer, frontend developer, creative, problem-solving, team player, UI/UX, user interface, javascript developer, typescript developer, react developer, nextjs developer, next.js app router, html, css, javascript, typescript, reactjs, react.js, redux, nextjs, next.js, tailwind, threejs, three.js, 3D graphics, 3D animations, framer motion, supabase, firebase, mui, shadcn, parallax, freelance, remote, startup-friendly, responsive design, high-performance websites, modern web design, english, german, afrikaans, south africa, international, graydon von gossler",
+    "portfolio, front-end developer, frontend engineer, web development, web developer, frontend developer, creative, problem-solving, team player, UI/UX, user interface, javascript developer, typescript developer, react developer, nextjs developer, next.js app router, html, css, javascript, typescript, reactjs, react.js, redux, nextjs, next.js, tailwind, threejs, three.js, 3D graphics, 3D animations, framer motion, supabase, firebase, mui, material ui, shadcn, parallax, freelance, remote, startup-friendly, responsive design, high-performance websites, modern web design, english, german, afrikaans, south africa, international, graydon von gossler",
   icons: [
     {
       rel: "icon",
