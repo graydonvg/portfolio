@@ -31,7 +31,15 @@ export const projects = [
     title: "MyStore",
     description:
       "Developed an e-commerce platform featuring an admin panel with role-based access control to manage users, products, and orders efficiently. Inspired by South African e-commerce store, Superbalist.",
-    tags: ["typescript", "next.js", "redux", "supabase", "mui", "stripe"],
+    tags: [
+      "typescript",
+      "react.js",
+      "next.js",
+      "redux",
+      "supabase",
+      "mui",
+      "stripe",
+    ],
     links: {
       repository: "https://github.com/graydonvg/my-store",
       website: "https://my-store-henna.vercel.app/",
@@ -44,6 +52,7 @@ export const projects = [
       "Developing a dynamic media gallery platform with advanced management features, allowing users to seamlessly upload and enhance both photos and videos. Key features include Auto-Tagging for efficient categorization and search optimization, Image Optimization for high-quality display across devices, and Smart Editing with AI-driven enhancements.",
     tags: [
       "typescript",
+      "react.js",
       "next.js",
       "redux",
       "supabase",
