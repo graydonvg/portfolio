@@ -25,7 +25,7 @@ export default function Typewriter({ children }: Props) {
               <span
                 style={{
                   opacity: 0,
-                  animation: `character-blinker 0.125s ${blinkDelay}s forwards`,
+                  animation: `character-blinker 0.05s ${blinkDelay}s forwards`,
                 }}
                 className="absolute right-0 top-0 h-full w-2 bg-foreground"
               />
