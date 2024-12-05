@@ -5,7 +5,7 @@ import galleryAiMockup from "/public/mockups/gallery-ai-mockup.jpg";
 export const SITE_URL =
   process.env.NODE_ENV === "development"
     ? "http://localhost:3000/"
-    : "https://vercel.com/graydonvgs-projects/portfolio";
+    : "https://www.graydonvongossler.com/";
 export const GITHUB_URL = "https://github.com/graydonvg";
 export const LINKED_IN_URL = "https://linkedin.com/in/graydon-von-gossler";
 export const EMAIL_ADDRESS = "graydonvg@gmail.com";
