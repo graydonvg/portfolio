@@ -1,42 +1,33 @@
-"use client";
-
 import Image from "next/image";
 import Section from "./section";
 import TypographyH2 from "./ui/typography/h2";
 import TypographyP from "./ui/typography/p";
 
 export default function AboutMe() {
-  function renderSilhouette(sizes: string) {
-    return (
-      <>
-        <Image
-          src="/silhouette.png"
-          alt="silhouette"
-          priority
-          fill
-          sizes={sizes}
-          style={{ objectFit: "contain" }}
-          className="blur-sm"
-        />
-        <div className="absolute inset-0 flex h-full w-full items-center justify-center rounded-2xl bg-zinc-950/80 text-center text-2xl text-white">
-          Photo coming soon
-        </div>
-      </>
-    );
-  }
-
   return (
     <Section className="bg-card text-card-foreground">
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 xl:gap-16">
-        <div className="relative hidden aspect-square w-full rounded-2xl md:block">
-          {renderSilhouette(
-            "(min-width: 1640px) 616px, (min-width: 1280px) 37.65vw, calc(50vw - 56px)",
-          )}
+        <div className="relative hidden aspect-square w-full md:block">
+          <Image
+            src="/headshot.jpg"
+            alt="silhouette"
+            priority
+            fill
+            sizes="(min-width: 1640px) 616px, (min-width: 1280px) 37.65vw, calc(50vw - 56px)"
+            className="rounded-2xl object-cover object-[50%_10%]"
+          />
         </div>
         <div className="flex flex-col items-center justify-center gap-8 md:items-start">
           <TypographyH2>About me</TypographyH2>
-          <div className="relative block aspect-square w-full rounded-2xl bg-zinc-200 md:hidden">
-            {renderSilhouette("calc(100vw - 64px)")}
+          <div className="relative block aspect-square w-full md:hidden">
+            <Image
+              src="/headshot-1.jpg"
+              alt="silhouette"
+              priority
+              fill
+              sizes="calc(100vw - 64px)"
+              className="rounded-2xl object-cover object-[50%_10%]"
+            />
           </div>
           <div>
             <TypographyP>
