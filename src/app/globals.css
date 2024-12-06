@@ -158,25 +158,20 @@ body {
   }
 }
 
-@keyframes reveal-character {
-  to {
-    opacity: 1;
+.typewriter {
+  animation:
+    typing var(--typewriter-duration, 1s) steps(13),
+    blink 0.5s step-end infinite alternate;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
   }
 }
 
-@keyframes character-blinker {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  10%,
-  90% {
-    opacity: 1;
-  }
-}
-
-@keyframes end-blinker {
+@keyframes blink {
   50% {
-    opacity: 1;
+    border-color: transparent;
   }
 }
