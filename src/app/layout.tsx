@@ -26,9 +26,9 @@ export const viewport: Viewport = {
 };
 
 const NAME = "Graydon von Gossler";
-const TITLE = `${NAME} | Web Developer`;
+const TITLE = `${NAME} | Front-end Web Developer`;
 const DESCRIPTION =
-  "Portfolio showcasing projects and web development skills in JavaScript, TypeScript, React.js, Next.js, Tailwind CSS, and more.";
+  "Portfolio showcasing projects and web development skills in HTML, CSS, JavaScript, TypeScript, React.js, Next.js and more.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   creator: NAME,
   publisher: NAME,
   keywords:
-    "portfolio, front-end developer, frontend engineer, web development, web developer, frontend developer, creative, problem-solving, team player, javascript developer, typescript developer, react developer, nextjs developer, next.js app router, html, css, javascript, typescript, reactjs, react.js, redux, nextjs, next.js, tailwind, threejs, three.js, 3D graphics, 3D animations, framer motion, supabase, mui, material ui, shadcn, parallax, remote, startup-friendly, responsive design, high-performance websites, english, german, afrikaans, south africa, international, graydon von gossler",
+    "portfolio, front-end developer, frontend engineer, web development, web developer, frontend developer, creative, problem-solving, team player, javascript developer, typescript developer, react developer, nextjs developer, next.js app router, html, css, javascript, typescript, reactjs, react.js, redux, nextjs, next.js, tailwind, threejs, three.js, 3D graphics, 3D animations, framer motion, supabase, mui, material ui, shadcn, parallax, remote, startup-friendly, responsive design, high-performance websites, english, german, afrikaans, south africa, international, graydon von gossler, graydon, von gossler",
   icons: [
     {
       rel: "icon",

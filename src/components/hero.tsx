@@ -10,7 +10,7 @@ import { HERO_DELAY_IN_SEC } from "@/lib/constants";
 import Link from "next/link";
 
 type Props = {
-  children?: ReactNode;
+  children: ReactNode;
 };
 
 export default function Hero({ children }: Props) {
