@@ -133,7 +133,7 @@ export default function ContactForm() {
                   {...field}
                   id="email"
                   type="text"
-                  placeholder="Your email *"
+                  placeholder="Your email address *"
                   autoComplete="email"
                   className={cn("text-lg", {
                     "outline outline-red-500 focus:ring-red-500":
