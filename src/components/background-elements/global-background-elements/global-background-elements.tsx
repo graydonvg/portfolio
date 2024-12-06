@@ -45,7 +45,7 @@ export default function GlobalBackgroundElements() {
 
       // Distance between the bottom of the element and the top of the viewport
       // The amount the GlobalBackgroundElements need to be clipped starting from the bottom of the viewport
-      const distance = 0 + rect.bottom;
+      const distance = rect.bottom - 10;
       setDistanceFromTop(`${distance}px`);
     };
 
