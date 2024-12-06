@@ -61,7 +61,7 @@ export default function Earth() {
           gl.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         }}
         gl={{ alpha: true }}
-        className="h-full max-h-[79rem] w-full"
+        className="h-full max-h-[79rem] w-full lg:min-h-[60rem]"
       >
         <ambientLight intensity={0.5} />
         <directionalLight
