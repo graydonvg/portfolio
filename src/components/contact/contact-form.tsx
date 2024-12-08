@@ -18,6 +18,7 @@ import {
   FormLabel,
   FormMessage,
 } from "../ui/form";
+import { useState } from "react";
 
 type EmailTemplate = {
   to_name: string;
@@ -27,6 +28,7 @@ type EmailTemplate = {
 };
 
 export default function ContactForm() {
+  const [isSending, setIsSending] = useState(false);
   const form = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -37,6 +39,8 @@ export default function ContactForm() {
   });
 
   async function sendEmail(emailData: EmailTemplate) {
+    setIsSending(true);
+
     const loadingToastId = toast.loading("Sending email");
 
     emailjs
@@ -77,7 +81,22 @@ export default function ContactForm() {
             transition: Flip,
           });
         },
-      );
+      )
+      .catch(() => {
+        toast.update(loadingToastId, {
+          type: "error",
+          render:
+            "There was an error sending your message. Please try again later.",
+          isLoading: false,
+          autoClose: null,
+          closeButton: null,
+          closeOnClick: null,
+          transition: Flip,
+        });
+      })
+      .finally(() => {
+        setIsSending(false);
+      });
   }
 
   async function onSubmit(values: z.infer<typeof contactFormSchema>) {
@@ -171,7 +190,11 @@ export default function ContactForm() {
           )}
         />
         <div>
-          <Button type="submit" className="mt-4 px-10 sm:mt-6">
+          <Button
+            type="submit"
+            disabled={isSending}
+            className="mt-4 px-10 sm:mt-6"
+          >
             Send
           </Button>
         </div>
