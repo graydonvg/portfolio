@@ -95,6 +95,9 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     images: [ogImage.src],
   },
+  verification: {
+    google: "VmkBdmFmPIAyVGnHGuapflceNwi1XqFcP_aW99qbGIw",
+  },
 };
 
 const jsonLdSchema = {

@@ -9,7 +9,7 @@ export default function AboutMe() {
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 xl:gap-16">
         <div className="relative hidden aspect-square w-full md:block">
           <Image
-            src="/headshot.jpg"
+            src="/headshots/headshot.jpg"
             alt="silhouette"
             priority
             fill
@@ -21,7 +21,7 @@ export default function AboutMe() {
           <TypographyH2>About me</TypographyH2>
           <div className="relative block aspect-square w-full md:hidden">
             <Image
-              src="/headshot-1.jpg"
+              src="/headshots/headshot-1.jpg"
               alt="silhouette"
               priority
               fill
