@@ -99,7 +99,7 @@ export const metadata: Metadata = {
     google: "VmkBdmFmPIAyVGnHGuapflceNwi1XqFcP_aW99qbGIw",
   },
   alternates: {
-    canonical: "https://www.graydonvongossler.com",
+    canonical: SITE_URL,
   },
 };
 
