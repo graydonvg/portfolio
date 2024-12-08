@@ -98,6 +98,9 @@ export const metadata: Metadata = {
   verification: {
     google: "VmkBdmFmPIAyVGnHGuapflceNwi1XqFcP_aW99qbGIw",
   },
+  alternates: {
+    canonical: "https://www.graydonvongossler.com",
+  },
 };
 
 const jsonLdSchema = {
