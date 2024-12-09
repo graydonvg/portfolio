@@ -10,7 +10,8 @@ export default function AboutMe() {
         <div className="relative hidden aspect-square w-full md:block">
           <Image
             src="/headshots/headshot.jpg"
-            alt="silhouette"
+            alt="headshot"
+            quality={100}
             priority
             fill
             sizes="(min-width: 1640px) 616px, (min-width: 1280px) 37.65vw, calc(50vw - 56px)"
@@ -22,7 +23,8 @@ export default function AboutMe() {
           <div className="relative block aspect-square w-full md:hidden">
             <Image
               src="/headshots/headshot-1.jpg"
-              alt="silhouette"
+              alt="headshot"
+              quality={100}
               priority
               fill
               sizes="calc(100vw - 64px)"
